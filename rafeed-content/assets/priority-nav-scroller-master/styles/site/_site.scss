@@ -1,0 +1,189 @@
+// ----- Base styles -----
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #333;
+  text-align: left;
+  background-color: #fff;
+}
+
+a {
+  color: #1976D2;
+  text-decoration: none;
+  transition: color 0.3s;
+
+  &:hover, &:focus {
+    color: #2196F3;
+  }
+}
+
+// Type
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+h1, h2 {
+  margin: 0 0 1.5rem 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0 0 1rem 0;
+}
+
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
+
+strong {
+  font-weight: 400;
+}
+
+p:last-child {
+  margin: 0;
+}
+
+
+
+// ----- Components -----
+
+.btn {
+  display: inline-block;
+  padding: .375rem .75rem;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  transition: background-color .3s, color .3s;
+  cursor: pointer;
+
+  &:hover, &:active {
+    background-color: #f3f3f3;
+  }
+}
+
+.btn-white {
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  top: -0.1em;
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  vertical-align: middle;
+}
+
+pre {
+  display: block;
+  padding: .75rem 1rem;
+  margin: 0 0 1.5rem 0;
+  overflow: auto;
+  font-family: 'Cutive Mono', SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 1rem;
+  background-color: #f3f3f3;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+
+// ----- Layout -----
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+
+// ----- Header and footer -----
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 1rem 0;
+  color: #fff;
+  background-color: #1976D2;
+  box-shadow: 0 0 6px 6px rgba(0,0,0,0.1);
+}
+
+  .logo-text {
+    margin: 0;
+
+    @media (max-width: 767px) {
+      font-size: 1.75rem;
+    }
+    @media (min-width: 768px) {
+      display: inline-block;
+    }
+  }
+
+  .header--links {
+
+    .btn {
+      margin: 0;
+      margin-top: .5rem;
+
+      &:last-child {
+        margin-left: .5rem;
+      }
+    }
+
+    @media (min-width: 768px) {
+      float: right;
+    }
+  }
+
+.footer {
+  padding: 1rem 0;
+  text-align: center;
+}
+
+
+
+// ----- Sections -----
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section--underline {
+  border-bottom: 1px solid #ddd;
+}

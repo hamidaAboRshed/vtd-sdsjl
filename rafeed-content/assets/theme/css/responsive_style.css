@@ -1,0 +1,804 @@
+@media only screen and (max-width:  320px) {
+    #ESeries .product-main-photo img{
+        transform: scale(1.8) !important;
+        /*transform-origin: 50% 91%;*/
+    }
+    #EasyHome_panel{
+        padding-left: 10px;
+    }
+    .simplegallery .content img{
+        /*-webkit-transform: translateY(0%) translateX(-11%) !important;*/
+        width: 300px !important;
+        height: auto;
+    }
+    .Premium-Quality{
+            font-size: 3rem;
+    }
+    .product-img, #product-col-spec table{
+        /*-webkit-transform: translateY(0%) translateX(-18%);*/
+        width: 200px;
+    }
+     #eseries_logo{
+        height: 97px;
+    }
+    #eseries_led{
+        height: 40px;
+    }
+    #eseries_product{
+        width: 307px !important;
+    }
+    #eseries_guarntee{
+        height: 65px;
+    }
+    #allbrand_text{
+        height: 185px;
+    }
+
+    #ios_text{
+        background: #c78250db;
+        width: 164px;
+        top: +177px;
+        position: absolute;
+        margin: 0 auto;
+        left: 51px;
+        border-left-width: 10px;
+    }
+
+    #electric_img{
+        width: 250px;
+    }
+    #elctric_logo img{
+        width: 235px !important;
+    }
+    .smart-logo{
+        top: 9px;
+    }
+    #heigh-quality ,#handredpre{
+        text-align: center;
+        width: 100%;
+    }
+    /*#handredpre{
+        text-align: center;
+    }*/
+    #smart_larg_img{
+        display: none;
+    }
+    #smart_small_img{
+        margin-left: -47px;
+        margin-top: 17px;
+    }
+    #smart_link{
+        padding-top: 25px !important;
+    }
+
+    #real-guarantee img {
+        bottom: 232px;
+        right: -51px;
+    }
+    #premium_larg_logo{
+        display: none;
+    }
+
+    #premium_small_logo{
+        display: block;
+        width: 242px;
+        margin: 0 auto;
+        margin-top: -40px;
+    }
+    #header2-0{
+        padding-top: 0;
+    }
+    #Layer_1{
+        height: 169px;
+        width: 300px;
+        margin-left: 18px;
+    }
+    .product-row{
+        margin: 0 5px !important;
+    }
+
+    /*   CCT Page   */
+    #cct_scale img{
+        width: 100%;
+    }
+    #cct_scale p{
+        padding: 0 5px;
+    }
+    #blank-col{
+        display: none;
+    }
+    .contact-info h5{
+        width: 200px;
+    }
+
+    /*  about page  */
+
+    .about-padding{
+        padding: 0 10px;
+    }
+    #since-txt{
+        font-size: 1.7rem;
+    }
+    #ten-txt{
+        font-size: 5rem;
+        margin-top: -10px;
+    }
+    #decorate-txt{
+        font-size: 1.3rem;
+        margin-top: -10px;
+    }
+    #lights-txt{
+        font-size: 2rem;
+    }
+    #about_header{
+        background-position: -109px 0;
+    }
+    #since-panel{
+        padding: 0 100px;
+    }
+    #welcome_rafeed_img{
+        width: 200px;
+    }
+    #about_border{
+        display: none;
+    }
+    #cover_page{
+        padding-top: 30px;
+    }
+}
+
+/*   smartphones   */
+@media only screen and (min-width:  320px) {
+    #EasyHome_panel{
+        padding-left: 9%;
+    }
+    .content-one-column{
+        margin: 0px 10px;
+    }
+    .contact-field-section{
+        padding: 0px 30px;   
+    }
+    #ESeries{
+        padding: 0px 10px;
+    }
+    .spec-tbl{
+        padding: 0;
+        top: 10px;
+    }
+    .E-Series #ESeries .page-header{
+        height: 450px !important; 
+    }
+    .filter-block .col{
+        display: contents;
+    }
+    .simplegallery .content img{
+        /*-webkit-transform: translateY(0%) translateX(-11%);*/
+        width: 320px !important;
+        height: auto;
+    }
+    #navbarNav .nav-item{
+        padding: 8px 20px;
+    }
+    #ESeries .product-main-photo img{
+        transform: scale(1.8);
+        /*transform-origin: 50% 91%;*/
+    }
+    #ESeries .product-main-photo{
+        top: -53px;
+        position: relative;
+    }
+    .Premium-Quality{
+            font-size: 3rem;
+    }
+    .application-img img{
+        transform: scale(1.2);
+    }
+    .electric-product-big-img>img{
+        width: 237px;
+    }
+    .product-img, #product-col-spec table{
+        width: 300px;
+    }
+    #eseries_logo{
+        height: 97px;
+    }
+    #eseries_led{
+        height: 40px;
+    }
+    #eseries_product{
+        width:292px;
+    }
+    #eseries_guarntee   {
+        height: 108px;
+    }
+    #allbrand_text{
+        height: 185px;
+    }
+    #ios_text{
+        background: #c78250db;
+        width: 200px;
+        top: +177px;
+        position: absolute;
+        margin: 0 auto;
+        left: 51px;
+    }
+     #led-screen-container{
+        width:90%;
+    }
+    #smart_larg_img{
+        display: none;
+    }
+    #smart_small_img{
+        margin-left: -47px;
+        margin-top: 17px;
+    }
+    #premium_larg_logo{
+        display: none;
+    }
+
+    #premium_small_logo{
+        display: block;
+        width: 242px;
+        margin: 0 auto;
+        margin-top: -40px;
+    }
+    .product-row{
+        margin: 0 15px;
+    }
+     #smart_link{
+        padding-top:14% !important;
+    }
+
+    /*   CCT Page   */
+    #cct_scale img{
+        width: 100%;
+    }
+    #cct_scale p{
+        padding: 0 25px;
+    }
+
+    #kelven_def{
+        /*margin-right: 10px;margin-left: 20px;*/
+        padding: 0 25px;
+    }
+    #kelvin_col1{
+        padding: 9% 25px;
+    }
+    #Layer_1{
+        height: 275px;
+        width: 300px;
+        margin-left: 18px;
+    }
+    .product-name{
+        font-size: 30px;
+    }
+   /* #smart-col, #electric-col{
+        border-left: 10px solid #fff !important;
+        border-right: 10px solid #fff !important;
+    }
+    #electric-col{
+        border-bottom-width: 5px !important;
+    }
+    #smart-col{
+        border-top-width: 5px !important;
+    }*/
+    #blank-col{
+        display: none;
+    }
+    .electric-technical-table{
+        width: 99% !important;
+    }
+    .contact-info h5{
+        width: 233px;
+    }
+
+
+    .about-padding{
+        padding: 0 25px;
+    }
+
+    #since-txt{
+        font-size: 1.7rem;
+    }
+    #ten-txt{
+        font-size: 5rem;
+        margin-top: -30px;
+    }
+    #decorate-txt{
+        font-size: 1.3rem;
+        margin-top: -30px;
+    }
+    #lights-txt{
+        font-size: 2rem;
+    }
+    #about_header{
+        background-position: -119px -150px;
+    }
+    #since-panel{
+        padding: 0 100px;
+    }
+    #about_border{
+        height: 3550px;
+        display: none;
+        /*transform: scale(1.8) !important;*/
+    }
+    #About .text{
+        font-size: 1.3rem;
+    }
+    #rafeed-story-bg{
+        height: 70%;
+    }
+    #rafeed-story{
+        height: 110%;
+    }
+    #rafeed-story-bg{
+        padding-bottom: 20px;
+    }
+    #welcome_rafeed_img{
+        width: 250px;
+    }
+    #cover_page{
+        padding-top: 30px;
+    }
+}
+
+/*  small devices, tablets  */
+@media only screen and (min-width: 768px) {
+    #ESeries .product-main-photo img{
+        transform: scale(1.8) !important;
+        /*transform-origin: 50% 91%;*/
+    }
+    #rafeed-story{
+        background-image: none;
+    }
+    .content-one-column{
+        margin: 0px 20px;
+    }
+    .contact-field-section{
+        padding: 0px 118px;   
+    }
+    .contact-info h5{
+        width: 233px;
+    }
+    #ESeries{
+        padding: 0px 50px;
+    }
+    .spec-tbl{
+        padding: 0;
+        top: 10px;
+    }
+    .filter-block .col{
+        display: contents;
+    }
+    .simplegallery .content img{
+        /*-webkit-transform: translateY(0%) translateX(0%);*/
+        width: 530px !important;
+        height: auto;
+    }
+    .nav-scroller-wrapper{
+        width: 80%;
+    }
+    #navbarNav .nav-item{
+        padding: 8px 20px;
+    }
+    .Premium-Quality{
+        font-size: 4rem;
+    }
+    .application-img img{
+        transform: scale(1.2);
+    }
+    .electric-product-big-img>img{
+        width: 237px;
+    }
+    #eseries_logo{
+        height: 120px;
+    }
+    #eseries_led{
+        height: 60px;
+    }
+    #eseries_product{
+        width:640px;
+    }
+    #eseries_guarntee{
+        height: 150px;
+    }
+    #allbrand_text{
+        height: 226px;
+    }
+    #ios_text{
+        /*background: transparent;*/
+        width: 190px;
+        position: relative;
+        top: 0;
+    }
+     #led-screen-container{
+        width:60%;
+    }
+    #smart_larg_img{
+        display: block;
+        margin: 0 auto;
+    }
+    #smart_small_img{
+        display: none;
+    }
+    #premium_larg_logo{
+        display: block;
+        margin:0 auto;
+    }
+
+    #premium_small_logo{
+        display: none;
+    }
+
+    /*   CCT Page   */
+    #cct_scale img{
+        width: 100%;
+    }
+
+    #cct_scale p{
+        padding: 0 50px;
+    }
+
+    #kelven_def{
+        /*margin-right: 10px;margin-left: 20px;*/
+        padding: 0 50px;
+    }
+    #kelvin_col1{
+        padding: 9% 50px;
+    }
+    #Layer_1{
+        height:435.468px;
+        width:954.839px;
+        margin: 0 auto;
+    }
+    #smart_link{
+        padding-top: 4% !important;
+    }
+    #product_list{
+        margin: 0 30px;
+    }
+    .product-img, #product-col-spec table{
+        width: 215px;
+    }
+    .product-name{
+        font-size: 45px;
+    }
+    .product-row .col {
+    padding: 0 8%;
+    }
+    .electric-technical-table{
+        width: 77.8% !important;
+    }
+    #blank-col{
+        display: none;
+    }
+    .about-padding{
+        padding: 0 50px;
+    }
+    #since-txt{
+        font-size: 1.7rem;
+    }
+    #ten-txt{
+        font-size: 5rem;
+        margin-top: -30px;
+    }
+    #decorate-txt{
+        font-size: 1.3rem;
+        margin-top: -30px;
+    }
+    #lights-txt{
+        font-size: 2rem;
+    }
+    #about_header{
+        background-position: -19px -150px;
+    }
+    #since-panel{
+        padding: 0 200px;
+    }
+    #about_border{
+        height: 3550px;
+        display: none;
+        /*transform: scale(2.8) !important;*/
+    }
+    #rafeed-story-bg{
+        height: 80vh;
+    }
+    #rafeed-story{
+        height: 110vh;
+    }
+    #About .text{
+        font-size: 1.3rem;
+    }
+    #welcome_rafeed_img{
+        width: 250px;
+    }
+    #cover_page{
+        padding-top: 40px;
+    }
+}
+
+/*  medium devices  */
+@media only screen and (min-width: 992px) {
+	#navbarNav
+	{position: absolute;}
+    #ESeries .product-main-photo img{
+        transform: scale(1.2) !important;
+        /*transform-origin: 50% 91%;*/
+    }
+    .content-one-column{
+        margin: 0px 218px;
+    }
+    .contact-field-section{
+        padding: 0px 218px;   
+    }
+    #ESeries{
+        padding: 0px 100px;
+    }
+    .spec-tbl{
+        padding: 0;
+        top: 0px;
+    }
+    .application-img img{
+        transform: scale(1);
+    }
+    .gallery{
+        padding-right: 10px;
+    }
+    .simplegallery .content img{
+        -webkit-transform: translateY(0%) translateX(0%);
+    }
+    .nav-scroller-wrapper{
+        width: 75%;
+    }
+    #navbarNav .nav-item{
+        padding: 8px 20px;
+    }
+    #blank-col{
+        display: block;
+    }
+    .electric-product-big-img>img{
+        width: 350px;
+    }
+    #eseries_logo{
+        height: 120px;
+    }
+    #eseries_led{
+        height: 60px;
+    }
+    #eseries_product{
+        width:750px;
+    }
+    #eseries_guarntee{
+        height: 150px;
+    }
+    #allbrand_text{
+        height: auto;
+    }
+    #ios_text{
+        width: auto;
+    }
+    #led-screen-container{
+        width:30%;
+    }
+    #electric_panel{
+        display: -webkit-box;
+    }
+    .smart-icons{
+        padding: 7% 0 0 7%;
+    }
+    #smart_larg_img{
+        width: 700px;
+    }
+
+    /*   CCT Page   */
+    #cct_scale img{
+        width: auto;
+    }
+    #cct_scale p{
+        padding: 0 150px;
+    }
+    #kelven_def{
+        margin-right: 150px;margin-left: 70px;
+    }
+    #kelvin_col1{
+        padding: 15% 50px;
+        padding-left: 150px;
+    }
+    #product_list{
+        margin: 0 75px;
+    }
+    .product-img{
+        width: 343px;
+    }
+    #product-col-spec table{
+        width: 100%;
+    }
+    .product-name{
+        font-size: 50px;
+    }
+    .product-row .col {
+    padding: 0;
+    }
+    .electric-technical-table{
+        width: 77.8%;
+    }
+    .about-padding{
+        padding: 0 215px;
+    }
+    #since-txt{
+        font-size: 2.7rem;
+    }
+    #ten-txt{
+        font-size: 10rem;
+        margin-top: -60px;
+    }
+    #decorate-txt{
+        font-size: 1.6rem;
+        margin-top: -60px;
+    }
+    #lights-txt{
+        font-size: 4rem;
+    }
+    #about_header{
+        background-position: -19px 0;
+    }
+    #since-panel{
+        padding: 0 215px;
+    }
+    #rafeed-story-bg{
+        height: 75vh;
+    }
+    #About .text{
+        font-size: 1.5rem;
+    }
+    #welcome_rafeed_img{
+        width: 300px;
+    }
+    #about_border{
+        display: block;
+    }
+    #rafeed-story{
+        background-image: none;
+    }
+    #cover_page{
+        padding-top: 70px;
+    }
+}
+/*  large devices  */
+@media only screen and (min-width: 1200px) {
+    #rafeed-story{
+        background-image: url('../../images/backgrounds/about_redline_bg.png');
+    }
+    .content-one-column{
+        margin: 0px 215px;
+    }
+    .contact-field-section{
+        padding: 0px 318px;   
+    }
+    #ESeries{
+        padding: 0px 200px;
+    }
+    .spec-tbl{
+        padding: 0;
+        top: 0px;
+    }
+    .gallery{
+        padding-right: 10px;
+    }
+    .simplegallery .content img{
+        -webkit-transform: translateY(0%) translateX(0%);
+    }
+    .nav-scroller-wrapper{
+        width: 70%;
+    }
+    .nav-scroller-nav{
+        border:none;
+        border: none !important;
+    }
+    #navbarNav .nav-item{
+        padding: 8px 20px;
+    }
+    #blank-col{
+        display: block;
+    }
+    .electric-product-big-img>img{
+        width: 350px;
+    }
+    #eseries_logo{
+        height: 130px;
+    }
+    #eseries_led{
+        height: 60px;
+    }
+    #eseries_product{
+        width:687px;
+    }
+    #eseries_guarntee{
+        height: 150px;
+    }
+    #led-screen-container{
+        width:30%;
+    }
+    #kelvin_col1{
+        padding: 10% 90px;
+        padding-left: 150px;
+    }
+    #product_list{
+        margin: 0 100px;
+    }
+    .about-padding{
+        padding: 0 215px;
+    }
+    #about_border{
+        height: 2550px;
+    }
+}
+
+.row [class*="col-"]{
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+
+.row{
+  overflow: hidden; 
+}
+
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+.table-responsive{
+    display: table !important;
+}
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    .product-row table,.product-row thead,.product-row tbody,.product-row th,.product-row td,.product-row tr { 
+        display: block; 
+    }
+    
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .product-row thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { /*border: 1px solid #ccc;*/ }
+    
+    .product-row td { 
+        /* Behave  like a "row" */
+        border: none;
+        position: relative;
+    }
+    
+    /*   Add label   */
+    /*td:before { */
+        /* Now like a table header */
+        /*position: absolute;*/
+        /* Top/left values mimic padding */
+       /* top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;*/
+   /* }*/
+    
+    /*
+    Label the data
+    */
+    /*td:nth-of-type(1):before { content: "First Name"; }
+    td:nth-of-type(2):before { content: "Last Name"; }
+    td:nth-of-type(3):before { content: "Job Title"; }
+    td:nth-of-type(4):before { content: "Favorite Color"; }
+    td:nth-of-type(5):before { content: "Wars of Trek?"; }
+    td:nth-of-type(6):before { content: "Secret Alias"; }
+    td:nth-of-type(7):before { content: "Date of Birth"; }
+    td:nth-of-type(8):before { content: "Dream Vacation City"; }
+    td:nth-of-type(9):before { content: "GPA"; }
+    td:nth-of-type(10):before { content: "Arbitrary Data"; }*/
+}

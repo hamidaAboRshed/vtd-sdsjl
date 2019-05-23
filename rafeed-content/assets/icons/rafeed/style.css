@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'rafeed';
+  src:  url('fonts/rafeed.eot?ct5p7m');
+  src:  url('fonts/rafeed.eot?ct5p7m#iefix') format('embedded-opentype'),
+    url('fonts/rafeed.ttf?ct5p7m') format('truetype'),
+    url('fonts/rafeed.woff?ct5p7m') format('woff'),
+    url('fonts/rafeed.svg?ct5p7m#rafeed') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'rafeed' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cri:before {
+  content: "\e916";
+  color: #6d6e71;
+}
+.icon-ip:before {
+  content: "\e917";
+  color: #6d6e71;
+}
+.icon-pf:before {
+  content: "\e918";
+  color: #6d6e71;
+}
+.icon-share:before {
+  content: "\e919";
+}
+.icon-uncheck:before {
+  content: "\e91a";
+}
+.icon-check:before {
+  content: "\e91b";
+}
+.icon-ce:before {
+  content: "\e91c";
+  color: #6d6e71;
+}
+.icon-Indoor:before {
+  content: "\e91d";
+  color: #6d6e71;
+}
+.icon-led:before {
+  content: "\e91e";
+  color: #6d6e71;
+}
+.icon-beam_angel:before {
+  content: "\e91f";
+  color: #6d6e71;
+}
+.icon-power:before {
+  content: "\e920";
+  color: #6d6e71;
+}
+.icon-rohs:before {
+  content: "\e921";
+  color: #6d6e71;
+}
+.icon-work_hours:before {
+  content: "\e922";
+  color: #6d6e71;
+}
+.icon-computer:before {
+  content: "\e90e";
+}
+.icon-fax:before {
+  content: "\e90f";
+}
+.icon-iron:before {
+  content: "\e910";
+}
+.icon-music_player:before {
+  content: "\e911";
+}
+.icon-play_station:before {
+  content: "\e912";
+}
+.icon-printer:before {
+  content: "\e913";
+}
+.icon-screen:before {
+  content: "\e914";
+}
+.icon-stereo_system:before {
+  content: "\e915";
+}
+.icon-PowerSupply:before {
+  content: "\e90d";
+}
+.icon-Extension:before {
+  content: "\e90c";
+}
+.icon-search:before {
+  content: "\e900";
+}
+.icon-buy:before {
+  content: "\e901";
+}
+.icon-Accessories_big:before {
+  content: "\e902";
+}
+.icon-Bulb:before {
+  content: "\e903";
+}
+.icon-Commercial_Light2:before {
+  content: "\e904";
+}
+.icon-Downlight:before {
+  content: "\e905";
+}
+.icon-Flood_Light:before {
+  content: "\e906";
+}
+.icon-HighBay_Light:before {
+  content: "\e907";
+}
+.icon-Spotlight:before {
+  content: "\e908";
+}
+.icon-Street_Light:before {
+  content: "\e909";
+}
+.icon-Strips_Light:before {
+  content: "\e90a";
+}
+.icon-Commercial_Light:before {
+  content: "\e90b";
+}

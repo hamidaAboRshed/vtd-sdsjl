@@ -1,0 +1,249 @@
+/*
+--- file index ---
+
+-fonts
+-basic
+-primary-nav
+-secoundary-nav
+
+-home_page
+
+-footer 
+
+-Product_list
+-read_more
+
+*/
+
+/*  basic  */
+body{
+    color: #4b4b4b !important;
+}
+
+a{
+    color: #4b4b4b !important;
+}
+
+/*  primary-nav  */
+.navbar.navbar-expand-lg{
+	background:rgba(0,0,0,0.8);
+    border-bottom-color: #EC1A3B;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+	color:#E7E5E5 !important;
+}
+
+/* secoundary-nav */
+#sec-nav{
+	background-color: #F5F5F5;
+}
+
+
+.Premium #cat-item > a:hover,.Premium #cat-item > a.active,.Premium .social-link i:hover{
+    color: #DBAE27 !important;
+    border-color: #DBAE27;
+}
+
+.E-Series #cat-item > a:hover,.E-Series #cat-item > a.active,.E-Series .social-link i:hover{
+    color: #e90e8b !important;
+    border-color: #e90e8b;
+}
+
+.Electric #cat-item > a:hover,.Electric #cat-item > a.active,.Electric .social-link i:hover{
+    color: #98c93e !important;
+    border-color: #98c93e;
+}
+
+.Smart #cat-item > a:hover,.Smart #cat-item > a.active,.Smart .social-link i:hover{
+    color: #03838b !important;
+    border-color: #03838b;
+}
+
+/*  Home_page  */
+.green{
+	color: #03838B;
+}
+
+.red{
+	color: #EC1A3B;
+}
+
+.led-economic{
+    color: #4b4b4b;
+}
+
+.led-screen-title{
+    color: #929497;
+}
+
+.led-screen-p{
+    color: #929497;
+}
+
+.led-screen-p-small{
+	color: #929497;
+}
+
+.led-screen-btn{
+	color: #EC1A3B;
+}
+
+#nav-icon{
+	color: #fff;
+}
+
+#header2-0{
+	/*background-image: radial-gradient( circle closest-side, #c8c8c8, #ffffff );*/
+	background-color: #fff;
+}
+
+/*  footer  */
+.footer-lower{
+	background-color: #333333;
+	border-top-color:#EC1A3B;
+}
+
+.copyright p{
+	color: #fff;
+}
+
+/*  Product_list  */
+
+.product-row{
+	border-bottom-color: #929497;
+}
+
+/*  premium  */
+.Premium .product-name,.Premium text,.Premium .text{
+    color: #DBAE27;
+    fill: #DBAE27;
+}
+
+/*  E-series  */
+.E-Series .product-name,.E-Series text,.E-Series .text{
+    color: #e90e8b;
+    fill:#e90e8b;
+}
+
+/*  Electric  */
+.Electric .product-name, .Electric text, .Electric .text{
+    color: #98c93e;
+    fill: #98c93e;
+}
+
+/*  Smart  */
+.Smart .product-name, .Smart text,.Smart .text{
+    color: #03838b;
+    fill: #03838b;
+}
+
+
+.product-description{
+	color: #6D6E71;
+    border-top-color: #6d6e71;
+}
+
+.social-link i
+
+/*  read_more  */
+
+/*  premium  */
+.Premium svg #follow-up,.Premium #main-arrow{
+	stroke: #DBAE27;
+}
+
+@keyframes Premium-fill{
+	to{
+      transform: translateY(0);
+      fill: #DBAE27;
+    }
+}
+
+/*  E-series  */
+.E-Series svg #follow-up,.E-Series #main-arrow{
+	stroke: #e90e8b;
+}
+
+@keyframes E-Series-fill{
+	to{
+      transform: translateY(0);
+      fill: #e90e8b;
+    }
+}
+
+/*  Electric  */
+.Electric svg #follow-up, .Electric #main-arrow{
+	stroke: #98c93e;
+}
+
+@keyframes Electric-fill{
+	to{
+      transform: translateY(0);
+      fill: #98c93e;
+    }
+}
+
+/*  Smart  */
+.Smart svg #follow-up,.Smart #main-arrow{
+	stroke: #03838b;
+}
+
+@keyframes Smart-fill{
+	to{
+      transform: translateY(0);
+      fill: #03838b;
+    }
+}
+
+
+.Electric .series-bar{
+  background-color: #98c93e;
+  color: #fff;
+}
+
+.Smart .series-bar{
+  background-color: #03838b;
+  color: #fff;
+}
+
+.E-Series .tri-down{
+  background: #EC008C;
+}
+
+.E-Series .tri-down:after {
+  border-top-color: #EC008C;
+}
+
+.E-Series #ESeries .tab-link.active{
+    background-color: #EC008C;
+}
+
+.Premium .tri-down{
+  background: #DBAE27;
+}
+
+.Premium .tri-down:after {
+  border-top-color: #DBAE27;
+}
+
+
+.Premium #ESeries .tab-link.active{
+    background-color: #DBAE27;
+}
+
+.Premium #ESeries .page-header{
+    background: url('../../../assets/images/backgrounds/Premium_downarrow_bg.png') no-repeat;
+    margin-top: 50px;
+    text-align: center;
+    height: 385px;
+    background-position: center;
+  }
+
+.E-Series #ESeries .page-header{
+  background: url('../../../assets/images/backgrounds/Eseries_downarrow_bg.png') no-repeat;
+  margin-top: 50px;
+  text-align: center;
+  height: 350px;
+  background-position: center;
+}

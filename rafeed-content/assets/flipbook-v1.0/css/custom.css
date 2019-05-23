@@ -1,0 +1,153 @@
+
+body{
+    background-color: #f6f6f6;
+    background-image: linear-gradient(315deg, #f6f6f6 0%, #e9e9e9 74%);
+    height: 100vh;  
+    margin: 0px;
+}
+a {
+    color : #333333 !important;
+}
+.catalog .col {
+ display: inline-block;
+  vertical-align: bottom;
+  text-align: center;
+}
+.catalog .col img{
+    bottom: 0;
+    vertical-align: bottom;
+    cursor: pointer;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.55);
+    margin: 0 10px 0 10px;
+}
+.catalog {
+    margin: 4% auto;
+}
+.flip-header, .flip-footer{
+    background-color: #333333; 
+    margin: 0px;
+}
+.flip-header p{
+    margin: 0px;
+    /*padding: 10px;*/
+    padding: 13px 0px;
+    color: #F5F5F5;
+    font-family: "Helvetica-Neue-Light";
+    font-size: 1.2rem;
+}
+.brand img{
+    margin: 10px;
+}
+
+.zoom-icon{
+    top: 10px;
+    right: 10px;
+}
+
+.flip-footer{
+    padding: 0px;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+.flip-footer p{
+    margin: 0;
+    font-family: "Helvetica-Neue-Light";
+}
+#share-buttons{
+    margin-bottom: 5px;
+}
+.flip-footer a{
+    color: #ddd;
+    font-family: "Helvetica-Neue-Light";
+    font-size: 1.1rem;
+}
+.flip-footer i{
+    color: #ddd;
+    border-color: #ddd;
+}
+#share-buttons {
+    text-align: right;
+    margin-bottom: 8px!important; 
+    display: block;
+    padding-top: 13px;
+}
+
+@media only screen and (min-width:1320px) {
+.grid{ margin: 0px 3%; }
+.gridleft{    left: 235px !important;}
+.gridtop {  top: 78px!important;}
+.align{ width: 123%;}  
+
+}
+@media only screen and (max-width:1320px) {
+.grid-item { width: 80% !important; }
+.grid{ margin: 0px 10%!important;    }
+.grid img
+{width:100%; height: auto!important; }
+}
+@media only screen and (max-width:767px) {
+.col-md-3 , .col-md-5, .col-md-4
+{
+    text-align: center;
+
+}
+#share-buttons {
+    text-align: center;
+
+}
+
+}
+.grid-item { width: 200px; }
+.grid-item--width2 { width: 400px; }
+
+
+.soci
+{
+  text-align: right;
+ 
+}
+.soci a
+{
+  text-decoration: none;
+ 
+}
+.social-link i {
+    font-size: 20px;
+    color: #6D6E71;
+    border: none !important;
+    padding: 0!important;
+    width: 35px!important;
+}
+.flip-footer a {
+    font-size: 1.75rem;
+}
+
+
+.swal-form input{
+    margin: 5px !important;
+}
+.swal-subtitle{
+    color: #797979;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 300;
+    position: relative;
+    text-align: inherit;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+}
+.fb3d-modal.light::before {
+     background-color: transparent; 
+}
+.fb3d-modal {
+     box-shadow: 0 0 0px #fff;
+}
+.fb3d-modal-shadow::before {
+    opacity: 1;
+}
+body::before {
+    background-color: #b1b0b0;
+}
