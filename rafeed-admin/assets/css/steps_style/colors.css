@@ -1,0 +1,177 @@
+/*------------------------------------------------------------------
+[Table of contents]
+
+ - Color one
+ - Color two
+
+- Author:  Andrey Sokoltsov
+- Profile:	http://themeforest.net/user/andreysokoltsov
+
+-------------------------------------------------------------------*/
+
+/* Color one */
+
+.b-search__main-form-submit button span.fa,
+.m-home .b-count__item-circle:hover,
+.b-compare__links a.btn.m-btn:hover,
+.b-blog__aside-reviews-posts-one-info .b-world__item-num,
+.btn.m-btn.m-readMore:hover,
+.navbar-toggle,
+.b-slider__info p span,
+.b-slider__info a.btn:hover,
+.b-search__main-title,
+.b-search__main-form-submit button:hover,
+.b-search__main-form-submit button.btn.m-btn:hover span,
+.b-search__main-form-submit button span.fa,
+.b-featured__item-price,
+.b-welcome,
+.b-welcome__services-img:hover,
+.b-world__item-val-circles span,
+.b-world__item a:hover,
+.b-asks__first:hover .b-asks__first-circle,
+.b-auto__main-item-info .m-price,
+.b-auto__main-item-info .m-price,
+.b-contact-title h5,
+.b-contact__form button,
+.b-info__aside > a:hover,
+.m-home .b-slider__info .btn.m-btn,
+.m-home .b-world__item-num,
+.m-home .b-count__item-circle:hover,
+.m-home .b-footer__toTop-inside,
+.b-pageHeader__search,
+.b-items__aside-main-body-item .ui-widget-header,
+.b-items__aside-main-footer button,
+.b-items__aside-main-footer button:hover span,
+.b-items__aside-sell-info a:hover span,
+.b-items__cars-one-info-header > span,
+.b-items__cars-one-info a.btn:hover,
+.b-items__cell-info a.btn:hover,
+.btn.m-btn.m-infoBtn:hover,
+.b-detail__head-price-num,
+.b-detail__main-aside-about-seller,
+.b-detail__main-aside form button.btn.m-btn,
+.b-detail__main-aside form button.btn.m-btn:hover span.fa,
+.b-detail__main-info-characteristics-one:hover .b-detail__main-info-characteristics-one-top > div,
+.b-compare__links a.btn.m-btn:hover,
+.b-compare__images-item-price,
+.b-compare__links a.btn.m-btn:hover,
+.b-blog__aside-reviews-posts-one-info .b-world__item-num,
+.btn.m-btn.m-readMore:hover,
+.b-blog__posts-one-body-main-link,
+.b-article__main-author,
+.b-article__main-add button.btn.m-btn,
+.b-article__main-add button.btn.m-btn:hover span.fa,
+.s-form button[type='submit'],
+.s-form button[type='submit']:hover span.fa,
+.b-infoBar__progress-line-step-circle-inner.m-active,
+.b-submit__aside-step-inner.m-active,
+.s-submit button.btn.m-btn,
+.s-submit button.btn.m-btn:hover span.fa,
+.b-submit__main-file label.btn.m-btn span.fa,
+.b-submit__main-contacts-price-input-usd,
+.b-submit__main-contacts-price-plan > a,
+.b-submit__main-plan label.s-submitCheckLabel span.m-circle,
+a.btn.m-btn.m-pay:hover,
+.b-search__main-form-submit button.btn.m-btn span.fa,
+.b-info__aside > a.btn.m-btn:hover,
+.b-search__main-type svg:hover g,
+.ui-slider-handle:after,
+.b-asks .b-asks__first:hover,
+.b-count,
+.b-features,
+.b-search__main-type input[type='radio']:checked + label.b-search__main-type-svg svg g,
+.b-search__main-form-submit button.btn.m-btn:hover,
+.m-home .b-homeAuto__world > a:hover,
+.m-home .b-homeReviews__main-body:after,
+.b-items__aside-main-footer button.btn.m-btn,
+.b-items__aside-main-footer button.btn.m-btn:hover span,
+.b-items__aside-sell-info a.btn.m-btn:hover span,
+.b-items__cell-info a.btn.m-btn:hover,
+.b-compare .b-compare__images .b-compare__images-item-price,
+.b-compare__links a.btn.m-btn span.fa,
+.b-items__aside-sell-info a.btn.m-btn:hover span.fa,
+.b-welcome .container,
+.m-index .b-count .m-main,
+.demo_changer .demo-icon
+{
+    background-color:#f76d2b;
+    fill: #f76d2b;
+}
+
+
+.b-submit__aside-step-inner-info-triangle
+{
+    border-left-color:#f76d2b;
+}
+
+.b-compare__block-title > a,.b-more__info-block-title a
+{
+    border-bottom-color:#f76d2b;
+}
+
+
+
+
+.b-slider__info h3,.b-slider__info h2,.b-slider__info p,
+.btn.m-btn span.fa,
+.b-slider__info a.btn:hover,
+.b-search__main-title h2,
+.b-search__main-form-submit button,
+.b-search__main-form-submit button:hover,
+.b-search__main-form-submit button span.fa,
+.b-more__info-block-title a,
+.b-more__info-block-title.m-active,
+.s-form button[type='submit'],
+.s-form button[type='submit']:hover span.fa,
+.b-submit__aside-step h3,
+.b-submit__aside-step-inner-icon span.fa,
+.b-submit__aside-step-inner-info h4,
+.s-submit button.btn.m-btn,
+.b-submit__main-file label.btn.m-btn span.fa,
+.b-submit__main-contacts-price h6,
+.b-submit__main-contacts-price-input-usd,
+.b-submit__main-contacts-price-note,
+.b-submit__main-contacts-price-plan,
+.b-submit__main-contacts-price-plan > a,
+a.btn.m-btn.m-pay:hover,
+.b-search__main-form-submit button.btn.m-btn,
+.b-search__main-form-submit button.btn.m-btn:hover,
+.b-search__main-form-submit button.btn.m-btn span.fa,
+.owl-theme .owl-controls .owl-buttons div:before,
+.b-info__aside > a.btn.m-btn:hover,
+.m-home .b-slider__info a.btn.m-btn:hover span,
+.b-items__cars-one-info a.btn.m-btn:hover,
+.b-items__aside-main-footer button.btn.m-btn,
+.b-items__aside-main-footer button.btn.m-btn:hover span.fa,
+.b-items__aside-sell-info a.btn.m-btn,
+.b-items__aside-sell-info a.btn.m-btn:hover span,
+.b-items__cell-info a.btn.m-btn:hover,
+.b-compare .b-compare__images .b-compare__images-item-price,
+.b-compare__block-title > a,
+.b-items__cars-one-img-video, .b-items__cars-one-img-video:hover, .b-items__cars-one-img-video:visited, .b-items__cars-one-img-video:active,.b-items__cars-one-img-video:focus
+{
+    color:#fff;
+    fill:#fff;
+}
+
+.b-search__main-title h2,
+.b-welcome__text h2,
+.b-count__item-circle,
+.b-items__aside-main-footer button.btn.m-btn:hover,
+.b-count__item h5,
+.b-contact-title h2,
+.b-info__latest > h3, .b-info__aside-article > h3, .b-info__twitter > h3, .b-info__contacts > p,
+.b-features__items li,
+.b-items__aside-sell-img h3,
+.b-items__aside-sell-info a,
+.b-pageHeader__search h3,
+.b-article__main-author h3,
+.b-submit__aside-step-inner.m-active .b-submit__aside-step-inner-info h4,
+.b-compare__images-item-price-vs
+{
+    border-color:#fff;
+}
+
+.b-more__info-block-title.m-active a{
+    border-bottom-color:#fff;
+}

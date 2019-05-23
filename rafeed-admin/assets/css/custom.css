@@ -1,0 +1,241 @@
+﻿::-webkit-input-placeholder{
+    font-size: 14px;
+    color: #d8d7d7 !important;
+}
+
+.nav-tabs>li>a{
+    color: #333;
+}
+.error{
+    font-size: small;
+    color: red;
+}
+
+#back_btn{
+        cursor: pointer;
+    text-decoration: underline !important;
+}
+
+.question-details{
+    display: grid;
+    width: 60%;
+    padding: 15px 20px;
+    font-family: "opensans-regular", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: #515860;
+    letter-spacing: 1px;
+    background: #ffffff;
+    -webkit-rtl-ordering: logical;
+    margin: auto;
+    text-align: initial;
+}
+
+.question-details input ,.question-details TEXTAREA, .question-details select
+{
+    color: #515860;
+    padding: 3px;
+    border: 1px solid #d0d7e1;
+}
+
+input[type="text"].unit{
+    -webkit-appearance:none!important;
+    color:#99abb4;
+    text-align:right;
+    width:45px;
+    border:1px solid gray;
+    border-left:0px;
+    margin:0 0 0 -7px;
+    background:white;
+}
+input[type="number"].dimentionValue{
+    -webkit-appearance:none!important;
+    border:1px solid gray;
+    border-right:0px;
+    outline:none;
+}
+label.dimentionLabel{
+    width: 4%;
+}
+
+.details-row{
+    padding: 5px;
+    /*display: -webkit-box;*/
+}
+
+.rang-value{
+    width: 75%;
+}
+
+.rang-label{
+    width: 15%;
+}
+
+.form-label{
+    width: 18%;
+}
+
+.type-selector{
+    width: 40%;
+    display: inline-block;
+    /*float: right;*/
+}
+
+.form-group .chosen-container{
+    width: 75% !important;
+}
+
+#main-wrapper{
+    top: 0px;
+    position: absolute;
+}
+
+.details-group{
+    /*width: 65%;*/
+    border: 1px solid #eeeeee;
+}
+
+#blah{
+    width: 64px;
+    height: 64px;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#accessory_product_photo{
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+}
+
+.chosen-container.chosen-with-drop .chosen-drop{
+    z-index: 9999;
+}
+
+.fa.crud-action{
+    color: #08975d !important;
+}
+
+.col1{
+    float: left;
+    text-align: center;
+    vertical-align: top;
+    display: inline-flex;
+    margin-top: 15px;
+}
+
+.col2{
+    float: left;
+    text-align: center;
+    vertical-align: top;
+    display: inline-flex;
+}
+
+.steps ul li .text_field{
+    padding: 7px 7px !important;
+}
+
+.card-body{
+    /*overflow: hidden;*/
+}
+.tab-pane{
+    min-height: 40vh;
+}
+.login-footer {
+    height:18px;
+    background-color: #FFD400;
+    position: absolute;
+    bottom: 2%;
+    width: 100%;
+}
+
+.login-footer p{
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #a28909;
+    font-family: logo_login;
+    text-align: center;
+}
+
+.welcome-p {
+    font-family: 'logo_login';
+    font-size: 29.77px;
+    color: #66655A;
+    margin-bottom: 0;
+}
+
+.application-p {
+    font-family: 'logo_login';
+    font-size: 26.86px;
+    color: #66655A;
+    float: right;
+}
+
+@font-face {
+    font-family: "logo_login";
+    src: url(../fonts/login/Helvetica-Neue-LT-Com-45-Light.ttf) format("truetype");
+}
+
+
+.golden-logo {
+    margin: 180px auto;
+    height: 116px;
+    position: absolute;
+    left: 480px;
+}
+
+.login-btn {
+    background-color: #FFD400;
+}
+.login-btn:hover {
+    background-color: #FFDD36;
+    border: 1px solid #FFD400;
+    -webkit-box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(116, 96, 238, 0.14), 0 3px 1px -2px rgba(116, 96, 238, 0.2), 0 1px 5px 0 rgba(116, 96, 238, 0.12);
+}
+
+[contenteditable]:hover, [contenteditable]:focus{
+        background: transparent;
+        border-color: #93b5ff;
+        outline: -webkit-focus-ring-color auto 5px;
+        outline-color: -webkit-focus-ring-color;
+        outline-style: auto;
+        outline-width: 5px;
+}
+
+.table input{
+    width: 50%;
+}
+
+.form_title{
+    margin: 0px;
+}
+
+label{
+    margin: 0px;
+}
+
+.question-main input{
+    width: 75%;
+}
+
+.inline{
+     display: inline-block; 
+}
+
+.inline input{
+    width: 40%;
+}
+
+.card-body .row{
+    width: 100%;
+}
+
+#dimension-filedset{
+    border: 1px solid #dee2e6;
+    padding: 29px;
+}
+
+.dropdown-menu {
+    left: initial;
+    right: 0;
+}
