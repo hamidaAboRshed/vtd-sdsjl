@@ -51,7 +51,6 @@ class Employee_model extends CI_Model {
 		$this->db->from('position');
 		$result=$this->db->get();
 		$data=$result->result();
-		$position_name=null;
 		foreach ($data as $row)
 		{
 			$position_name=$row->Name;

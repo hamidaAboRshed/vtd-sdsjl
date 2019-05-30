@@ -60,7 +60,7 @@ $autoload['packages'] = array();
 */
 
 //$autoload['libraries'] = array();
-$autoload['libraries'] = array('database', 'session','breadcrumbs','product_coding','user_validate','navigation');
+$autoload['libraries'] = array('database', 'session','breadcrumbs','product_coding','user_validate','navigation','global_function');
 //$autoload['libraries'] =array('database',);
 
 

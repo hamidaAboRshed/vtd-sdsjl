@@ -1,6 +1,6 @@
 <div class="left col-lg-4">
     <div class="photo-left">
-      <img id="pro_img" class="photo" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Employee_photos/<?php echo $output['Photo'];?>"/>
+      <img id="pro_img" class="photo" src="<?php echo base_url();?>/assets/App_files/Employee_photos/<?php echo $output['Photo'];?>"/>
       
     </div>
     <h4 class="name"><?php echo $output['Full_name'];?></h4>

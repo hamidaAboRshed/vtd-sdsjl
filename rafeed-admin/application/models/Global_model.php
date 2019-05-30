@@ -33,6 +33,18 @@ class Global_model extends CI_Model
         return $result;
     }
 
+    // Query Data Array from Table by One Columns;
+    public function getDataArrayOneColumn($table, $col1_name, $col1_value)
+    {
+        $this->db->where_in("$col1_name", $col1_value);
+
+        $query = $this->db->get("$table");
+        $result = $query->result_array();
+        $this->db->save_queries = false;
+
+        return $result;
+    }
+
     // Query Data from Table By two columns;
     public function getDataTwoColumn($table, $col1_name, $col1_value, $col2_name, $col2_value)
     {
@@ -120,7 +132,7 @@ class Global_model extends CI_Model
 
     public function deleteByColumn($table, $col_name, $col_value)
     {
-        $this->db->where("$col_name", $col_value);
+        $this->db->where_in("$col_name", $col_value);
         $this->db->delete("$table");
 
         return true;

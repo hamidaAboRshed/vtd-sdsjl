@@ -9,6 +9,9 @@ class Enums extends CI_Model{
     const BaseFixture = array('Socket' => 1,'Pin' => 2 ,'LED' => 3);
     const ProductPart = array('Fitting' => 1,'Driver' => 2, 'LED' => 3 , 'Accessory' => 4, 'Installation way Accessory' =>5 );
     const ProductType = array('Indoor' => 1,'Outdoor' => 2 );
+    const ProductPowerType = array('Specific Drivers' => 1,'Undefined Drivers' => 2, 'AC' => 3 );
+    const CCTRangeValues = array('Tunable White 3500-5000k' => -1,'RGB' => -2,'RGBW' => -3);
+    const ProductFamilyType = array('Fitting with lighting source' => 1,'Just fitting without lighting source' => 2, 'Both' => 3 );
 
     public function get_product_part()
     {
@@ -36,6 +39,26 @@ class Enums extends CI_Model{
     public function get_DriverOutputType()
     {
         return Enums::OutputType;
+    }
+
+    public function get_ProductPowerType()
+    {
+        return Enums::ProductPowerType;
+    }
+
+    public function get_CCTRangeValues()
+    {
+        return Enums::CCTRangeValues;
+    }
+    
+    public function get_ProductFamilyType()
+    {
+        return Enums::ProductFamilyType;
+    }
+
+    public function get_CCTRangeValues_byId($id)
+    {
+        return array_search($id,Enums::CCTRangeValues) == FALSE ? null : array_search($id,Enums::CCTRangeValues);
     }
 
     public function get_DriverType_byId($id)

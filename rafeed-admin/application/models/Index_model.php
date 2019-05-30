@@ -7,6 +7,21 @@ class Index_model extends CI_Model {
 		$query=$this->db->get($index_name);
 		return $query->result_array();
 	}
+
+	function get_index_language_not_deleted($index_name){
+
+		//get values for default language
+		$language_id=$this->get_default_language();
+		
+		$this->db->select($index_name.'_id as ID,Name');
+		$this->db->where($index_name.'_language.language_id='.$language_id);
+		$this->db->where($index_name.'.is_deleted',0);
+		$this->db->from($index_name);
+		$this->db->join($index_name.'_language', $index_name.'.ID = '.$index_name.'_id', 'left');
+		$query=$this->db->get();
+
+		return $query->result_array();
+	}
 	
 	function get_default_language(){
 		$this->db->select('ID');
