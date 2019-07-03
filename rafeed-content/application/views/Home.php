@@ -396,7 +396,7 @@ $(window).on('resize', function (){
     <div class="row" style="padding-bottom: 20px;margin: 0;">
         <div id="E-SERIES" class="middle align-center col-lg-5 col-md-12">
             <div class="section-logo align-center">
-                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/2" >
+                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/2" >
                     <img src="<?php echo base_url();?>/assets/images/home-product/logo-Eseries.png" id="eseries_logo" style="">
                 </a>
             </div>
@@ -407,8 +407,8 @@ $(window).on('resize', function (){
                 <img src="<?php echo base_url();?>/assets/images/home-product/led-economic.png" id="eseries_led" style="">
             </div>
             <div class ="align-center">
-                <a class="display-4" href="<?php echo base_url();?>index.php/Catalog/economic">Open Catalogue > </a><br/>
-                <a class="display-4" href="<?php echo base_url();?>index.php/Product/Product_series_list/2">Read More > </a>
+                <a class="display-4" href="<?php echo $this->navigation->get_base_url()?>/Catalog/economic">Open Catalogue > </a><br/>
+                <a class="display-4" href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/2">Read More > </a>
             </div>
         </div>
 
@@ -450,7 +450,7 @@ $(window).on('resize', function (){
             </div>
             <div class="align-center col" id="electric-container" style="margin-bottom: 25px;">
                 <div class="section-logo" style="margin-bottom: 55px;" id="elctric_logo">
-                    <a href="<?php echo base_url();?>index.php/Product/Product_series_list/3" >
+                    <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/3" >
                         <img src="<?php echo base_url();?>/assets/images/home-product/electric-logo.png" style="width: 255px;">
                     </a>
                 </div>
@@ -466,7 +466,7 @@ $(window).on('resize', function (){
                 </div>
                 <div class="section-p row center"  id="premium_link">
                     <div  class="col" style="padding: 20px 0;text-align: center;">
-                        <a href="<?php echo base_url();?>index.php/Product/Product_series_list/3" >Read More ></a>
+                        <a href="<?php echo $this->navigation->get_base_url();?>/Product/Product_series_list/3" >Read More ></a>
                     </div>
                 </div>
             </div>
@@ -478,10 +478,10 @@ $(window).on('resize', function (){
         <div class="row mrg-top-5x">
             <!-- <div class="col " style=""> -->
                 <div class="col" style="padding-top: 4%;" id="smart_link">
-                    <a href="<?php echo base_url();?>index.php/Catalog/smart" style="padding-left: 95px;">Open Catalogue ></a>
+                    <a href="<?php echo $this->navigation->get_base_url()?>/Catalog/smart" style="padding-left: 95px;">Open Catalogue ></a>
                 </div>
                 <div class="col section-logo smart-logo">
-                    <a  href="<?php echo base_url();?>index.php/Product/Product_series_list/4" >
+                    <a  href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/4" >
                         <img src="<?php echo base_url();?>/assets/images/home-product/logo-smart.png" style="height: 45px;" >
                     </a>
                 </div>
@@ -513,7 +513,7 @@ $(window).on('resize', function (){
         </div>
         <div class="section-p row center"  id="premium_link">
             <div  class="col" style="padding-bottom: 15px;text-align: center;">
-                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/4" >Read More ></a>
+                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/4" >Read More ></a>
             </div>
         </div>
             
@@ -581,7 +581,7 @@ $(window).on('resize', function (){
             <div id="led-screen-container" class="right-content ml-auto" style="height: -webkit-fill-available;background-image:url('<?php echo base_url();?>/assets/images/home-product/led-screen-section-bg.png');background-size: cover;">
                 <div id ="led-screen-content">
                     <div class="section-logo" id="led-screen-logo" style="padding: 40px 0;">
-                        <a href="<?php echo base_url();?>index.php/Product/Product_series_list/5" >
+                        <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/5" >
                             <img src="<?php echo base_url();?>/assets/images/home-product/led-screen-logo.png" >
                         </a>
                     </div>
@@ -594,7 +594,7 @@ $(window).on('resize', function (){
                         <p class="led-screen-p-small">for both indoor & outdoor applications</p>
                         <div class="section-p row center"  id="premium_link">
                             <div  class="col" style="padding: 20px 0;text-align: center;">
-                                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/5" >< Read More ></Read></a>
+                                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/5" >< Read More ></Read></a>
                             </div>
                         </div>
                     </div>
