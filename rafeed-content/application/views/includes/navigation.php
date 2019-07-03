@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark align-items-center" style="width: 100%">
   <div class="container">
-    <a class="navbar-brand" href="<?php echo $this->navigation->get_base_url()?>/Home" style="z-index: 9999;">
+    <a class="navbar-brand" href="<?php echo $this->navigation->get_base_url()?>" style="z-index: 9999;">
       <img src="<?php echo base_url();?>/assets/images/logo/rafeed/rafeed-logo.png" alt="rafeed-logo" title="" style="height: 1.3rem;">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

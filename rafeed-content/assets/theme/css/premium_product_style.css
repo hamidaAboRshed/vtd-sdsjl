@@ -1,0 +1,96 @@
+  #cat-item > a > span {
+    width: 110px;
+  }
+    
+[data-toggle="collapse"] .fa:before {  
+  content: "\f139";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+  content: "\f13a";
+}
+/*   , .dataTables_info*/
+.dataTables_filter { 
+    
+    display: none; 
+}    
+    
+.dataTables_paginate {
+    font-size: small;
+}  
+    
+        
+    
+/* tab in modal   */
+.nav-tabs .nav-link.active 
+{
+    font-weight:bold;
+    background-color: transparent;
+    border-bottom:2px solid #DBAE27;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-radius: 0px !important;
+} 
+.nav-tabs .nav-link
+{
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    border-radius: 0px !important;
+}    
+/*---*/   
+    
+    th select{
+/*            border-radius: 22%;*/
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-bottom: 1px solid;
+        width: 75px;
+        cursor: pointer;
+    }
+    
+    th select:focus{
+   outline: 0;
+ }
+
+        th select:focus{
+   outline: 0;
+ }
+/*
+    option{
+        
+        background-color:aquamarine;
+    }
+*/
+    
+    select {text-align-last:center; font-size: smaller;}
+    
+    th select option:hover {
+    background-color: aquamarine !important;
+}
+    
+/*---*/   
+   
+.dataTables_wrapper .dataTables_paginate .paginate_button.current , .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    /* color: #333 !important; */
+    border: 1px solid #777;
+    border-radius: 50%;
+    /* background-color: black !important; */
+        background: white !important;
+    padding: 0.27em 0.7em;
+}
+    
+    
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    
+    background: white !important;
+    border: 1px solid #111;
+    border-radius: 50%;
+    color:black !important;
+    padding: 0.27em 0.7em;
+}    
+  .dataTables_wrapper .dataTables_paginate .paginate_button {
+      padding: 0.27em 0.7em;
+    }

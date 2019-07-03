@@ -43,10 +43,25 @@
     </nav> -->
     
 	<section class="menu cid-1" once="menu" id="menu2-5">
-		<?php $this->load->view('includes/navigation');?>
+    	<nav class="navbar fixed-top navbar-expand-lg navbar-dark align-items-center" style="width: 100%">
+          <div class="container">
+            <a class="navbar-brand" href="<?php echo $this->navigation->get_base_url();?>" style="z-index: 9999;">
+              <img src="<?php echo base_url();?>/assets/images/logo/rafeed/rafeed-logo.png" alt="rafeed-logo" title="" style="height: 1.3rem;">
+            </a>
+    		<?php $this->load->view('includes/navigation');?>
+    		<div>
+    		<!-- <?php if($this->session->userdata('site_language')){
+				foreach ($this->session->userdata('site_language') as $key => $value) {
+					echo $value['Name'];
+				}
+
+			}?>
+    		</div> -->
+    		</div>
+    	</nav>
 	</section>
 		
-	<section>
+	<section style="z-index: 999;">
 	  <?php $this->load->view('includes/secondary_navigation');?>
 	</section>
 	

@@ -1,193 +1,394 @@
-<!-- Premium section -->
-<!-- <style type="text/css">
-    .placeholder {
-  background-color: #f6f6f6;
+<!--<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">-->
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/animate.min.css">
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/ken-burns-lib.css">
+<!--<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/home products.css">-->
+
+<style type="text/css">
+body{
+    overflow-x: hidden;
+}
+    .discover-title {
+ overflow: hidden;
+ text-align: center;
+ color: #657983;
+ text-align: center;
+ font-size: 25px;
+ font-family: "Helvetica-Neue-Light";
+ padding: 0px 0 20px 0px;
+}
+    
+    @media only screen and (max-width:425px)
+    {
+        .discover-title {
+            width: 47%;
+        text-align: center !important;
+            font-size: 20px;
+        }
+        
+        #carouselExampleControls {
+        width: 50%;
+        }
+    }
+
+    
+.discover-title:before,
+.discover-title:after {
+ background-color: #657983;
+ content: "";
+ display: inline-block;
+ height: 1px;
+ position: relative;
+ vertical-align: middle;
+ width: 50%;
+}
+.discover-title:before {
+ right: 0.5em;
+ margin-left: -50%;
+}
+.discover-title:after {
+ left: 0.5em;
+ margin-right: -50%;
+}
+.full-screen {
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
+}
+.kb_wrapper {
+  max-height: 100vh !important;
+}
+  .container {
+      padding-right:0 !important;
+      padding-left:0 !important;
+      max-width: initial !important;
+  }
+  .kb_elastic .carousel-item:first-child{
+        max-width: 100% !important;
+  }
+  .kb_elastic .carousel-item {
+    transform: none;
+  }
+  .butn {
+ /* background: #dbae27;
+  background-image: -webkit-linear-gradient(top, #dbae27, #907216 );
+  background-image: -moz-linear-gradient(top, #dbae27, #907216  );
+  background-image: -ms-linear-gradient(top, #dbae27, #907216 );
+  background-image: -o-linear-gradient(top, #dbae27, #907216  );
+  background-image: linear-gradient(to bottom, #dbae27, #907216 );
+  -webkit-border-radius: 50;*/
+  /*-moz-border-radius: 50;*/
+  /*border-radius: 50px;*/
+  color: #dbae27 !important;
+    border: 1px solid;
+  color: #dbae27 !important;
+  font-size: 17px;
+  padding: 15px 30px;;
+  text-decoration: none;
+  /*height: 60px;*/
 }
 
-.placeholder img {
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: opacity 1s linear;
+.butn:hover {
+  background: #dbae27 ;
+  /*background-image: -webkit-linear-gradient(top, #907216  , #dbae27);
+  background-image: -moz-linear-gradient(top, #907216 , #dbae27);
+  background-image: -ms-linear-gradient(top, #907216  , #dbae27);
+  background-image: -o-linear-gradient(top, #907216 , #dbae27);
+  background-image: linear-gradient(to bottom, #907216  , #dbae27);*/
+  text-decoration: none;
+  color: #fff !important;
+}
+.kb_caption{
+    left: 0;
+    bottom: 0;
+    background-color: #00000075;
+    width: 100%;
+    padding-left: 11%;
+    padding-bottom: 5%;
+    position: absolute;
+}
+.kb_caption h5 {
+  width: 50%;
+    text-align: left;
 }
 
-.placeholder img.loaded {
-  opacity: 1;
-}
 
-.img-small {
-  /*filter: blur(50px);*/
-  /* this is needed so Safari keeps sharp edges */
-  transform: scale(1);
-}
-</style> -->
-<!-- <script type="text/javascript">
-    window.onload = function() {
-  
-  var placeholder = document.querySelector('.placeholder'),
-      small = placeholder.querySelector('.img-small')
-  
-  // 1: load small image and show it
-  var img = new Image();
-  img.src = small.src;
-  img.onload = function () {
-   small.classList.add('loaded');
-  };
-  
-  // 2: load large image
-  var imgLarge = new Image();
-  imgLarge.src = placeholder.dataset.large; 
-  imgLarge.onload = function () {
-    imgLarge.classList.add('loaded');
-  };
-  placeholder.appendChild(imgLarge);
-}
-</script> -->
+
+</style>
+
+
 <h1 class="hide">Home page</h1>
-<section class="section-one-page cid-2 mbr-fullscreen mbr-parallax-background" id="header2-0" style="height: 90vh">
-    <div class="container align-center">
-        <div class="premium_header">
+<section class="section-one-page cid-2 mbr-fullscreen mbr-parallax-background" id="header2-0" style="">
+    <div class="container align-center " style="width: 100%">
+        <div class="justify-content-md-center " style="width: 100%">
+            
+            
+            
+            <div class="container  " style="width: 100%">
+        <!-- ++++++++++++++++++++++++++ BOOTSTRAP CAROUSEL +++++++++++++++++++++++++++++ -->
+
+        <div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="false" style="">
+                <ol class="carousel-indicators">
+      <li data-target="#kb" data-slide-to="0" class="active"></li>
+      <li data-target="#kb" data-slide-to="1"></li>
+      <li data-target="#kb" data-slide-to="2"></li>
+      <li data-target="#kb" data-slide-to="3"></li>
+      <li data-target="#kb" data-slide-to="4"></li>
+      <li data-target="#kb" data-slide-to="5"></li>
+    </ol>
+            <!--======= Wrapper for Slides =======-->
+            <div class="carousel-inner" role="listbox">
+
+                <!--========= First Slide =========-->
+                <div class="carousel-item active">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Hospitality_app.jpg" alt="slider 01" />
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Hospitality</h1>
+                        <h5 data-animation="animated flipInX">Light due to your mood and feel the place with our elegant and high class lights for hospitality spaces.</h5>
+                    </div>
+                </div>
+
+                <!--========= Second Slide =========-->
+                <div class="carousel-item min-vh-100">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Fashion_app.jpg" alt="slider 02">
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Fashion & Retail</h1>
+                        <h5 data-animation="animated flipInX">Retail lighting does much more than just illuminate your space. Get different moods and options with our various collection. </h5>
+                    </div>
+                </div>
+
+                <!--========= Third Slide =========-->
+                <div class="carousel-item min-vh-100">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Offices_app.jpg" alt="slider 03" />
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Offices & Healthcare</h1>
+                        <h5 data-animation="animated flipInX">Create your healthy and appropriate spaces with RAFEED offices and healthcare lighting solution.</h5>
+                    </div>
+                </div>
+                
+                                <div class="carousel-item min-vh-100">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Industrial_app.jpg" alt="slider 04" />
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Industrial</h1>
+                        <h5 data-animation="animated flipInX">Enhance your work places with sustainability and safety RAFEED industrial lighting solution.</h5>
+                    </div>
+                </div>
+                
+                                <div class="carousel-item min-vh-100">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Outdoor_app.jpg" alt="slider 05" />
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Outdoor</h1>
+                        <h5 data-animation="animated flipInX">Add a vivid and distinctive ambience to your exterior spaces 
+With our unique weatherproof outdoor lighting collections.</h5>
+                    </div>
+                </div>
+                
+                <div class="carousel-item min-vh-100">
+                    <img src="<?php echo base_url();?>/assets/images/home-product/application-slider/Street_app.jpg" alt="slider 06" />
+                    <div class="carousel-caption kb_caption kb_caption_left">
+                        <h1 data-animation="animated flipInX">Street Light</h1>
+                        <h5 data-animation="animated flipInX">Improve the quality of your neighbourhood & feel safe with our distinctive Street & Post-Top lighting.</h5>
+                    </div>
+                </div>
+
+            </div>
+            </div>
+
+            <!--======= Navigation Buttons =========-->
+
+            <!--======= Left Button =========-->
+            <a class="carousel-control-prev carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
+                <span class="fa fa-angle-left kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+
+            <!--======= Right Button =========-->
+            <a class="carousel-control-next carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
+                <span class="fa fa-angle-right kb_icons" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+
+        </div> <!-- ++++++++++++++++++++++ END BOOTSTRAP CAROUSEL +++++++++++++++++++++++ -->
+
+</div>
+
+        </div>
+        
+        
+                
+    </div>
+</section>
+
+<section class="section-one-page cid-2 mbr-fullscreen mbr-parallax-background" id="header2-0" style="">
+    <div class="container align-center" style="">
+        <div class="row justify-content-md-center" style="margin: 0;">
+        
+          <div class="row premium_header">
+            <div class="col">
+            <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/1" style="padding: 2px">
+              <img src="<?php echo base_url();?>/assets/images/home-product/premium_series_logo.png" style="" id="premium_larg_logo"/>
+              <img src="<?php echo base_url();?>/assets/images/logo/series/premium_logo.svg" style="width: 232px;" id="premium_small_logo"/>
+            </a>
+            <!--  <h2>High Quality LED Components</h2> -->
+              
+              <p style="font-size: 1.9rem;color: #657983">New Luminaires Collection<br/>
+              <span style="font-family: 'Helvetica-Neue-MdCn'; font-size: 2.0rem"> 2019 - 2020 </span></p>
+              <div style="    margin: 20px;">
+                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/1" class="butn">Get Started</a>
+              </div>
+              <p style="font-family: 'Helvetica-Neue-MdCn'; font-size: 2.0rem;color: #657983">Light your Life with US!</p>
+              <div class=""  id="premium_link">
+                <a href="<?php echo $this->navigation->get_base_url()?>/Catalog/premium" style="color:#dbae27 !important;" >Open Catalogue ></a>
+              </div>
+              
+              
+            </div>
+          </div>
+<!--           <div class="row">
+            <div class="col" style="text-align: left;padding: 1% 11%;color: #657983;">
+              <p style="font-size: 1.9rem;">New Luminaires collection, 2019 - 2020 <br/>Light your Life with US !</p>
+              <div style="margin-top: 30px">
+                
+              </div>
+            </div>
+            
+            <div class="col" style="    padding-top: 63px;">
+              <a href="#" class="butn">Get Started</a>
+              
+            </div>
+          </div> -->
+
+<script type="text/javascript">
+  var $item = $('.carousel-item');
+var $wHeight = $(window).height();
+
+$item.height($wHeight);
+$item.addClass('full-screen');
+
+$('.carousel img').each(function() {
+  var $src = $(this).attr('src');
+  var $color = $(this).attr('data-color');
+  $(this).parent().css({
+    'background-image' : 'url(' + $src + ')',
+    'background-color' : $color
+  });
+  $(this).remove();
+});
+
+$(window).on('resize', function (){
+  $wHeight = $(window).height();
+  $item.height($wHeight);
+});
+</script>
+
+<div class="products3" style="">
+<div class="container" style="width: 900px !important;padding: 0px 50px;    margin-top: 60px;">
+    <p class ='discover-title'>you can discover our products in one click</p>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="row">
+           <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/145"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/145/attachment_file1.jpg" alt="First slide"></a></div>
+            <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/267"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/267/attachment_file_2.jpg" alt="First slide"></a></div>
+            <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/48"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/48/attachment_file_2.jpg" alt="First slide"></a></div>
+            <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/40"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/40/attachment_file_01.jpg" alt="First slide"></a></div>
+           
+        </div>
+    </div>
+    <div class="carousel-item">
+              <div class="row">
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/138"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/138/attachment_file_2.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/271"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/271/attachment_file_01.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/239"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/239/attachment_file_01.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/80"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/80/attachment_file_01.jpg" alt="First slide"></a></div>
+        </div>
+    </div>
+    <div class="carousel-item">
+              <div class="row">
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/24"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/24/attachment_file7.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/191"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/191/attachment_file_2.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/193"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/193/attachment_file1.jpg" alt="First slide"></a></div>
+                  <div class="col-3"><a href="<?php echo $this->navigation->get_base_url()?>/Product/home_product_view/81"><img class="d-block w-100" src="<?php echo $this->navigation->get_includes_url()?>/upload_files/Product/Premium/81/attachment_file_2.jpg" alt="First slide"></a></div>
+        </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="margin-left: -103px;">
+<!--    <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: black;"></span>-->
+      <i class="fa fa-angle-left" style="font-size:33px"></i>
+      
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next" style="margin-right: -111px;">
+<!--    <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: black;"></span>-->
+            <i class="fa fa-angle-right" style="font-size:33px"></i>
+
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+
+</div>
+
+
+        </div>
+      </div>
+    </section>
+
+
+<!-- <div class="premium_header">
             <div>
-                <a href="#" ?>
+                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/1" >
                 <img src="<?php echo base_url();?>/assets/images/home-product/premium_series_logo.png" style="margin-bottom: 40px;" id="premium_larg_logo"/>
                 <img src="<?php echo base_url();?>/assets/images/logo/series/premium_logo.svg" style="margin-bottom: 40px;width: 232px;" id="premium_small_logo"/>
                     </a>
             </div>
             <h2>High Quality LED Components</h2>
-            <div class=""  id="premium_link">
-                <a href="<?php echo $this->navigation->get_base_url()?>/Catalog/premium" >Open Catalogue ></a>
+                    <div class=""  id="premium_link">
+                <a href="http://rafeed-srv5/rafeed_website_v3/index.php/Catalog/premium" style="color:#dbae27 !important;" >Open Catalogue ></a>
             </div>
-            <div class=""  id="premium_link">
-                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/1" >Read More ></a>
-            </div>
-        </div>
-        <!-- <figure>
-            <div class="placeholder" data-large="http://www.atclighting.co//assets/images/home-product/products-premium1.png">
-                <img src="http://www.atclighting.co//assets/images/home-product/products-premium1-small.png" class="img-small">
-                <div style="padding-bottom: 66.6%;"></div>
-            </div>
-        </figure> -->
-        <div class="row justify-content-md-center" style="margin: 0;">
-            
-            
-            <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             width="954.839px" height="493.468px" viewBox="0 0 954.839 493.468" enable-background="new 0 0 954.839 493.468"
-             xml:space="preserve">
-             
-             <font horiz-adv-x="1000">
-                <!-- Helvetica is a trademark of Heidelberger Druckmaschinen AG, exclusively licensed through Linotype GmbH, and may be registered in certain jurisdictions. -->
-                <!-- <font-face font-family="HelveticaNeueLTCom-Bd" units-per-em="1000" underline-position="-75" underline-thickness="50"/> -->
-                <!-- <missing-glyph horiz-adv-x="512" d="M222,117l0,67l56,0l0,-67M225,234l-2,17C223,288 227,315 236,332C245,349 260,369 282,391C303,412 317,428 323,439C329,450 332,461 332,474C332,498 325,518 310,535C295,551 277,559 256,559C235,559 218,552 203,537C188,522 178,498 174,464l-50,8C129,519 143,554 168,576C193,598 223,609 259,609C294,609 324,597 348,573C371,549 383,517 383,478C383,457 379,437 371,420C362,402 345,381 320,358C295,336 281,319 277,306C273,293 271,269 271,234M462,50l0,617l-412,0l0,-617M512,718l0,-718l-512,0l0,718z"/>
-                <glyph unicode="5" horiz-adv-x="556" d="M500,583l-289,0l-28,-159l2,-2C204,441 225,455 247,464C269,472 294,476 322,476C357,476 387,470 414,457C441,444 463,427 482,406C500,385 514,360 524,331C533,302 538,271 538,238C538,202 531,169 517,138C503,107 484,80 461,57C437,34 409,17 378,4C347,-9 313,-15 278,-14C244,-14 212,-9 181,0C150,9 122,23 98,42C74,61 55,84 41,112C26,139 19,171 18,208l142,0C163,177 176,151 197,132C218,113 244,103 275,103C294,103 310,107 325,114C340,121 352,131 363,144C374,157 382,171 388,188C393,204 396,221 396,238C396,256 393,273 388,289C383,305 375,319 364,331C353,343 341,352 326,359C311,366 294,369 275,369C250,369 229,365 213,356C197,347 182,332 168,313l-128,0l69,387l391,0z"/> -->
-            </font>
-            
-            <image overflow="visible" width="2500" height="1309" id="premium_img" xlink:href="<?php echo base_url();?>/assets/images/home-product/products-premium1.png" transform="matrix(0.377 0 0 0.377 0 0)"></image>
-            
-            <g id="Years_Warranty_link"> 
-                <path id="path_1"> <!--  d="l 0,0 0, 21.142" -->
-                    <animate attributeName="d" from="m0,2 h0" to="m0,2 h1100" dur="12.8s" begin="2.5s" repeatCount="1" fill="freeze"/>
-                </path>
-                <path id="path_11">
-                    <animate attributeName="d" from="m0,2 h0" to="m0,2 h1100" dur="12.8s" begin="2.8s" repeatCount="1" fill="freeze"/>
-                </path>
 
-                <text id="Years_Warranty_txt" transform="matrix(1 0 0 1 614.5889 97.5903)" fill="#484748" font-family="'Helvetica-Neue-Light'" font-size="28.074">
-                    <textPath xlink:href="#path_1">
-                        Years
-                    </textPath>
-                </text>
-                <text id="Years_Warranty_txt" transform="matrix(1 0 0 1 614.5889 119.8323)" fill="#484748" font-family="'Helvetica-Neue-Light'" font-size="28.074">
-                    <textPath xlink:href="#path_11">
-                        Warranty
-                    </textPath>
-                </text>
-                <circle id="circle" fill="#fff" cx="573.02" cy="95.917" r="37.841">
-                    <animate attributeName="r" begin="2s" dur="1s" repeatCount="1" from="0" to="37.841" />
-                    <animate attributeName="fill" begin="2s" dur="1s" repeatCount="1" from="#fff" to="#484748" fill="freeze"/>
-                </circle>
-                <text transform="matrix(1 0 0 1 559.4033 128.4419)" fill="#FFFFFF" font-family="'Helvetica-Neue-Bd'" font-size="91.5159">5</text>
-                <polyline id="line_1" fill="none" stroke="#DAAD27" stroke-width="0.5102" points="833.175,223.181 
-                    833.175,122.872 799.218,88.914 692.316,88.914"/>
-                <circle id="point_1" fill="#DAAD27" cx="692.317" cy="88.915" r="3.472">
-                    <animate attributeName="r" begin="5s" dur="1s" repeatCount="5" from="3.172" to="4.172"/>
-                </circle>
-            </g>
-            <g id="save_mony_link">
-                <g id="Save_Money" opacity="0.8">
-                    <path id="path_2">
-                        <animate attributeName="d" from="m0,2 h0" to="m0,2 h1100" dur="12.8s" begin="4.5s" repeatCount="1" fill="freeze"/>
-                    </path>
-                    <text transform="matrix(1 0 0 1 539.1124 34)" fill="#333333" font-family="'Helvetica-Neue-Light'" font-size="12">
-                        <textPath xlink:href="#path_2">Save Money...</textPath>
-                    </text>
-                </g>
-                <polyline id="line_2" fill="none" stroke="#484748" stroke-width="0.5102" points="92.34,236.325 92.34,65.464 126.297,31.506 
-                     529.012,31.506  "/>
-                <circle id="point_2" fill="#DAAD27" cx="529.011" cy="31.508" r="3.472">
-                    <animate attributeName="r" begin="5s" dur="1s" repeatCount="5" from="3.172" to="4.172"/>
-                </circle>
-            </g>
-            <g id="Low_Carbon_link">
-                <g id="Low_Carbon_txt" opacity="0.8">
-                    <path id="path_3">
-                        <animate attributeName="d" from="m0,0 h0" to="m0,0 h1100" dur="12.8s" begin="1s" repeatCount="1" fill="freeze"/>
-                    </path>
-                    <text transform="matrix(0 -1 1 0 934.0493 225.1934)" fill="#333333" font-family="'Helvetica-Neue-Light'" font-size="12">
-                        <textPath xlink:href="#path_3">Low Carbon...</textPath>
-                    </text>
-                </g>
-                <polyline id="line_3" fill="none" stroke="#484748" stroke-width="0.5102" points="897.78,336.401 931.737,302.443 
-                    931.737,233.736     "/>
-                <circle id="point_3" class="pulse" fill="#DAAD27" cx="931.737" cy="233.738" r="3.473">
-                    <animate attributeName="r" begin="5s" dur="1s" repeatCount="5" from="3.172" to="4.172"/>
-                </circle>
-            </g>
-            <g id="Environmentally_Friendly_link">
-                <g id="Environmentally_Friendly_txt" opacity="0.8">
-                    <path id="path_4">
-                        <animate attributeName="d" from="m0,2 h0" to="m0,2 h1100" dur="12.8s" begin="1.3s" repeatCount="1" fill="freeze"/>
-                    </path>
-                    <text transform="matrix(1 0 0 1 364.728 477.1543)" fill="#333333" font-family="'Helvetica-Neue-Light'" font-size="12">
-                        <textPath xlink:href="#path_4">Environmentally Friendly...</textPath>
-                    </text>
-                </g>
-                <polyline id="line_4" fill="none" stroke="#484748" stroke-width="0.5102" points="651.023,394.216 570.119,474.971 
-                    501.412,474.971     "/>
-                <circle id="point_4" fill="#DAAD27" cx="501.414" cy="474.971" r="3.473">
-                    <animate attributeName="r" begin="5s" dur="1s" repeatCount="5" from="3.172" to="4.172"/>
-                </circle>
-            </g>
-            <g id="longer_lifespan_link">
-                <g id="Longer_Lifespan_txt" opacity="0.8">
-                    <path id="path_5">
-                        <animate attributeName="d" from="m0,2 h0" to="m0,2 h1100" dur="12.8s" begin="2.2s" repeatCount="1" fill="freeze"/>
-                    </path>
-                    <text transform="matrix(1 0 0 1 463.1001 445.876)" fill="#333333" font-family="'Helvetica-Neue-Light'" font-size="12">
-                        <textPath xlink:href="#path_5">Longer Lifespan...</textPath>
-                    </text>
-                </g>
-                <polyline id="line_5" fill="none" stroke="#484748" stroke-width="0.5102" points="166.81,394.216 216.718,443.18 457.117,443.18 
-                        "/>
-                <circle id="point_5" fill="#DAAD27" cx="457.115" cy="443.18" r="3.473">
-                    <animate attributeName="r" begin="5s" dur="1s" repeatCount="5" from="3.172" to="4.172"/>
-                </circle>
-            </g>
-        </svg>
-            <!-- <div>
-                <img src="<?php echo base_url();?>/assets/images/home-product/products-premium.png" style="width: 950px;">
-            </div>
-            <div class="draw" style=""></div>
-            <div class="mbr-white col-md-10">
-            </div> -->
+        </div> -->
+
+
+
+<!--
+<div class="products3">
+<div class="container">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+        <div class="row">
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
         </div>
     </div>
-</section>
+    <div class="carousel-item">
+              <div class="row">
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+            <div class="col-3"><img class="d-block w-100" src="<?php echo base_url();?>/assets/images/home-products/attachment_file7.jpg" alt="First slide"></div>
+        </div>
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+
+</div>
+-->
+
+
 
 
 <!-- E-series section -->
@@ -206,8 +407,8 @@
                 <img src="<?php echo base_url();?>/assets/images/home-product/led-economic.png" id="eseries_led" style="">
             </div>
             <div class ="align-center">
-                <a class="display-4" href="<?php echo $this->navigation->get_base_url()?>/Catalog/economic">Open Catalogue > </a><br/>
-                <a class="display-4" href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/2">Read More > </a>
+                <a class="display-4" href="<?php echo base_url();?>index.php/Catalog/economic">Open Catalogue > </a><br/>
+                <a class="display-4" href="<?php echo base_url();?>index.php/Product/Product_series_list/2">Read More > </a>
             </div>
         </div>
 
@@ -249,7 +450,7 @@
             </div>
             <div class="align-center col" id="electric-container" style="margin-bottom: 25px;">
                 <div class="section-logo" style="margin-bottom: 55px;" id="elctric_logo">
-                    <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/3" >
+                    <a href="<?php echo base_url();?>index.php/Product/Product_series_list/3" >
                         <img src="<?php echo base_url();?>/assets/images/home-product/electric-logo.png" style="width: 255px;">
                     </a>
                 </div>
@@ -265,7 +466,7 @@
                 </div>
                 <div class="section-p row center"  id="premium_link">
                     <div  class="col" style="padding: 20px 0;text-align: center;">
-                        <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/3" >Read More ></a>
+                        <a href="<?php echo base_url();?>index.php/Product/Product_series_list/3" >Read More ></a>
                     </div>
                 </div>
             </div>
@@ -277,10 +478,10 @@
         <div class="row mrg-top-5x">
             <!-- <div class="col " style=""> -->
                 <div class="col" style="padding-top: 4%;" id="smart_link">
-                    <a href="<?php echo $this->navigation->get_base_url()?>/Catalog/smart" style="padding-left: 95px;">Open Catalogue ></a>
+                    <a href="<?php echo base_url();?>index.php/Catalog/smart" style="padding-left: 95px;">Open Catalogue ></a>
                 </div>
                 <div class="col section-logo smart-logo">
-                    <a  href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/4" >
+                    <a  href="<?php echo base_url();?>index.php/Product/Product_series_list/4" >
                         <img src="<?php echo base_url();?>/assets/images/home-product/logo-smart.png" style="height: 45px;" >
                     </a>
                 </div>
@@ -312,7 +513,7 @@
         </div>
         <div class="section-p row center"  id="premium_link">
             <div  class="col" style="padding-bottom: 15px;text-align: center;">
-                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/4" >Read More ></a>
+                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/4" >Read More ></a>
             </div>
         </div>
             
@@ -380,7 +581,7 @@
             <div id="led-screen-container" class="right-content ml-auto" style="height: -webkit-fill-available;background-image:url('<?php echo base_url();?>/assets/images/home-product/led-screen-section-bg.png');background-size: cover;">
                 <div id ="led-screen-content">
                     <div class="section-logo" id="led-screen-logo" style="padding: 40px 0;">
-                        <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/5" >
+                        <a href="<?php echo base_url();?>index.php/Product/Product_series_list/5" >
                             <img src="<?php echo base_url();?>/assets/images/home-product/led-screen-logo.png" >
                         </a>
                     </div>
@@ -393,7 +594,7 @@
                         <p class="led-screen-p-small">for both indoor & outdoor applications</p>
                         <div class="section-p row center"  id="premium_link">
                             <div  class="col" style="padding: 20px 0;text-align: center;">
-                                <a href="<?php echo $this->navigation->get_base_url()?>/Product/Product_series_list/5" >< Read More </a>
+                                <a href="<?php echo base_url();?>index.php/Product/Product_series_list/5" >< Read More ></Read></a>
                             </div>
                         </div>
                     </div>
@@ -402,3 +603,64 @@
         </div>
     </div>
 </section>
+    
+        <script src="<?php echo base_url();?>/assets/ken_burns_slider_effect/js/custom.js"></script>
+      <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+    <script>
+    
+$('#carouselExample').on('slide.bs.carousel', function (e) {
+
+  
+    var $e = $(e.relatedTarget);
+    var idx = $e.index();
+    var itemsPerSlide = 4;
+    var totalItems = $('.carousel-item').length;
+    
+    if (idx >= totalItems-(itemsPerSlide-1)) {
+        var it = itemsPerSlide - (totalItems - idx);
+        for (var i=0; i<it; i++) {
+            // append slides to end
+            if (e.direction=="left") {
+                $('.carousel-item').eq(i).appendTo('.carousel-inner');
+            }
+            else {
+                $('.carousel-item').eq(0).appendTo('.carousel-inner');
+            }
+        }
+    }
+});
+
+
+  $('#carouselExample').carousel({ 
+                interval: 2000
+        });
+
+
+  $(document).ready(function() {
+/* show lightbox when clicking a thumbnail */
+    $('a.thumb').click(function(event){
+      event.preventDefault();
+      var content = $('.modal-body');
+      content.empty();
+        var title = $(this).attr("title");
+        $('.modal-title').html(title);        
+        content.html($(this).html());
+        $(".modal-profile").modal({show:true});
+    });
+
+  });
+    </script>

@@ -9,13 +9,17 @@
 			  <div class="nav-scroller nav-scroller--demo-links-sm">
 
 			    <nav class="nav-scroller-nav">
-			      <div class="nav-scroller-content"  id="cat-item">';
+			      <div class="nav-scroller-content"  id="cat-item" style="align-items: baseline;">';
+            $class_name="cat-icon";
+            if($this->session->userdata('is_premium')==1){
+                $class_name="cat-icon-p";
+            }
 			      if($value['ID']!=4 && $value['ID']!=5)
-					foreach ($value["catergory"] as $key2 => $value2) {
+					foreach ($value["category"] as $key2 => $value2) {
 						echo '
-			        <a class="nav-scroller-item '.($value2["active"]==1? "active":"").'" href="'.$this->navigation->get_base_url().'/Product/Product_category_list/'.$value2["ID"].'">
-		                    <span><i class="icon-'.$value2["icon"].' cat-icon"></i></span>
-		                    <span class="blank-row"></span>
+			        <a class="nav-scroller-item '.($value2["active"]==1? "active":"").'" href="'.$this->navigation->get_base_url()."/Product/Product_category_list/".$value2["ID"].'">
+		                    <span><i class="icon-'.$value2["icon"].' '.$class_name.' "></i></span>
+		                    
 		                    <span>'.$value2["Name"].'</span>
 		                </a>';
 			    }
