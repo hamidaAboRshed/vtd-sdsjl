@@ -31,7 +31,8 @@ class Product extends CI_Controller {
 		$data['PremiumType']=$this->Index_model->get_index_language('premium_type');
 		$data['ProductType']=$this->Enums->get_ProductType();
 		$data['Solution']=$this->Index_model->get_index_language('solution');
-		$data['Product_category'] = $this->Index_model->get_all_category();
+		//$data['Product_category'] = $this->Index_model->get_all_category();
+		$data['Product_category'] = $this->Index_model->get_all_subcat();
 		$data['InstallationWay']=$this->Index_model->get_index_language('installation_way');
 		$data['Shape']=$this->Index_model->get_index_language('shape');
 		$data['Material']=$this->Index_model->get_index_language('material');
@@ -216,7 +217,7 @@ class Product extends CI_Controller {
 		
 		if ($Shape_list) {
 			if (isset($_FILES['dailog_study_file'])) {
-				$uploadImgData['dailog_study_file'] = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'dailog_study_file','dailog_study_file');
+				$uploadImgData['dailog_study_file'] = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'dailog_study_file','dailog_study_file');
 			}
 			$dimension_id=1;
 			foreach ($Shape_list as $key => $value) {
@@ -257,10 +258,10 @@ class Product extends CI_Controller {
 				 }
 
 				if (isset($_FILES['dimension_photo'.$dimension_id])) {
-					$dimension_photo = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'dimension_photo','dimension_photo'.$dimension_id);
+					$dimension_photo = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'dimension_photo','dimension_photo'.$dimension_id);
 				}
 				if (isset($_FILES['product_photo'.$dimension_id])) {
-					$product_photo = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'product_photo','product_photo'.$dimension_id);
+					$product_photo = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'product_photo','product_photo'.$dimension_id);
 				}
 
 				foreach ($dimension_photo as $key_photo => $value_photo) {
@@ -359,13 +360,13 @@ class Product extends CI_Controller {
 
 		//upload IES file
 		if (isset($_FILES['ies_file'])) {
-			$uploadImgData['ies_file'] = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'ies_file','ies_file');
+			$uploadImgData['ies_file'] = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'ies_file','ies_file');
 		}
 		
 		
 		//color_series_photo
 		if (isset($_FILES['color_series_photo'])) {
-			$uploadImgData['color_series_photo'] = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'color_series_photo','color_series_photo')	;
+			$uploadImgData['color_series_photo'] = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'color_series_photo','color_series_photo')	;
 		}
 
 		//upload attachment file
@@ -937,7 +938,7 @@ class Product extends CI_Controller {
 			$installation_way_option=$this->input->post('InstallationWayID');
 			foreach ($installation_way_option as $key => $value) {
 				//upload photo 
-				$file_name = $this->upload_file('./assets/App_files/Product/Premium/'.$product_id,'application_'.$product_id.'_'.$value,'application_photo_installation_'.$value);
+				$file_name = $this->upload_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'application_'.$product_id.'_'.$value,'application_photo_installation_'.$value);
 				$installation_data = array( 'installation_way_id' => $value,
 										 'product_id' => $product_id,
 										 'application_photo' => $file_name
@@ -950,7 +951,7 @@ class Product extends CI_Controller {
 	function add_upload_data($product_id)
 	{
 		//upload file
-		$upload_attachment_data = $this->upload_multiple_file('./assets/App_files/Product/Premium/'.$product_id,'attachment_file','FileName');
+		$upload_attachment_data = $this->upload_multiple_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'attachment_file','FileName');
 		$upload_attachment_type_data=$this->input->post('AttachmentTypeID');
 		if($upload_attachment_data)
 		{

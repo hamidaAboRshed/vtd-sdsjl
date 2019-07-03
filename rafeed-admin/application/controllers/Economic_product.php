@@ -155,7 +155,7 @@ class Economic_product extends CI_Controller {
 			$fitting_color_data='';
 
 			foreach ($fitting_color as $key_fitting => $value_fitting) {
-				$fitting_color_data .= '<img hight=30 width=30 src="'.base_url().'assets/App_files/Texture/'.$value_fitting['Texture_photo'].'" />'
+				$fitting_color_data .= '<img hight=30 width=30 src="'.$this->navigation->get_includes_url().'/upload_files/Texture/'.$value_fitting['Texture_photo'].'" />'
 							.$value_fitting['color']." / ".$value_fitting['material']." (".$value_fitting['part'].")";
 				if($key_fitting !== count($fitting_color) -1 )
 					$fitting_color_data.='</br>';
@@ -377,7 +377,7 @@ class Economic_product extends CI_Controller {
 			$installation_way_option=$this->input->post('InstallationWayID');
 			foreach ($installation_way_option as $key => $value) {
 				//upload photo 
-				/*$file_name = $this->upload_file('./assets/App_files/Product/Premium/'.$product_id,'application_'.$product_id.'_'.$value,'application_photo_installation_'.$value);*/
+				/*$file_name = $this->upload_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,'application_'.$product_id.'_'.$value,'application_photo_installation_'.$value);*/
 				$installation_data = array( 'installation_way_id' => $value,
 										 'product_id' => $product_id
 									);
@@ -488,13 +488,13 @@ class Economic_product extends CI_Controller {
 
 			//upload IES file
 			if (isset($_FILES['ies_file'])) {
-				$ies_file = $this->global_function->upload_file('./assets/App_files/Product/Economic/'.$economic_product_id,'ies_file','ies_file');
+				$ies_file = $this->global_function->upload_file('./../rafeed-includes/upload_files/Product/Economic/'.$economic_product_id,'ies_file','ies_file');
 			}
 			
 			
 			//color_series_photo
 			if (isset($_FILES['color_series_photo'])) {
-				$color_series_photo = $this->global_function->upload_file('./assets/App_files/Product/Economic/'.$economic_product_id,'color_series_photo','color_series_photo')	;
+				$color_series_photo = $this->global_function->upload_file('./../rafeed-includes/upload_files/Product/Economic/'.$economic_product_id,'color_series_photo','color_series_photo')	;
 			}
 
 			$data = array(

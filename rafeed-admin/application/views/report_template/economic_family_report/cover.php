@@ -1,5 +1,5 @@
 <div class="cover-header">
-    <p>Premium Series</p>
+    <p>Economic Series</p>
 </div>
 
 <p>&nbsp;</p>
@@ -9,9 +9,9 @@
 <p>&nbsp;</p>
 <!-- <p>&nbsp;</p> -->
 
-<p align="center" id="Cover_Title">FAMILY REPORT</p>
+<p align="center" id="Cover_Title" style="font-family: Helvetica-Neue-LtEx">FAMILY REPORT</p>
 
-<p align="center" class="Cover_subtitle" ><?php echo $family_name;?> – <?php echo $product_category;?> – <?php echo $product_solution;?></p>
+<p align="center" class="Cover_subtitle" ><?php echo $family_name;?> – <?php echo $product_category;?></p>
 
 <p>&nbsp;</p>
 <p>&nbsp;</p>

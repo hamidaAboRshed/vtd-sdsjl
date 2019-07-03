@@ -1,3 +1,4 @@
+<script src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
 <style>
 .modal-dialog {
     width: 460px;
@@ -231,6 +232,122 @@
  			<?php echo form_submit('submit', 'Save Changes',array("class"=>"btn btn-primary","id"=>"submit"));?>
       </div>
 	  <?php echo form_close()?>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- color series MemberModal -->
+<div class="modal fade" role="dialog" id="colorSeriesPhotoModal">
+  <div class="modal-dialog" role="document" style="width: 700px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Family color series</h4>
+      </div>
+     
+      <div class="modal-body">        
+     <div id="color_data">
+      
+        </div>    
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- family order MemberModal -->
+<div class="modal fade" role="dialog" id="premiumFamilyOrderModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Change family display order</h4>
+      </div>
+      <?php echo form_open('Premium_product/change_family_display_order',$attributes=array('id'=>'change_premium_display_orderForm','method'=>'post'));?>
+      <div class="modal-body">        
+     <div class="">
+      <div class="col">
+        <div class="form-group ">
+          <?php echo form_label('Family order','family_order',$attributes=array());?>
+          <input type="number" name="family_order" id="family_order">
+           </div>
+        
+      </div>
+        </div>    
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <?php echo form_submit('submit', 'Save Changes',array("class"=>"btn btn-primary","id"=>"submit"));?>
+      </div>
+    <?php echo form_close()?>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- family description MemberModal -->
+<div class="modal fade" role="dialog" id="premiumFamilyDescriptionModal">
+  <div class="modal-dialog" role="document" style="width: 600px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Change family description</h4>
+      </div>
+      <?php echo form_open('Premium_product/change_product_family_description',$attributes=array('id'=>'change_premium_display_descriptionForm','method'=>'post'));?>
+      <div class="modal-body">        
+     <div class="">
+      <div class="col question-main">
+        <div class="form-group ">
+            <!-- <p class="form_title">Family name<span class="text-danger">*</span></p> -->
+            <ul class="nav nav-tabs" role="tablist">
+                <?php $home_active='active';
+                foreach ($Language as $rec) : ?>
+                <li class="nav-item <?php echo($home_active);?>"> 
+                    <a class="nav-link " data-toggle="tab" href="#<?php echo $rec['Name']?>_family" role="tab">
+                        <span class="hidden-sm-up"><i class="ti-home"></i></span> 
+                        <span class="hidden-xs-down"><?php echo $rec['Name']?></span>
+                    </a> 
+                </li>
+                <?php $home_active='';?>
+                <?php endforeach; ?>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content  tabcontent-border">
+                <?php $home_active='active';
+                foreach ($Language as $rec) : ?>
+                <div class="tab-pane <?php echo($home_active);?>" id="<?php echo $rec['Name']?>_family" role="tabpanel">
+                    <div class="p-20" style="display: inline-grid;">
+                        <input type="hidden" name="Language_id[]" value="<?php echo $rec['ID']?>"/>
+                        <input type="hidden" name="ProductFamily_language_id[]" value="0"/>
+                        <div class="col1">
+                            <label>Family name</label><span class="text-danger">*</span>
+                        </div>
+                        <div class="col2">
+                            <input type="text" class=" required" name="ProductFamily[]" required />
+                        </div>
+                        <div class="col1">
+                            <label>Family description</label><span class="text-danger">*</span>
+                        </div>
+                        <div class="col2">
+                            <textarea name="ProductFamilyDescription[]" minlength="300" rows="10" cols="60" id="ProductFamilyDescription<?php echo $rec['ID']?>"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <?php $home_active='';?>
+                <?php endforeach; ?>
+            </div>
+      </div>
+        </div>    
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <?php echo form_submit('submit', 'Save Changes',array("class"=>"btn btn-primary","id"=>"submit"));?>
+      </div>
+    <?php echo form_close()?>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

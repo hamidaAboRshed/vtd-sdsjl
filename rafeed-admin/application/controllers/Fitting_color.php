@@ -65,7 +65,7 @@ class Fitting_color extends CI_Controller {
 			$jpeg_quality = 90;
 
 			if (empty($_FILES["Texture"]["tmp_name"])) {
-				$src = "./assets/App_files/Texture/default.jpg";
+				$src = "./../rafeed-includes/upload_files/Texture/default.jpg";
 			}
 			else
 				$src = $_FILES["Texture"]["tmp_name"];
@@ -104,7 +104,7 @@ class Fitting_color extends CI_Controller {
 			imagecopyresampled($dst_r,$tmp,0,0,$_POST['x'],$_POST['y'],
 			$targ_w,$targ_h,$_POST['w'],$_POST['h']);
 
-			imagejpeg($dst_r,"./assets/App_files/Texture/".$createMember_id.".jpg",$jpeg_quality);
+			imagejpeg($dst_r,"./../rafeed-includes/upload_files/Texture/".$createMember_id.".jpg",$jpeg_quality);
 
 			$data=array(
 				'Texture_photo' => $createMember_id.".jpg"

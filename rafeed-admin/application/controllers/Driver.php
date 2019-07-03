@@ -65,7 +65,7 @@ class Driver extends CI_Controller {
 			'Output Voltage' => $value['OutputVoltageMin'] ." - ".$value['OutputVoltageMax'],
 			'Origin Country' => $this->global_function->get_referance_value('country',$value['OriginCountryID']),
 			'Supplier' => $this->global_function->get_referance_value('supplier',$value['SupplierID']),
-			'Datasheet' =>'<a href="'.(is_null($value['Datasheet_file']) ? '#' : base_url().'assets/App_files/Datasheet/Driver/'.$value['Datasheet_file'].'" download="driver_datasheet_'.$value['Code']).'">Download Datasheet</a>'
+			'Datasheet' =>'<a href="'.(is_null($value['Datasheet_file']) ? '#' : $this->navigation->get_includes_url().'/upload_files/Datasheet/Driver/'.$value['Datasheet_file'].'" download="driver_datasheet_'.$value['Code']).'">Download Datasheet</a>'
 			);
 		echo json_encode($data);
 	}
@@ -116,7 +116,7 @@ class Driver extends CI_Controller {
 				$value['IPRate'],
 				$this->global_function->get_referance_value('country',$value['OriginCountryID']),
 				$this->global_function->get_referance_value('supplier',$value['SupplierID']),
-				(is_null($value['Datasheet_file']) ?'': '<a href="'. base_url().'assets/App_files/Datasheet/Driver/'.$value['Datasheet_file'].'" download="driver_datasheet_'.$value['Code'].'">Download Datasheet</a>'),
+				(is_null($value['Datasheet_file']) ?'': '<a href="'. $this->navigation->get_includes_url().'/upload_files/Datasheet/Driver/'.$value['Datasheet_file'].'" download="driver_datasheet_'.$value['Code'].'">Download Datasheet</a>'),
 				$buttons		
 			);
 		} // end foreach
@@ -263,7 +263,7 @@ class Driver extends CI_Controller {
 		if($this->form_validation->run() === true) {
 
 			//upload file
-			$data['Datasheet_file'] = $this->global_function->upload_file('./assets/App_files/Datasheet/Driver/','driver_'.$id,'datasheet_file');
+			$data['Datasheet_file'] = $this->global_function->upload_file('./../rafeed-includes/upload_files/Datasheet/Driver/','driver_'.$id,'datasheet_file');
         	$createMember = $this->Driver_model->update($data,$id); 
             
             if($createMember === true) {

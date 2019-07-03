@@ -7,7 +7,7 @@ class Premium_product_model extends CI_Model {
 		$this->load->model('Index_model');
 		$default_lan=$this->Index_model->get_default_language();
 		if($id) {
-			$sql = "SELECT DISTINCT Product.*,premium_product.*,premium_product_language.* FROM product INNER JOIN premium_product ON product.ID=premium_product.ProductId LEFT JOIN premium_product_language on premium_product.ID= premium_product_language.Pemium_product_id WHERE premium_product_language.Language_id=".$default_lan." and product.ID = ?";
+			$sql = "SELECT DISTINCT Product.*,premium_product.*,premium_product_language.* FROM product INNER JOIN premium_product ON product.ID=premium_product.ProductId LEFT JOIN premium_product_language on premium_product.ID= premium_product_language.Premium_product_id  where premium_product_language.Language_id=".$default_lan." and premium_product.ID = ?";
 			$query = $this->db->query($sql, array($id));
 			return $query->row_array();
 		}
@@ -50,6 +50,11 @@ class Premium_product_model extends CI_Model {
 		$this->db->from('premium_product_family_dimension');
 		return $this->db->get()->row()->Premium_product_id;
 	}
+	function get_premium_color_series_by_product_id($id)
+	{
+		$query = $this->db->query("SELECT Fitting_color_series_id, color_series_photo FROM premium_product_collection WHERE premium_product_family_dimension_id in( SELECT ID FROM `premium_product_family_dimension` WHERE `Premium_product_id` in (select ID FROM premium_product WHERE ProductId=".$id." )) ");
+		return $query->result_array();
+	}
 
 	function update_premium_collection_price_by_power($dimension_id='', $power='', $price='')
 	{
@@ -61,6 +66,16 @@ class Premium_product_model extends CI_Model {
 	        $this->db->where('premium_product_family_dimension_id',$dimension_id);
 	        
 	        return $this->db->update('premium_product_collection',$value);
+	    }
+	}
+
+	function change_premium_product_order_by_solution($product_id, $solution_id,$data){
+		if ($product_id) {
+
+			$this->db->where('solution_id',$solution_id);
+	        $this->db->where('product_id',$product_id);
+	        
+	        return $this->db->update('product_solution',$data);
 	    }
 	}
 	
@@ -125,6 +140,83 @@ class Premium_product_model extends CI_Model {
 		return null;
 	}
 
+	function change_color_series_photo($color_series_id,$value){
+		if($color_series_id)
+			{
+				$value=array('color_series_photo'=>$value);
+	        	$this->db->where('Fitting_color_series_id',$color_series_id);
+	        	//$this->db->where('color_series_photo',$file_name);
+	        
+	        	return $this->db->update('premium_product_collection',$value);
+			}
+		return null;
+	}
+	
+	function get_changed_collection_installation_way($dim_id){
+		$this->db->select('Driver_id,`Led_id`,`Fixture_id`,`Fitting_id`,`Fitting_color_series_id`,`Fitting_accessory_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_changed_collection_accessory($dim_id){
+		$this->db->select('Driver_id,`Led_id`,`Fixture_id`,`Fitting_id`,`Fitting_color_series_id`,`Fitting_installation_way_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_changed_collection_color_series($dim_id){
+		$this->db->select('Driver_id,`Led_id`,`Fixture_id`,`Fitting_id`,`Fitting_accessory_id`,`Fitting_installation_way_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_premium_installation_way_by_product_id($pro_id){
+		$this->db->select('installation_way_id');
+		$this->db->from('premium_product_collection');
+		$this->db->where('premium_product.ProductId',$pro_id);
+   		$this->db->join('premium_product_family_dimension', 'premium_product_family_dimension.ID = premium_product_collection.premium_product_family_dimension_id', 'left');
+   		$this->db->join('premium_product', 'premium_product.ID = premium_product_family_dimension.Premium_product_id', 'left');
+
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_dimension_installation_way($dim_id){
+		$this->db->select('`Fitting_installation_way_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_dimension_accessory($dim_id){
+		$this->db->select('`Fitting_accessory_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
+	function get_dimension_color_series($dim_id){
+		$this->db->select('`Fitting_color_series_id`');
+		$this->db->distinct();
+		$this->db->where('premium_product_family_dimension_id',$dim_id);
+		$this->db->from('premium_product_collection');
+		$result=$this->db->get();
+		return $result->result_array();
+	}
+
 	function get_collection_serial(){
    		$this->db->select_max('serial_num');
 		$this->db->from("premium_product_collection");
@@ -174,6 +266,7 @@ class Premium_product_model extends CI_Model {
 	 	return 0;
 	}
 
+
 	function get_premium_dimension($premium_id){
 		$this->db->select('*');
    		$this->db->where('Premium_product_id ',$premium_id);
@@ -189,8 +282,9 @@ class Premium_product_model extends CI_Model {
 		return $query->result_array();
 	}
 
-	function get_premium_collection_by_dimension_id($dimension_ids)
-	{
+	function get_premium_collection_by_dimension_id($dimension_ids){
+		/*$query = $this->db->query("SELECT premium_product_collection.* FROM premium_product_collection inner join premium_product_family_dimension on premium_product_collection.premium_product_family_dimension_id = premium_product_family_dimension.ID WHERE premium_product_family_dimension.Premium_product_id= ".$premium_id);
+		return $query->result_array();*/
 		if($dimension_ids){
 			$this->db->select('premium_product_collection.*');
 			//$this->db->distinct();
@@ -230,14 +324,41 @@ class Premium_product_model extends CI_Model {
 		return $result->row_array();
 	}
 
+	function get_premium_product_attachment_byProduct_id($product_id)
+	{
+		if($product_id){
+			$this->db->select("*");
+			$this->db->where("ProductID",$id);
+			$this->db->from("product_attachment");
+			$query=$this->db->get();
+			return $query->result_array();
+		}
+	}
 	function get_premium_product_language($premium_id,$language_id)
 	{
+		if ($language_id!=0) {
+			$this->db->where('Language_id',$language_id);
+		}
 		$this->db->select('*');
    		$this->db->where('Premium_product_id',$premium_id);
-   		$this->db->where('Language_id',$language_id);
+   		
 		$this->db->from("premium_product_language");
 		$result=$this->db->get();
 		return $result->result_array();
+	}
+
+	function delete_premium_product($product_id)
+	{
+		//Product
+		//Product Attchment
+		//Product Application
+		//Product Certification
+		//premium
+		//premium language
+		//premium Dimension
+		//premium Collection
+		//premium Collection driver
+		//color series 
 	}
 
 	function get_premium_coding_data($premium_id)
@@ -252,6 +373,29 @@ class Premium_product_model extends CI_Model {
 		$this->db->from('premium_product');
 		$ret = $this->db->count_all_results();
 	 	return $ret;	
+	}
+
+	function get_premium_product_color_series_by_product_id($product_id)
+	{
+		$this->db->select('Fitting_color_series_id as ID, fitting_part_language.Name as part, color_language.Name as color,material_language.Name as material,color_series_photo');
+		$this->db->distinct();
+		$this->db->from('premium_product');
+		$this->db->join('premium_product_family_dimension', 'premium_product.ID = premium_product_family_dimension.Premium_product_id', 'left');
+		$this->db->join('premium_product_collection', 'premium_product_family_dimension.ID = premium_product_collection.premium_product_family_dimension_id', 'left');
+		$this->db->join('fitting_color_series', 'fitting_color_series.id = premium_product_collection.Fitting_color_series_id', 'left');
+   		$this->db->join('fitting_color', 'fitting_color.Fitting_color_series_id = fitting_color_series.ID', 'left');
+
+		$this->db->where('color_language.Language_id',1);
+		$this->db->where('material_language.Language_id',1);
+		$this->db->where('fitting_part_language.Language_id',1);
+   		$this->db->join('color_texture', 'color_texture.ID = fitting_color.color_texture_id', 'left');
+   		$this->db->join('color_language', 'color_language.Color_id = color_texture.ColorID', 'left');
+   		$this->db->join('material_language', 'material_language.Material_id = color_texture.MaterialID', 'left');
+   		$this->db->join('fitting_part_language', 'fitting_part_language.Fitting_part_id = fitting_color.FittingPartID', 'left');
+   		
+		$this->db->where('premium_product.ProductId',$product_id);
+		$result=$this->db->get();
+		return $result->result_array();
 	}
 
 }

@@ -75,7 +75,7 @@ class LED extends CI_Controller {
 				$value['Code'],
 				$this->global_function->get_referance_value('country',$value['OriginCountryID']),
 				$this->global_function->get_referance_value('supplier',$value['SupplierID']),
-				(is_null($value['Datasheet_file']) ?'': '<a href="'.base_url().'assets/App_files/Datasheet/Led/'.$value['Datasheet_file'].'" download="led_datasheet_'.$value['Code'].'">Download Datasheet</a>'),
+				(is_null($value['Datasheet_file']) ?'': '<a href="'.$this->navigation->get_includes_url().'/upload_files/Datasheet/Led/'.$value['Datasheet_file'].'" download="led_datasheet_'.$value['Code'].'">Download Datasheet</a>'),
 				$buttons
 			);
 		}
@@ -137,7 +137,7 @@ class LED extends CI_Controller {
 				'Code' => $value['Code'],
 				'Origin Country' => $this->global_function->get_referance_value('country',$value['OriginCountryID']),
 				'Supplier' => $this->global_function->get_referance_value('supplier',$value['SupplierID']),
-				'Datasheet' => '<a href="'.(is_null($value['Datasheet_file']) ? ' ' : base_url().'assets/App_files/Datasheet/Led/'.$value['Datasheet_file']).'" download="led_datasheet_'.$value['Code'].'">Download Datasheet</a>'
+				'Datasheet' => '<a href="'.(is_null($value['Datasheet_file']) ? ' ' : $this->navigation->get_includes_url().'/upload_files/Datasheet/Led/'.$value['Datasheet_file']).'" download="led_datasheet_'.$value['Code'].'">Download Datasheet</a>'
 			);
 		echo json_encode($data);
 	}
@@ -301,7 +301,7 @@ class LED extends CI_Controller {
 
 		if($this->form_validation->run() === true) {
 			//upload file
-			$createMember = $this->global_function->upload_file('./assets/App_files/Datasheet/Led/','led_'.$id,'datasheet_file');
+			$createMember = $this->global_function->upload_file('./../rafeed-includes/upload_files/Datasheet/Led/','led_'.$id,'datasheet_file');
 			
             if($createMember === true) {
 

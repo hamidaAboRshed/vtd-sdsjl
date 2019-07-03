@@ -76,8 +76,7 @@ class Accessory extends CI_Controller {
 
 			$series_str=$this->ProductSeries_model->get_series_str($value['Series_id']);
 			$result['data'][$key] = array(
-				//'<img hight=100 width=100 src="'.base_url().'assets/App_files/Accessory/'.(is_null($value['Photo'])? 'default.jpg':$value['Photo']).'" />',
-				'',
+				'<img hight=100 width=100 src="'.$this->navigation->get_includes_url().'/upload_files/Accessory/'.(is_null($value['Photo'])? 'accessory_default.jpg':$value['Photo']).'" />',
 				$series_str.'-'.$value['Code'],
 				$value['SupplierCode']);
 			$result['data'][$key]= array_merge($result['data'][$key],$language);
@@ -113,7 +112,7 @@ class Accessory extends CI_Controller {
 		$validator = array('success' => false, 'messages' => array());
 
 		$this->form_validation->set_error_delimiters('<p class="text-danger">','</p>');
-		$upload_photo_data = $this->global_function->upload_multiple_file('./assets/App_files/Accessory/','accessory'.$id,'change_accessory_photo');
+		$upload_photo_data = $this->global_function->upload_multiple_file('./../rafeed-includes/upload_files/Accessory/','accessory'.$id,'change_accessory_photo');
 		if (!empty($upload_photo_data))
 		{
 			$this->Accessory_model->delete_image($id);
@@ -197,7 +196,7 @@ class Accessory extends CI_Controller {
 			}
 			
 			//upload accessory photos
-			$upload_photo_data = $this->global_function->upload_multiple_file('./assets/App_files/Accessory/',str_pad(($serial['serial'] +1), 4, '0', STR_PAD_LEFT),'upload_photo');
+			$upload_photo_data = $this->global_function->upload_multiple_file('./../rafeed-includes/upload_files/Accessory/',str_pad(($serial['serial'] +1), 4, '0', STR_PAD_LEFT),'upload_photo');
 
 			foreach ($upload_photo_data as $key => $value) {
 				$data=array(

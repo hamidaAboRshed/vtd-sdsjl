@@ -47,6 +47,20 @@ class Index_model extends CI_Model {
 		return $query->result_array();
 	}
 
+	function get_index_language_logo($index_name){
+		//get id for default language
+		$language_id=$this->get_default_language();
+
+		//get values for default language
+		$this->db->select($index_name.'_id as ID,Name,Logo');
+		$this->db->where('language_id='.$language_id);
+		$this->db->from($index_name.'_language');
+		$this->db->join($index_name, $index_name.'.ID = '.$index_name.'_id', 'left');
+		$query=$this->db->get();
+
+		return $query->result_array();
+	}
+
    	function get_value_by_name($index_name,$index_value){
    		$this->db->select('*');
 		$this->db->where("Name = '". $index_value."'");
@@ -107,6 +121,16 @@ class Index_model extends CI_Model {
 		return $query->result();
    	}
 
+   	function get_all_subcat()
+   	{
+   		$language_id=$this->get_default_language();
+
+		//get values for default language
+		$query = $this->db->query("SELECT Product_category_id as ID,Name FROM product_category_language ,product_category WHERE Product_category_id=product_category.ID and language_id=".$language_id);
+
+		return $query->result_array();
+   	}
+
 
 	function get_category_code($cat_id)
 	{
@@ -116,6 +140,16 @@ class Index_model extends CI_Model {
 		$result=$this->db->get();
 		$code = $result->result();
 		return $code[0]->Code_str;
+	}
+
+	function get_category_num($cat_id)
+	{
+		$this->db->select('Code_num');
+		$this->db->where('ID',$cat_id);
+		$this->db->from('product_category');
+		$result=$this->db->get();
+		$code = $result->result();
+		return $code[0]->Code_num;
 	}
 
 	function delete_by_tablename_id($tablename, $field_name, $id)
@@ -140,7 +174,4 @@ class Index_model extends CI_Model {
 		}
 		return null;
 	}
-
-
-
 }
