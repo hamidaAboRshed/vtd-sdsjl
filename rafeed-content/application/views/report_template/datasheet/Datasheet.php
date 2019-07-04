@@ -14,12 +14,19 @@
     <img src="<?php echo base_url();?>/assets/images/datasheet-images/DATASHEET-TRIAL-3.png"  style="width: 22cm; height: auto;  z-index: 600; margin:-60px -42px 0px -42px;">
 <!--    <div style="position: absolute; bottom: 608px; right: 140px;"><h3>PN 000890</h3></div>-->
 <!--    <div style="font-family: 'Helvetica-Neue-Light';position: absolute; bottom: 0px; right: 2px;"><h1>Ashhab</h1></div>-->
-    <div style="margin-top: -75px; margin-right: 2px; z-index: 999;"><h1 style="margin-left: 300px; font-weight: normal; font-size: 20pt;"><?php echo $description['English'][0]['Family_name'].'-';?><div style="font-family:'Helvetica-Neue-Light-ar'; margin-left: 85px; margin-top: -41px;"><?php echo $description['Arabic'][0]['Family_name'];?></div></h1></div>
-    <div style="margin-top: -41px; margin-right: 2px; z-index: 999;">
+    
+<!--    <div style="margin-top: -90px; margin-right: 2px; z-index: 999;"><h1 style="margin-left: 300px; font-weight: normal; font-size: 19pt;"><?php echo $description['English'][0]['Family_name'];?><div style="font-family:'Helvetica-Neue-Light-ar'; margin-left: 20px; margin-top: -12px;"><?php echo $description['Arabic'][0]['Family_name'];?></div></h1></div>-->
+    
+    <div style="margin-top: -75px; margin-right: 2px; z-index: 999;"><h1 style="margin-left: 300px; font-weight: normal; font-family:'Helvetica-Neue-Light-ar'; font-size: 20pt;"><?php echo $description['Arabic'][0]['Family_name'].'     '.$description['English'][0]['Family_name'];?></h1></div>
+
+    
+    <div style="margin-top: -52px; margin-right: 2px; z-index: 999;">
         <h3 style="margin-left: 590px;">PN <?php echo $product_serial;?></h3>
         <?php
-//        if($opened_solution != null)
+//        if($opened_solution != null){
 //            echo'<img src="'.base_url().'/assets/icons/datasheet/'.$opened_solution.'.png" style=" margin-top: -37px; padding-right:10px; margin-left: 660px;">';
+//            echo'<img src="'.base_url().'/assets/icons/datasheet/'.$opened_solution.'.png" style=" margin-top: -38px; padding-right:10px; margin-left: 737px;">'; 
+//        }
         ?>
 
     </div>
@@ -27,7 +34,7 @@
     </div>
     
 <div class="row" style="margin: 0px 3px -2px 3px !important;">
-    <p style="margin-top: 16px; margin-bottom:5px;"><?php echo $product_code;?></p>
+    <p style="margin-top: 23px; margin-bottom:5px;"><?php echo $product_code;?></p>
     </div>
     
   <div class="row" style="margin: 0px 3px 0px 3px !important;">
@@ -69,7 +76,7 @@ else{
         </div>
     </div> 
     <div class="row" style="margin: 0px 3px 0px 3px !important; background-color: black;">
-    <h4 style="color: white;  margin: 1px 0px 1px 4px;">Description<div class="description-ar" style="direction: rtl; margin-top: -13px;">الوصف</div></h4>
+    <h4 style="color: white;  margin: 1px 0px 1px 4px;">Description<div class="description-ar" style="direction: rtl; margin-top: -13px; margin-right: 4px;">الوصف</div></h4>
     </div>
     <div class="row" style="margin: 0px 3px 0px 3px !important;">
     <p style="margin: 3px 2px 8px 2px;" class="description">
