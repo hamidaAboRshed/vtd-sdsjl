@@ -60,7 +60,7 @@
       <div class="col" style="text-align: right;">
       <?php foreach ($certification as $key => $value) {
       echo "<span id='".$value['Name']."' class='' >
-      <img src='".$this->navigation->get_includes_url()."/upload_files/Certification/".$value['Logo']."' style='width:7%;margin: 5px 5px;' ></span>";
+      <img src='".$this->navigation->get_includes_url()."/upload_files/Certification/".$value['Logo']."' style='width:30px; margin: 5px 5px;' ></span>";
 
   } ?>
     </div>
@@ -209,10 +209,10 @@ $i=0
         }	
 	} ?>
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon" style="width: 40px; height: 40px;"></span>
+    <span class="carousel-control-prev-icon" style="width: 2rem; height: 1.5rem;"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon" style="width: 40px; height: 40px;"></span>
+    <span class="carousel-control-next-icon" style="width: 2rem; height: 1.5rem;"></span>
   </a>
 </div>
 </div>

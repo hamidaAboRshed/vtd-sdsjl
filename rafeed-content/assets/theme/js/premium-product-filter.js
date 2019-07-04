@@ -151,77 +151,77 @@ function product_info_popup(id){
             var data ='<ul class="list-group list-group-flush" style="text-align: left;">';
             var data2 ='<ul class="list-group list-group-flush" style="text-align: left;">';
                        if(obj['product_serial'] != null)
-                data += '<li class="list-group-item"> <span style="font-weight: 700; font-size: 1vw;">Luminaire Number : </span>'+obj['product_serial']+'</li>';/*serial_num*/
+                data += '<li class="list-group-item"> <span style="font-weight: 700; font-size: 0.9rem;">Luminaire Number : </span>'+obj['product_serial']+'</li>';/*serial_num*/
             if(obj['product_code'] != null)
-                data += '<li class="list-group-item"> <span style="font-weight: 600;font-size: 1vw;">Luminaire Model : </span>'+obj['product_code']+'</li>';
+                data += '<li class="list-group-item"> <span style="font-weight: 600;font-size: 0.9rem;">Luminaire Model : </span>'+obj['product_code']+'</li>';
            
            
                 data += '<li></li></ul>';
            ///////////////////////////////////////////////////////////
            
            if(obj['Shape'] != null)
-                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Shape : </span>'+obj['Shape']+'</li>';
+                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Shape : </span>'+obj['Shape']+'</li>';
            if(obj['Length'] != null && obj['Length2'] != null)
-                data2 +='<li class="list-group-item">  <span style="font-weight: 700;font-size: 1vw;">Length : </span>'+obj['Length']+' / '+obj['Length2']+'<span><i> mm</i></span></li>';
+                data2 +='<li class="list-group-item">  <span style="font-weight: 700;font-size: 0.9rem;">Length : </span>'+obj['Length']+' / '+obj['Length2']+'<span><i> mm</i></span></li>';
            else if(obj['Length'] != null && obj['Length2'] == null)
-                data2 += '<li class="list-group-item">  <span style="font-weight: 700;font-size: 1vw;">Length : </span>'+obj['Length']+'<span><i> mm</i></span></li>';
+                data2 += '<li class="list-group-item">  <span style="font-weight: 700;font-size: 0.9rem;">Length : </span>'+obj['Length']+'<span><i> mm</i></span></li>';
            if(obj['Width'] != null)
-                data2 +='<li class="list-group-item">  <span style="font-weight: 700;font-size: 1vw;">Width : </span>'+obj['Width']+'<span><i> mm</i></span></li>';
+                data2 +='<li class="list-group-item">  <span style="font-weight: 700;font-size: 0.9rem;">Width : </span>'+obj['Width']+'<span><i> mm</i></span></li>';
            if(obj['Height'] != null && obj['Height'] != 0)
-                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Height : </span>'+obj['Height']+'<span><i> mm</i></span></li>';
+                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Height : </span>'+obj['Height']+'<span><i> mm</i></span></li>';
            if(obj['Radius'] != null && obj['Radius'] != 0)
-                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Radius : </span>'+obj['Radius']+'<span><i> mm</i></span></li>';
+                data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Radius : </span>'+obj['Radius']+'<span><i> mm</i></span></li>';
            if(obj['Cut_out'] != null && obj['Cut_out'] != 0)
-                data2 +='<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Cut Out : </span>'+obj['Cut_out']+'<span><i> mm</i></span></li>';
+                data2 +='<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Cut Out : </span>'+obj['Cut_out']+'<span><i> mm</i></span></li>';
            
            if(obj['AdjustableType'] == 'Tilted'){
                if(obj['TiltedVMax'] != null && obj['TiltedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt >Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt >Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd></dl></li>';
                else if (obj['TiltedVMax'] != null && obj['TiltedHMax']==null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd></dl></li>';
                else if (obj['TiltedVMax'] == null && obj['TiltedHMax'] != null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd></dl></li>';    
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd></dl></li>';    
            }
 
            else if(obj['AdjustableType'] == 'Rotated'){
                 if(obj['RotatedVMax'] != null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Rotated Adjustable</dt><dd> Vertical :             '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal : '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Rotated Adjustable</dt><dd> Vertical :             '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal : '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                else if (obj['RotatedVMax'] != null && obj['RotatedHMax']==null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';  
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';  
                else if (obj['RotatedVMax'] == null && obj['RotatedHMax'] != null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';  
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';  
            }
 
            else if(obj['AdjustableType'] == 'Tilted & Rotated'){
                 if (obj['TiltedVMax']!=null && obj['TiltedHMax']!=null && obj['RotatedVMax']!=null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']==null && obj['TiltedHMax']!=null && obj['RotatedVMax']!=null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']!=null && obj['TiltedHMax']==null && obj['RotatedVMax']!=null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']!=null && obj['TiltedHMax']!=null && obj['RotatedVMax']==null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']!=null && obj['TiltedHMax']!=null && obj['RotatedVMax']!=null && obj['RotatedHMax']==null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';
                
                
                 else if (obj['TiltedVMax']==null && obj['TiltedHMax']!=null && obj['RotatedVMax']==null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']==null && obj['TiltedHMax']!=null && obj['RotatedVMax']!=null && obj['RotatedHMax']==null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd>Horizontal : '+obj['TiltedHMin']+'/'+obj['TiltedHMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']!=null && obj['TiltedHMax']==null && obj['RotatedVMax']==null && obj['RotatedHMax']!=null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd>Horizontal :  '+obj['RotatedHMin']+'/'+obj['RotatedHMax']+'</dd></dl></li>';
                 else if (obj['TiltedVMax']!=null && obj['TiltedHMax']==null && obj['RotatedVMax']!=null && obj['RotatedHMax']==null)
-                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 1vw;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';  
+                    data2 +='<li class="list-group-item" style="padding-bottom: 0px;font-size: 0.9rem;"><dl><dt>Tilted Adjustable</dt><dd> Vertical :  '+obj['TiltedVMin']+'/'+obj['TiltedVMax']+'</dd><dt>Rotated Adjustable</dt><dd> Vertical : '+obj['RotatedVMin']+'/'+obj['RotatedVMax']+'</dd></dl></li>';  
            }
            
            else if(obj['AdjustableType'] == 'Not Adjustable'){
-                    data2 += '<li class="list-group-item"><span style="font-weight: 700;font-size: 1vw;">Adjustable : </span>Not Adjustable</li>';
+                    data2 += '<li class="list-group-item"><span style="font-weight: 700;font-size: 0.9rem;">Adjustable : </span>Not Adjustable</li>';
            }
 
 
            if(obj['Weight'] != null && obj['Weight'] != 0)
-                data2 += '<li class="list-group-item"><span style="font-weight: 700;font-size: 1vw;">Weight : </span>'+obj['Weight']+'</li>';
+                data2 += '<li class="list-group-item"><span style="font-weight: 700;font-size: 0.9rem;">Weight : </span>'+obj['Weight']+'</li>';
 
            
            
@@ -230,60 +230,60 @@ function product_info_popup(id){
            
            
                 if(obj['Power_up'] != null && obj['Power_up'] != 0)//W
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Power Up : </span>'+obj['Power_up']+'<span><i> W</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Power Up : </span>'+obj['Power_up']+'<span><i> W</i></span></li>';
                 if(obj['Power_up'] != null && obj['Power_up'] != 0 && obj['Power'] != null && obj['Power'] != 0)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Power Down: </span>'+obj['Power']+'<span><i> W</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Power Down: </span>'+obj['Power']+'<span><i> W</i></span></li>';
                 if((obj['Power_up'] == null || obj['Power_up'] == 0) && (obj['Power'] != null && obj['Power'] != 0))
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Power : </span>'+obj['Power']+'<span><i> W</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Power : </span>'+obj['Power']+'<span><i> W</i></span></li>';
                 if(obj['CCT'] != null  && obj['CCT'] != 0){
                     if(isNaN(obj['CCT']))
-                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">CCT : </span>'+obj['CCT']+' <span></span></li>';
+                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">CCT : </span>'+obj['CCT']+' <span></span></li>';
                     else 
-                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">CCT : </span>'+obj['CCT']+' <span><i>K</i></span></li>';        
+                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">CCT : </span>'+obj['CCT']+' <span><i>K</i></span></li>';        
                 }
                     
                 if(obj['CRI'] != null && obj['CRI'] != 0)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">CRI : </span>'+obj['CRI']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">CRI : </span>'+obj['CRI']+'</li>';
                 if(obj['Lumen'] != null && obj['Lumen'] != 0)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Lumen : </span>'+obj['Lumen']+'<span><i> lm</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Lumen : </span>'+obj['Lumen']+'<span><i> lm</i></span></li>';
                 if(obj['Current'] != null && obj['Current'] != 0)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Current : </span>'+obj['Current']+'<span><i> mA</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Current : </span>'+obj['Current']+'<span><i> mA</i></span></li>';
            
               if(obj['Multiple_ip'] == '0')
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">IP : </span>'+obj['IP']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">IP : </span>'+obj['IP']+'</li>';
               else if(obj['Multiple_ip'] == '1')
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Front IP : </span>'+obj['Front_ip']+'<br><span style="font-weight: 700;">Back IP : </span>'+obj['Back_ip']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Front IP : </span>'+obj['Front_ip']+'<br><span style="font-weight: 700;">Back IP : </span>'+obj['Back_ip']+'</li>';
            if(obj['IK'] != null && obj['IK'] != 0){
                 if(obj['IK'].toString().length > 1)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">IK : </span>'+obj['IK']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">IK : </span>'+obj['IK']+'</li>';
                else
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">IK : </span>0'+obj['IK']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">IK : </span>0'+obj['IK']+'</li>';
            }
 
                 if(obj['SymmetricBeam'] == '1')
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Beam Angle :  </span>'+obj['BeamAngleValue']+'°</li>'
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Beam Angle :  </span>'+obj['BeamAngleValue']+'°</li>'
                else if(obj['SymmetricBeam'] == '0'){
                    
                    if(obj['BeamAngleH']!= 0 && obj['BeamAngleV']!= 0)
-                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Beam Angle Horizontal : </span>'+obj['BeamAngleH']+'°<br><span style="font-weight: 700;font-size: 1vw;">Beam Angle Vertical : </span>'+obj['BeamAngleV']+'°</li>';
+                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Beam Angle Horizontal : </span>'+obj['BeamAngleH']+'°<br><span style="font-weight: 700;font-size: 0.9rem;">Beam Angle Vertical : </span>'+obj['BeamAngleV']+'°</li>';
                    else if(obj['BeamAngleH']!= 0)
-                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Beam Angle Horizontal : </span>'+obj['BeamAngleH']+'°';
+                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Beam Angle Horizontal : </span>'+obj['BeamAngleH']+'°';
                     else if(obj['BeamAngleV']!= 0)
-                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Beam Angle Vertical : </span>'+obj['BeamAngleV']+'°';
+                        data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Beam Angle Vertical : </span>'+obj['BeamAngleV']+'°';
                }
 
            
                 if(obj['LifeSpan'] != null && obj['LifeSpan'] != 0)//Hours
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">LifeSpan : </span>'+obj['LifeSpan']+'<span><i> Hours</i></span></li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">LifeSpan : </span>'+obj['LifeSpan']+'<span><i> Hours</i></span></li>';
                 if(obj['Warranty'] != null && obj['Warranty'] != 0)//Years
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">Warranty : </span>'+obj['Warranty']+'<span><i> Years</i></span></li>';         
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">Warranty : </span>'+obj['Warranty']+'<span><i> Years</i></span></li>';         
                 
                 if(obj['UGRRate'] != null && obj['UGRRate'] != 0)
-                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 1vw;">UGRRate : </span>'+obj['UGRRate']+'</li>';
+                    data2 += '<li class="list-group-item"> <span style="font-weight: 700;font-size: 0.9rem;">UGRRate : </span>'+obj['UGRRate']+'</li>';
            
                       
            if(obj['color'] != null){
-              data2 += '<li class="list-group-item" style="padding-bottom: 0px;"><dl><dt style="padding-bottom: 6px; font-size: 1vw;">Color</dt>';
+              data2 += '<li class="list-group-item" style="padding-bottom: 0px;"><dl><dt style="padding-bottom: 6px; font-size: 0.9rem;">Color</dt>';
               $.each(obj['color'], function () {
 					data2 +='<dd><img hight=20 width=20 style="border-radius: 50%;  border: 1px solid #b7b6b6; padding-bottom:0px !important;" src="'+url+'/upload_files/Texture/'+this['Texture_photo']+'"/><span> '+this['part'].capitalizeFirstLetter()+' - '+this['color'].capitalizeFirstLetter()+' - '+this['material'].capitalizeFirstLetter()+'</span></dd>';
 				});
@@ -291,7 +291,7 @@ function product_info_popup(id){
           }
            
             if(obj['lighting_distributor'] != null && obj['lighting_distributor'] != 0){
-              data2 += '<li class="list-group-item" style="padding-bottom: 0px;"><dl><dt style="padding-bottom: 6px; font-size: 1vw;">Lighting Distributor</dt>';
+              data2 += '<li class="list-group-item" style="padding-bottom: 0px;"><dl><dt style="padding-bottom: 6px; font-size: 0.9rem;">Lighting Distributor</dt>';
               $.each(obj['lighting_distributor'], function () {
 					data2 +='<dd><img hight=20 width=20 style="border-radius: 50%;    border: 1px solid #b7b6b6;" src="'+url+'/upload_files/Texture/'+this['Texture_photo']+'"/><span>                             '+this['kind'].capitalizeFirstLetter()+' - '+this['color'].capitalizeFirstLetter()+' - '+this['material'].capitalizeFirstLetter()+'</span></dd>';
 				});
@@ -312,7 +312,7 @@ function product_info_popup(id){
                             '<p style="font-size:medium;">'+this['Name']+'</p></div></div></div>';
            });
            if (data3 == '<div class="row">')
-               data3+='<p style="padding-top: 20px; margin: auto;">No available accessories for this product</p>';
+               data3+='<p style="padding-top: 20px; margin: auto;  padding-left: 23px;">No available accessories for this product</p>';
             data3+='</div>';
            
            var Driver_datasheet_unique = null;
@@ -321,23 +321,23 @@ function product_info_popup(id){
                 var Driver_datasheet_unique = obj['Driver_datasheet'].filter( onlyUnique );
            var data4 = '<div class="list-group"><ul class="list-group list-group-flush" style="text-align: left;">';
            
-           data4 += '<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="../premium_datasheet_view/'+obj['collection_id']+'" target="_blank"> <i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>Product Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
+           data4 += '<li class="list-group-item"><a style="font-weight: 700;font-size: 0.9rem;" href="../premium_datasheet_view/'+obj['collection_id']+'" target="_blank"> <i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>Product Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
            /*data4 += '<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="'+url+'index.php/Product/premium_datasheet_view2/'+obj['collection_id']+'" target="_blank"> <i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>Product Datasheet 2<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';*/
           if(obj['LED_datasheet'] != null)
-           data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="'+url+'/upload_files/Datasheet/Led/'+obj['LED_datasheet']+'" target="_blank"> <i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>LED Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
+           data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 0.9rem;" href="'+url+'/upload_files/Datasheet/Led/'+obj['LED_datasheet']+'" target="_blank"> <i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>LED Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
             
            if(Driver_datasheet_unique != null){
                           var c = 1;
            if(Driver_datasheet_unique.length <= 1){
                 if(Driver_datasheet_unique[0]!= null && (Driver_datasheet_unique[0].includes('.PDF') || Driver_datasheet_unique[0].includes('.pdf')))
-                data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="'+url+'/upload_files/Datasheet/Driver/'+Driver_datasheet_unique[0]+'" target="_blank"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>Driver Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
+                data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 0.9rem;" href="'+url+'/upload_files/Datasheet/Driver/'+Driver_datasheet_unique[0]+'" target="_blank"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>Driver Datasheet<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
            }
 
            else{
                 $.each(Driver_datasheet_unique, function () {
                if(this != null && (this.includes('.PDF') || this.includes('.pdf')))
                    {
-                    data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="'+url+'/upload_files/Datasheet/Driver/'+this+'" target="_blank"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i> Driver Datasheet '+c+'<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
+                    data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 0.9rem;" href="'+url+'/upload_files/Datasheet/Driver/'+this+'" target="_blank"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i> Driver Datasheet '+c+'<span style="color: rgba(0,0,0,0.6); padding-left: 7px;">/ PDF</span> </a></li>';
                     c+=1;  
                    }
                       });
@@ -348,7 +348,7 @@ function product_info_popup(id){
 
                 if(obj['attach_files'] != null){
                 $.each(obj['attach_files'], function () {
-                    data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 1vw;" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>'+this['file_type']+'</a></li>';
+                    data4+='<li class="list-group-item"><a style="font-weight: 700;font-size: 0.9rem;" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'"><i class="fa fa-download" aria-hidden="true" style="padding-right:10px; color:#DBAE27;"></i>'+this['file_type']+'</a></li>';
                       });
            }
 
@@ -376,7 +376,7 @@ function product_info_popup(id){
 			 //color photo
          if (obj['color_series_photo']!= null) {
             html_content +=  '<a class="example-image-link image_'+index+'" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+obj['color_series_photo']+'" data-lightbox="example-set'+index+'" data-title="product photo"  style="display: none;">'+
-              '<img width="300" class="example-image " src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+obj['color_series_photo']+'" alt="" />'+
+              '<img style="width:100% !important" class="example-image " src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+obj['color_series_photo']+'" alt="" />'+
               '</a>';
             html_thumbail += '<div class="thumb">'+
                     '<a href="#" rel="1">'+
@@ -387,7 +387,7 @@ function product_info_popup(id){
          else{
           $.each(obj['product_photo'], function (key, value) {
               html_content +=  '<a class="example-image-link image_'+index+'" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" data-lightbox="example-set'+index+'" data-title="product photo"  style="display: none;">'+
-                '<img class="example-image " src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" alt="" />'+
+                '<img class="example-image " style="width:100% !important" src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" alt="" />'+
               '</a>';
         html_thumbail += '<div class="thumb" >'+
                           '<a href="#" rel="1" >'+
@@ -400,8 +400,8 @@ function product_info_popup(id){
          }
 
 			$.each(obj['Dim_photo'], function (key, value) {
-             	html_content +=  '<a class="example-image-link image_'+index+'" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" data-lightbox="example-set'+index+'" data-title="product photo"  style="display: none;">'+
-							'<img width="300" class="example-image " src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" alt="" />'+
+             	html_content +=  '<a class="example-image-link image_'+index+'" href="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" data-lightbox="example-set'+index+'" data-title="dimension photo"  style="display: none;">'+
+							'<img style="width:100% !important" class="example-image " src="'+url+'/upload_files/Product/Premium/'+product_id+'/'+this['FileName']+'" alt="" />'+
 							'</a>';
 				html_thumbail += '<div class="thumb">'+
 				                    '<a href="#" rel="1">'+
