@@ -40,9 +40,12 @@
   padding: 25px;
   /* transition effect. not necessary */
   transition: opacity .2s, visibility .2s;
+/*
   text-align: justify;
   text-justify: inter-word;
         word-break: break-all;
+*/
+      text-align: left;
 }
 
 .product-card:hover .product-description {
