@@ -5,7 +5,7 @@ $(document).ready(function() {
 		/*dom: 'Bfrtip',*/
         buttons: [
         ],
-		'ajax': '../driver/fetchMemberData',
+		'ajax': './fetchMemberData',
 		'order': []
 	});	
 });

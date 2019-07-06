@@ -21,7 +21,7 @@ class Accessory extends CI_Controller {
 	{
 		if($this->user_validate->check_login())
 		{
-			$data['Supplier']=$this->Index_model->get_index('Supplier');
+			$data['Supplier']=$this->Index_model->get_index('supplier');
 			$data['AccessoryType']=$this->Enums->get_AccessoryType();
 			$data['Language']=$this->Index_model->get_index('language');
 			$data['series'] = $this->Index_model->get_index_language('product_series');
@@ -76,7 +76,7 @@ class Accessory extends CI_Controller {
 
 			$series_str=$this->ProductSeries_model->get_series_str($value['Series_id']);
 			$result['data'][$key] = array(
-				'<img hight=100 width=100 src="'.$this->navigation->get_includes_url().'/upload_files/Accessory/'.(is_null($value['Photo'])? 'accessory_default.jpg':$value['Photo']).'" />',
+				'<img hight=100 width=100 src="'.$this->navigation->get_includes_url().'/upload_files/Accessory/'.(is_null($value['Photo'])? 'accessory_default.png':$value['Photo']).'" />',
 				$series_str.'-'.$value['Code'],
 				$value['SupplierCode']);
 			$result['data'][$key]= array_merge($result['data'][$key],$language);

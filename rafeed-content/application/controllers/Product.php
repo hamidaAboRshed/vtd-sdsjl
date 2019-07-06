@@ -17,7 +17,7 @@ class Product extends CI_Controller {
 		$this->load->model('Accessory_model');
 		$this->load->model('Enums');
 		$this->load->helper('text');
-
+		$this->load->model('Supplier_model');
 		$this->load->library('pdf');
 	}
 
@@ -501,8 +501,9 @@ class Product extends CI_Controller {
         	$driver = $this->Driver_model->fetchMemberData($value['driver_id']);
         	$result->Input_Voltage = $this->get_range($driver['InputVoltageMin'],$driver['InputVoltageMax']);
         	$result->PowerFactor = $driver['PowerFactor'];
-        	if ($driver['is_brand']) {
-        		$result->Driver_supplier = $this->get_referance_value('supplier',$driver['SupplierID']);
+        	$supplier = $this->Supplier_model->get_supplier($driver['SupplierID']);
+        	if ($supplier['is_brand']) {
+        		$result->Driver_supplier = $supplier['Name'];
         	}
         	else
         		$result->Driver_supplier = null;

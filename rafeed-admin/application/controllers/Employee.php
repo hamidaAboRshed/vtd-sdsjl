@@ -21,10 +21,10 @@ public function index()
 	$crud = new grocery_CRUD();
 	//$crud->set_theme('datatables');
 	$crud->set_table('employee')->display_as('CityID','City')
-								->display_as('PositionID','Position');
+								->display_as('PositionID','position');
 	$crud->required_fields('FirstName','LastName','DateOfBirth');
 	//$crud->set_relation('CityID','city','Name');
-	$crud->set_relation('PositionID','Position','Name');
+	$crud->set_relation('PositionID','position','Name');
 	$crud->unset_jquery();
 	
 	$crud->add_action('Add user', '', 'User/create_user' ,'fa fa-user-plus');

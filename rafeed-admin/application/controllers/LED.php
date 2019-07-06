@@ -19,7 +19,7 @@ class LED extends CI_Controller {
 		if($this->user_validate->check_login())
 		{
 			$data['LEDType']=$this->Index_model->get_index('led_type');
-			$data['Supplier']=$this->Index_model->get_index('Supplier');
+			$data['Supplier']=$this->Index_model->get_index('supplier');
 			$data['SocketType']=$this->Index_model->get_index('socket_type');
 			$data['PinType']=$this->Index_model->get_index('pin_type');
 			$data['Country']=$this->Index_model->get_index_language('country');
@@ -32,7 +32,7 @@ class LED extends CI_Controller {
 		}
 	}
 
-	function fetchMemberData() 
+	public function fetchMemberData() 
 	{
 		$result = array('data' => array());
 

@@ -25,6 +25,8 @@ class Supplier extends CI_Controller {
 			$crud->add_action('Add Supplier Contact', '', 'Supplier/supplier_contact','fa fa-user');
 			$crud->field_type('is_brand','true_false');
 			$crud->unset_delete();
+			$crud->unset_clone();
+			$crud->unset_read();
 
 			$output = $crud->render();
 

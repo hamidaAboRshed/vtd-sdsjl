@@ -65,7 +65,7 @@ class User extends CI_Controller {
 		    		$username.="$val".'_';
 		    	}*/
 			}
-			$username.=$emp_id;
+			//$username.=$emp_id;
 		}
 		$username=str_replace(' ', '',$username);
 		$user_data = array('Username' => $username,

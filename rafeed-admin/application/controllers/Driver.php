@@ -28,7 +28,7 @@ class Driver extends CI_Controller {
 			$data['DriverOutputType']=$this->Enums->get_DriverOutputType();
 			$data['Country']=$this->Index_model->get_index_language('country');
 			$data['DriverAccessory']=$this->Accessory_model->get_accessory_by_type(3);
-			$data['Supplier']=$this->Index_model->get_index('Supplier');
+			$data['Supplier']=$this->Index_model->get_index('supplier');
 
 			$data['output'] = '';
 			$data['subview'] = 'driver_grid.php';
@@ -78,7 +78,7 @@ class Driver extends CI_Controller {
 	}
 
 
-	function fetchMemberData() 
+	public function fetchMemberData() 
 	{
 		$result = array('data' => array());
 

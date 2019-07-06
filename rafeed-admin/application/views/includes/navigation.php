@@ -47,6 +47,13 @@
             <span class="hide-menu">LED</span>
         </a>
     </li>
+     <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="icon-Indexes"></i><span class="hide-menu">Indexes</span></a>
+        <ul aria-expanded="false" class="collapse">
+            <li><a href="<?php echo base_url().index_page(); ?>/indexes/Certification" >Certification</a></li>   
+            <li><a href="<?php echo base_url().index_page(); ?>/indexes/Installation_way" >Installation way</a></li>   
+        </ul>
+    </li>
+    
     <li class="nav-devider"></li>
     <li class="nav-label">Knowledge</li>
     <li>
