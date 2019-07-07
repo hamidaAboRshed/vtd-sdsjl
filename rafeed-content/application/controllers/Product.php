@@ -95,7 +95,7 @@ class Product extends CI_Controller {
 			    $content .= $e;
 			}*/
 			//$data[$key]['Family_description'] = character_limiter($html,255);
-			$data[$key]['Family_description'] = character_limiter($value['datasheet_description'],355);
+			$data[$key]['Family_description'] = character_limiter($value['datasheet_description'],285);
 		}
 		echo json_encode($data);
 	}
@@ -562,8 +562,8 @@ class Product extends CI_Controller {
        	$product_data=$this->Premium_product_model->get_product_by_id($premium_data['ProductId']);
        	$product_id = $premium_data['ProductId'];
 
-       	$data->PowerType = 'DC';
-       	switch ($product_data['PowerType']) {
+       	$data->PowerType = 'AC';
+       	switch ($premium_data['PowerType']) {
        	 	case 1:
        	 		$data->PowerType = 'AC';
        	 		break;
@@ -571,7 +571,7 @@ class Product extends CI_Controller {
    	 			$data->PowerType = 'DC';
    	 			$data->Input_Voltage='24';
    	 			break;
- 			case 2:
+ 			case 3:
    	 			$data->PowerType = 'AC';
    	 			$data->Input_Voltage='220 - 240';
    	 			break;

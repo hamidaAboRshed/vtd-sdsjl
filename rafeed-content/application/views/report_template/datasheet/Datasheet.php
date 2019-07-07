@@ -103,7 +103,7 @@ else{
                 ?>
                 <hr style="margin-top: -1px; margin-bottom: 0px; border-top: 0px dotted;">
                 <?php if($Input_Voltage){ ?>
-                <p style="margin: 1px 0px 0px 0px; ">Voltage</p><div style="direction: rtl; margin-top: -13px;"><?php echo $Input_Voltage ?> v</div>
+                <p style="margin: 1px 0px 0px 0px; ">Voltage</p><div style="direction: rtl; margin-top: -13px;"><?php echo $Input_Voltage;?> V<?php if($PowerType) echo $PowerType; ?></div>
                 <hr style="margin-top: -1px; margin-bottom: 0px; border-top: 0px dotted;">
                     <?php }?>
                 <p style="margin: 1px 0px 0px 0px; ">Lumen</p><div style="direction: rtl; margin-top: -13px;">

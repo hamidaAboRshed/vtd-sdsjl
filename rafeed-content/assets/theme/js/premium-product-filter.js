@@ -26,16 +26,17 @@ $('#product_dimension_table').on('click', '.clickable-row', function(event) {
           var obj=JSON.parse(result);
           url=obj['base_url'];
           $.each(obj['premium_product_collection'], function () {
-			var beamanle='';
+			var beamanle='-';
               
 			if(this['SymmetricBeam'] ==1)
-			  	beamanle=this['BeamAngleValue'];
+                if(this['BeamAngleValue'] != null)
+			  	  beamanle=this['BeamAngleValue'];
 			else{
-                if(this['BeamAngleH']!=0 && this['BeamAngleV']!=0)
+                if(this['BeamAngleH']!=0 && this['BeamAngleV']!=0 && this['BeamAngleH']!=null && this['BeamAngleV']!=null)
                     beamanle=this['BeamAngleH']+' x '+ this['BeamAngleV'];
-                else if(this['BeamAngleH']!=0)
+                else if(this['BeamAngleH']!=0 && this['BeamAngleH']!=null)
                     beamanle=this['BeamAngleH'];
-                else if(this['BeamAngleV']!=0)
+                else if(this['BeamAngleV']!=0 && this['BeamAngleV']!=null)
                     beamanle=this['BeamAngleV'];
                 
             }

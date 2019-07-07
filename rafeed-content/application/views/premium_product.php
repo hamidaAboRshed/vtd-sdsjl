@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/accessory/css/style.css">
 
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/premium_product_style.css">
+
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/Back.css">
 <style>
 
 </style>
@@ -21,7 +23,18 @@
 
 
 <h1 class="hide">Product view</h1>
+
+
+
 <div id="ESeries">
+    
+    <div class="backBtn ">
+      <span class="line tLine"></span>
+      <span class="line mLine"></span>
+      <p class="label" onclick="window.history.go(-1)"><?php echo $product_category ?>s</p>
+      <span class="line bLine"></span>
+	</div>
+    
 	<div class="page-header" style="">
 		<p class="product-name"><?php $family_name2=strtolower($family_name); echo ucfirst($family_name2) ?></p>
 		<p class="product-desc"><?php echo strtoupper($product_category) ?></p>
@@ -137,27 +150,42 @@
     
 <!--TRACK-->
         
+  <?php 
+    if($accessory_data != null){
+               echo '<div class="row">
+            <p class="title">Track Rails</p>
+            </div>
+            <div class="row">
+                <p class="body">Aluminium track rail system designed for easy surface mounting on ceiling or walls, or recessed in false ceilings to suite all applications. 
+I,L,X and T connectors are available for all tracks, with a pendant option for different designs and mounting methods. </p>
+            </div>
+            <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+            <img class="card-img-top" src="'.base_url().'/assets/images/Track Rails/Surface mounted track rail.jpg" alt="Card image" style="width:50%">
+      <div class="card-body">
+        <h5 class="card-text">Surface mounted</h5>
+          <ul style="color: rgba(0,0,0,0.525);">';
+          foreach ($accessory_data as &$value)
+              if($value['rail_installation_way']=='Surface')
+                  echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$value['rail_length'].'</span></li>';
+        echo '</ul></div></div></div>';
+    
+
+        echo '<div class="col-sm-6">
+                <div class="card">
+                    <img class="card-img-top" src="'.base_url().'/assets/images/Track Rails/Recessed track rail.jpg" alt="Card image" style="width:50%">
+                    <div class="card-body">
+                        <h5 class="card-text">Recessed</h5>
+                        <ul style="color: rgba(0,0,0,0.525);">';
+                        foreach ($accessory_data as &$value)
+                            if($value['rail_installation_way']=='Recessed')
+                                echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$value['rail_length'].'</span></li>';
+        echo '</ul></div></div></div></div>';  
         
-<!--
-        <div class="row">
-  <div class="col-sm-6">
-    <div class="card">
-            <img class="card-img-top" src="<?php echo base_url('../Rafeed/').'/assets/App_files/Product/Premium/'.$Product_id.'/'.$family_photo;?>" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
-            <img class="card-img-top" src="<?php echo base_url('../Rafeed/').'/assets/App_files/Product/Premium/'.$Product_id.'/'.$family_photo;?>" alt="Card image" style="width:100%">
-      <div class="card-body">
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>s
-      </div>
-    </div>
-  </div>
-</div>
--->
+    }     
+        
+?>
     
     
     

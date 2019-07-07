@@ -92,7 +92,7 @@
    
               body_+= '</div>'+
                       '<img class="product-img img-fluid lazy" data-src="<?php echo $this->navigation->get_includes_url()?>/upload_files//Product/Premium/'+this['ID']+'/'+this['img']+'">'+
-                      '<p class="product-description" style="font-size:0.95rem;">'+this['Family_description']+'</p>'+
+                      '<p class="product-description" style="font-size:0.91rem;">'+this['Family_description']+'</p>'+
                       '</div>'+
                       '<div>'+
                       '<p class="product-name">'+this['Family_name'].capitalizeFirstLetter()+'</p></div>'+
