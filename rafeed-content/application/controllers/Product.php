@@ -7,7 +7,7 @@ class Product extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Product_model');
-		$this->load->model('productSeries_model');
+		$this->load->model('ProductSeries_model');
 		$this->load->model('Premium_product_model');
 		$this->load->model('Fitting_color_model');
 		$this->load->model('Fitting_model');
@@ -767,6 +767,18 @@ class Product extends CI_Controller {
                 $data['dimension_data'][$key]["Dim_photo"] = $this->Premium_product_model->get_premium_dimension_attachment($dimension_photo_type_id,$value["ID"]);
             }
         }
+
+        $data['accessory_data'] = null;
+        if ($data['dimension_data'][0]['Wires']) {
+        	$accessory_data = $this->Accessory_model->get_rail_accessory($data['dimension_data'][0]['Wires']);
+        	foreach ($accessory_data as $key => $value) {
+        		$series_str = $this->ProductSeries_model->get_series_str($value['Series_id']);
+        		$accessory_data[$key]['Code'] = $series_str.'-'.$value['Code'];
+        		$accessory_data[$key]['rail_installation_way'] = $this->Index_model->get_value_by_id("installation_way",$value['rail_installation_way']);
+        	}
+        	$data['accessory_data'] = $accessory_data;
+        }
+
 
         //led type Model 
 
