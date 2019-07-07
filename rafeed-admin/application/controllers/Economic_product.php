@@ -35,7 +35,7 @@ class Economic_product extends CI_Controller {
 			$array['read_action'] = '../Economic_product/fetchEchonomicFamiliesData/';
 
 			$data['ProductType']=$this->Enums->get_ProductType();
-			$data['Supplier']=$this->Index_model->get_index('Supplier');
+			$data['Supplier']=$this->Index_model->get_index('supplier');
 			$data['Application']=$this->Index_model->get_index_language('application');
 			$data['Certification']=$this->Index_model->get_index('certification');
 			$data['Language']=$this->Index_model->get_index('language');

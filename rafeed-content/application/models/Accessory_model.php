@@ -143,4 +143,16 @@ class Accessory_model extends CI_Model {
 		$query = $this->db->query($sql);
 		return $query->result_array();
 	}
+
+	function get_rail_accessory($wires)
+	{
+		$this->db->select("rail_installation_way, rail_length, Code, Series_id");
+		$this->db->from('accessory');
+		$this->db->where('is_trak_rail',1);
+		$this->db->where('rail_wires',$wires);
+		$this->db->order_by("Code", 'AESC');
+		
+		$result = $this->db->get();
+		return $result->result_array();
+	}
 }
