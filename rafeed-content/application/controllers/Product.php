@@ -562,6 +562,21 @@ class Product extends CI_Controller {
        	$product_data=$this->Premium_product_model->get_product_by_id($premium_data['ProductId']);
        	$product_id = $premium_data['ProductId'];
 
+       	$data->PowerType = 'DC';
+       	switch ($product_data['PowerType']) {
+       	 	case 1:
+       	 		$data->PowerType = 'AC';
+       	 		break;
+   	 		case 2:
+   	 			$data->PowerType = 'DC';
+   	 			$data->Input_Voltage='24';
+   	 			break;
+ 			case 2:
+   	 			$data->PowerType = 'AC';
+   	 			$data->Input_Voltage='220 - 240';
+   	 			break;
+       	 } 
+
        	if (!$data->LifeSpan) {
         	$data->LifeSpan = $premium_data['LifeSpan'];
         }
