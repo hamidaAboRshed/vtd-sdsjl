@@ -81,20 +81,21 @@ class Product extends CI_Controller {
 	{
 		$sol_id = $this->navigation->get_active_category();
 		if ($cat_id==0) {
-			$data = $this->productSeries_model->get_premium_product_list($sol_id);
+			$data = $this->ProductSeries_model->get_premium_product_list($sol_id);
 		}
 		else
-			$data = $this->productSeries_model->get_premium_product_list($sol_id,$cat_id);
+			$data = $this->ProductSeries_model->get_premium_product_list($sol_id,$cat_id);
 		foreach ($data as $key => $value) {
 			
-			$html = strip_tags ($value['Family_description'],'<br>');
+			//$html = strip_tags ($value['Family_description'],'<br>');
 			$data[$key]['colors']=$this->Fitting_color_model->get_fitting_texture_by_product_id($value['ID']);
 			/*$content='';
 			foreach($html->find('p') as $e)
 			{
 			    $content .= $e;
 			}*/
-			$data[$key]['Family_description'] = character_limiter($html,255);
+			//$data[$key]['Family_description'] = character_limiter($html,255);
+			$data[$key]['Family_description'] = character_limiter($value['datasheet_description'],355);
 		}
 		echo json_encode($data);
 	}
