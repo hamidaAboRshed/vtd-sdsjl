@@ -581,7 +581,7 @@ class Product extends CI_Controller {
         	$data->LifeSpan = $premium_data['LifeSpan'];
         }
 
-        
+        $data->FamilyType = $premium_data['FamilyType'];
         $data->product_id=$product_id;
         $data->certification = $this->Premium_product_model->get_product_certification($product_id);
         $data->application = $this->Premium_product_model->get_product_application($product_id,$default_language);
