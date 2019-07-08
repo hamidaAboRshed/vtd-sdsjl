@@ -32,6 +32,8 @@
 
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/theme.css">
 
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/preloader/css/style.css">
+
 <!-- Included CSS Files -->
 <!-- <link rel="stylesheet" href="<?php echo base_url();?>/assets/foundation-6.4.2-complete/css/foundation.css">
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/foundation-6.4.2-complete/css/app.css"> -->

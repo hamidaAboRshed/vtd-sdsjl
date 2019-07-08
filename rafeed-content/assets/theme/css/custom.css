@@ -303,7 +303,7 @@ ul#category-nav li > a {
 }
 
 .cat-icon{
-    font-size: 40px;
+    font-size: 45px !important;
 }
 
 .icon-working_temperature{
@@ -312,7 +312,7 @@ ul#category-nav li > a {
 
 
   .cat-icon-p {
-      font-size: 50px !important;
+      font-size: 45px !important;
   }
 
 

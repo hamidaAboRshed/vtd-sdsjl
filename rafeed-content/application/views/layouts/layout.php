@@ -19,6 +19,7 @@
 </style>
 <body class="<?php echo($series_name);?>">
 	<script src="<?php echo base_url();?>/assets/web/assets/jquery/jquery.min.js"></script>
+    
 
 	<!-- <nav class="navbar fixed-top navbar-expand navbar-light bg-light">
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -41,6 +42,8 @@
             </ul>
         </div>
     </nav> -->
+    
+
     
 	<section class="menu cid-1" once="menu" id="menu2-5">
     	<nav class="navbar fixed-top navbar-expand-lg navbar-dark align-items-center" style="width: 100%">
@@ -70,6 +73,16 @@
     <script src="<?php echo base_url();?>/assets/priority-nav-scroller-master/scripts/bundle.js"></script>
 
 	<?php $this->load->view($subview); ?>
+        
+        
+<!--
+        
+              <div id="preloader">
+            <div id="status1"></div>
+      </div>
+-->
+        
+        
 	
 	<!-- sitemap -->
 	<section class="footer3 cid-qTljV9dz7X" id="footer3-a">
@@ -81,6 +94,7 @@
 	<?php $this->load->view('includes/footer');?>
 
 	
+        
 	<script src="<?php echo base_url();?>/assets/popper/popper.min.js"></script>
 	<script src="<?php echo base_url();?>/assets/tether/tether.min.js"></script>
 	<script src="<?php echo base_url();?>/assets/bootstrap/js/bootstrap.min.js"></script>
@@ -92,6 +106,20 @@
 	<script src="<?php echo base_url();?>/assets/smoothscroll/smooth-scroll.js"></script>
 	<script src="<?php echo base_url();?>/assets/theme/js/script.js"></script>
 	<script src="<?php echo base_url();?>/assets/formoid/formoid.min.js"></script>
+        
+        <script src="<?php echo base_url();?>/assets/preloader/js/script.js"></script>
+    <!--Premium-->    
+
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
 <!-- <script type="text/javascript">
 	// Adjust the "querySelector" value to target your image
 	document.addEventListener('DOMContentLoaded', function () {

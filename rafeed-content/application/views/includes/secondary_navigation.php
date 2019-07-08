@@ -20,7 +20,7 @@
 			        <a class="nav-scroller-item '.($value2["active"]==1? "active":"").'" href="'.$this->navigation->get_base_url()."/Product/Product_category_list/".$value2["ID"].'">
 		                    <span><i class="icon-'.$value2["icon"].' '.$class_name.' "></i></span>
 		                    
-		                    <span>'.$value2["Name"].'</span>
+		                    <span style="line-height: 1rem; padding-top: 0.4rem;">'.$value2["Name"].'</span>
 		                </a>';
 			    }
 			     echo ' </div>

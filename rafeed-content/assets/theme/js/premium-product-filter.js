@@ -26,17 +26,16 @@ $('#product_dimension_table').on('click', '.clickable-row', function(event) {
           var obj=JSON.parse(result);
           url=obj['base_url'];
           $.each(obj['premium_product_collection'], function () {
-			var beamanle='-';
+			var beamanle='';
               
 			if(this['SymmetricBeam'] ==1)
-                if(this['BeamAngleValue'] != null)
 			  	  beamanle=this['BeamAngleValue'];
 			else{
-                if(this['BeamAngleH']!=0 && this['BeamAngleV']!=0 && this['BeamAngleH']!=null && this['BeamAngleV']!=null)
+                if(this['BeamAngleH']!=0 && this['BeamAngleV']!=0)
                     beamanle=this['BeamAngleH']+' x '+ this['BeamAngleV'];
-                else if(this['BeamAngleH']!=0 && this['BeamAngleH']!=null)
+                else if(this['BeamAngleH']!=0)
                     beamanle=this['BeamAngleH'];
-                else if(this['BeamAngleV']!=0 && this['BeamAngleV']!=null)
+                else if(this['BeamAngleV']!=0)
                     beamanle=this['BeamAngleV'];
                 
             }
@@ -57,6 +56,9 @@ $('#product_dimension_table').on('click', '.clickable-row', function(event) {
                   var Lumen = '-';
               else 
                   var Lumen = this['Lumen'] ;
+              
+              if(beamanle == null)
+                  beamanle = '-';
               
 			  html += '<tr data-toggle="modal" onclick="product_info_popup('+this['ID']+')" data-target=".animate"  style ="cursor: pointer;">'+
 			  		'<td>'+this['product_code']+'</td> '+
@@ -99,7 +101,7 @@ $('#product_dimension_table').on('click', '.clickable-row', function(event) {
 
         initComplete: function () {
             this.api().columns([1,2,3,4,5]).every( function () {
-                var column = this.column( this, {search: 'applied'} );
+                var column = this.column( this, {search: 'applied'});
                 $(column.header()).append("<br>")
                 var select = $('<select ><option value="">All</option></select>')
                     .appendTo($(column.header()))

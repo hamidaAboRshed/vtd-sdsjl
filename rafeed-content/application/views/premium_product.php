@@ -15,7 +15,7 @@
 
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/premium_product_style.css">
 
-<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/Back.css">
+<!--<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/Back.css">-->
 <style>
 
 </style>
@@ -28,12 +28,18 @@
 
 <div id="ESeries">
     
+<!--
     <div class="backBtn ">
       <span class="line tLine"></span>
       <span class="line mLine"></span>
       <p class="label" onclick="window.history.go(-1)"><?php echo $product_category ?>s</p>
       <span class="line bLine"></span>
 	</div>
+-->
+    <div style="margin-top: 10px;">
+    <p style="font-size: medium; cursor: pointer; color: rgba(0,0,0,0.6);" onclick="window.history.go(-1)">&lt; Back To <?php echo $product_category ?></p>
+    </div>
+        
     
 	<div class="page-header" style="">
 		<p class="product-name"><?php $family_name2=strtolower($family_name); echo ucfirst($family_name2) ?></p>
@@ -340,7 +346,7 @@ $i=0
 		</div>
 
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<!--        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
 <script src="<?php echo base_url();?>/assets/lightbox/js/lightbox-plus-jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>/assets/image-gallery/src/simplegallery.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>/assets/theme/js/premium-product-filter.js"></script>

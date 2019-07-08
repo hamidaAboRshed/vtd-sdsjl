@@ -23,10 +23,22 @@
     <div style="margin-top: -52px; margin-right: 2px; z-index: 999;">
         <h3 style="margin-left: 590px;">PN <?php echo $product_serial;?></h3>
         <?php
-//        if($opened_solution != null){
-//            echo'<img src="'.base_url().'/assets/icons/datasheet/'.$opened_solution.'.png" style=" margin-top: -37px; padding-right:10px; margin-left: 660px;">';
-//            echo'<img src="'.base_url().'/assets/icons/datasheet/'.$opened_solution.'.png" style=" margin-top: -38px; padding-right:10px; margin-left: 737px;">'; 
-//        }
+        if($solution_data != null){
+            if(gettype($solution_data) == string)
+                            echo'<img src="'.base_url().'/assets/icons/datasheet/'.$solution_data.'.png" style=" margin-top: -37px; padding-right:10px; margin-left: 660px;">';
+            else
+            {
+                if(sizeof($solution_data) == 1)
+                    echo'<img src="'.base_url().'/assets/icons/datasheet/'.$solution_data[0]['Name'].'.png" style=" margin-top: -37px; padding-right:10px; margin-left: 660px;">';
+                else if(sizeof($solution_data) == 2)
+                {
+                        echo'<img src="'.base_url().'/assets/icons/datasheet/'.$solution_data[0]['Name'].'.png" style=" margin-top: -37px; padding-right:10px; margin-left: 660px;">';
+                        echo'<img src="'.base_url().'/assets/icons/datasheet/'.$solution_data[1]['Name'].'.png" style=" margin-top: -38px; padding-right:10px; margin-left: 737px;">'; 
+                    
+                }
+
+            }
+        }
         ?>
 
     </div>
@@ -62,8 +74,18 @@ else{
 <div class="row" style="margin: 0px 0px 0px 3px !important;">
         <div style="margin: 8px 3px 2px 3px;">
             <?php
-//            if($opened_solution != null)
-//                echo $opened_solution.' - ';
+        if($solution_data != null){
+            if(gettype($solution_data) == string)
+                            echo $solution_data.' - ';
+            else
+            {
+                if(sizeof($solution_data) == 1)
+                    echo $solution_data[0]['Name'].' - ';
+                else if(sizeof($solution_data) == 2)
+                        echo $solution_data[0]['Name'].' / '.$solution_data[1]['Name'].' - ';
+
+            }
+        }
             ?>  <?php echo $product_category;?></div>
         <div style="direction: rtl;    margin-bottom: 5px;" > <!--certification--> 
             
@@ -95,11 +117,25 @@ else{
         </div>
             <div>
                 <?php
+    
+                if($FamilyType == 2)
+                {
+                if($Power_up != null && $Power_up != 0)//W
+                        echo "<p style='margin: 1px 0px 0px 0px;'>Max Power</p><div style='direction: rtl; margin-top: -13px;'>".$Power_up.'/'.$Power." w</div>";
+        
+                if(($Power_up == null || $Power_up == 0) && ($Power != null && $Power != 0))
+                        echo "<p style='margin: 1px 0px 0px 0px;'>Max Power</p><div style='direction: rtl; margin-top: -13px;'>".$Power." w</div>";
+                        
+                }
+                else
+                {
                     if($Power_up != null && $Power_up != 0)//W
                         echo "<p style='margin: 1px 0px 0px 0px;'>Power Up/Down</p><div style='direction: rtl; margin-top: -13px;'>".$Power_up.'/'.$Power." w</div>";
         
                     if(($Power_up == null || $Power_up == 0) && ($Power != null && $Power != 0))
                         echo "<p style='margin: 1px 0px 0px 0px;'>Power</p><div style='direction: rtl; margin-top: -13px;'>".$Power." w</div>";
+                }
+
                 ?>
                 <hr style="margin-top: -1px; margin-bottom: 0px; border-top: 0px dotted;">
                 <?php if($Input_Voltage){ ?>

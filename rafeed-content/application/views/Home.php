@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/ken-burns-lib.css">
 <!--<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/home products.css">-->
 
+
 <style type="text/css">
 body{
     overflow-x: hidden;
@@ -117,6 +118,7 @@ body{
 
 
 <h1 class="hide">Home page</h1>
+
 <section class="section-one-page cid-2 mbr-fullscreen mbr-parallax-background" id="header2-0" style="">
     <div class="container align-center " style="width: 100%">
         <div class="justify-content-md-center " style="width: 100%">
@@ -212,10 +214,6 @@ With our unique weatherproof outdoor lighting collections.</h5>
 </div>
 
         </div>
-        
-        
-                
-    </div>
 </section>
 
 <section class="section-one-page cid-2 mbr-fullscreen mbr-parallax-background" id="header2-0" style="">
@@ -605,6 +603,7 @@ $(window).on('resize', function (){
 </section>
     
         <script src="<?php echo base_url();?>/assets/ken_burns_slider_effect/js/custom.js"></script>
+        
       <script type="text/javascript">
 
   var _gaq = _gaq || [];
