@@ -437,11 +437,11 @@ class Product extends CI_Controller {
         	$result->description[$value['Name']] = $this->Premium_product_model->get_premium_product_language($result->Premium_product_id,$value['ID']);
         }
 
-        $result->opened_solution = null;
+        /*$result->opened_solution = null;
         $activated_solution = $this->navigation->get_active_category();
         if ($activated_solution) {
         	$result->opened_solution = $this->Index_model->get_value_by_id("solution",$activated_solution);
-        }
+        }*/
         
 
 		$result->CCT = (is_null($this->Enums->get_CCTRangeValues_byId($result->CCT)) ? $result->CCT : $this->Enums->get_CCTRangeValues_byId($result->CCT));
@@ -595,6 +595,16 @@ class Product extends CI_Controller {
         if ($product_supplier == $data->Driver_supplier) {
         	$data->Driver_supplier=null;
         }
+        //solution
+
+        if (is_null($product_data['ProductSolutionID'])) {
+
+            $data->solution_data = $this->Premium_product_model->get_product_solution($product_id,$default_language);
+        }
+        else{
+            	$data->solution_data = $this->Index_model->get_value_by_id("solution",$product_data['ProductSolutionID']);
+    	}
+
 
         $pdf->SetProtection(array('print-highres','print'), null, md5(time()), 128);
 
