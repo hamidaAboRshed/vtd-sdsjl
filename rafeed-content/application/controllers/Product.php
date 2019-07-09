@@ -95,7 +95,7 @@ class Product extends CI_Controller {
 			    $content .= $e;
 			}*/
 			//$data[$key]['Family_description'] = character_limiter($html,255);
-			$data[$key]['Family_description'] = character_limiter($value['datasheet_description'],285);
+			$data[$key]['Family_description'] = character_limiter($value['datasheet_description'],255);
 		}
 		echo json_encode($data);
 	}
