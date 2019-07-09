@@ -95,7 +95,7 @@ function editMember(id = null)
 		$('.text-danger').remove();
 
 		$.ajax({
-			url: '../led/getSelectedMemberInfo/'+id,
+			url: './getSelectedMemberInfo/'+id,
 			type: 'post',
 			dataType: 'json',
 			success:function(response) {

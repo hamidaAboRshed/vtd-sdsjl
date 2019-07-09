@@ -16,6 +16,7 @@ class Driver extends CI_Controller {
 	 	$this->load->model('Enums');
 	 	$this->load->model('User_model');
 	 	$this->load->model('Accessory_model');
+	 	$this->load->helper('form');
 	}
 	 
 	public function index()

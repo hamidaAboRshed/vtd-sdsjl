@@ -557,7 +557,7 @@ class Premium_product extends CI_Controller {
 			}*/
 
 			$this->Product_model->delete_product_attachment($product_id, $this->input->post('AttachmentTypeID'));
-			$photos = $this->upload_file('../../rafeed-includes/upload_files/Product/Premium/'.$product_id,$photo_name,'product_photo');
+			$photos = $this->upload_file('./../rafeed-includes/upload_files/Product/Premium/'.$product_id,$photo_name,'product_photo');
 			$data= array(
 				'ProductID' => $product_id, 
 				'AttachmentTypeID' => $this->input->post('AttachmentTypeID'), 
@@ -884,7 +884,7 @@ class Premium_product extends CI_Controller {
 		$data['SocketType']=$this->Index_model->get_index('socket_type');
 		$data['PinType']=$this->Index_model->get_index('pin_type');
 		$data['LightingDisturbationKind']=$this->Index_model->get_index_language('lighting_distribution_kind');
-		$data['Supplier']=$this->Index_model->get_index('Supplier');
+		$data['Supplier']=$this->Index_model->get_index('supplier');
 		$data['Brand']=$this->Index_model->get_index_language('brand');
 		$data['DimmableType']=$this->Index_model->get_index_language('dimmable_type');
 		$data['Country']=$this->Index_model->get_index_language('country');

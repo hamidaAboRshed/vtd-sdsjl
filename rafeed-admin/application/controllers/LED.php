@@ -150,7 +150,7 @@ class LED extends CI_Controller {
 		    array(
 		        'field' => 'LEDCode',
 		        'label' => 'Code',
-		        'rules' => 'trim|required|is_unique[LED.Code]',
+		        'rules' => 'trim|required|is_unique[led.Code]',
 		        'errors' => array(
 		        		'required' => 'You must provide a %s.',
 		        		'is_unique'=> 'This %s already exists.'

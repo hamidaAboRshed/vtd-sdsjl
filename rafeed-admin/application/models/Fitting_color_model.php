@@ -87,8 +87,8 @@ class Fitting_color_model extends CI_Model {
 		$Texture = array();
 		foreach ($temp_texture as $key => $value) {
 			$name='';
-			$name=$this->Index_model->get_value_by_id('Material',$value['MaterialID']);
-			$name.= ', '.$this->Index_model->get_value_by_id('Color',$value['ColorID']);
+			$name=$this->Index_model->get_value_by_id('material',$value['MaterialID']);
+			$name.= ', '.$this->Index_model->get_value_by_id('color',$value['ColorID']);
 
 			array_push($Texture, array('ID' => $value['ID'],'Name' => $name ,'Texture'=>$value['Texture_photo'] ) );
 		}

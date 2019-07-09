@@ -42,7 +42,7 @@ class Product extends CI_Controller {
 		$data['SocketType']=$this->Index_model->get_index('socket_type');
 		$data['PinType']=$this->Index_model->get_index('pin_type');
 		$data['LightingDistributionKind']=$this->Index_model->get_index_language('lighting_distribution_kind');
-		$data['Supplier']=$this->Index_model->get_index('Supplier');
+		$data['Supplier']=$this->Index_model->get_index('supplier');
 		$data['Brand']=$this->Index_model->get_index('brand');
 		$data['DimmableType']=$this->Index_model->get_index_language('dimmable_type');
 		$data['Country']=$this->Index_model->get_index_language('country');
