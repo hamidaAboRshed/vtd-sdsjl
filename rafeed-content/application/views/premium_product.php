@@ -37,7 +37,7 @@
 	</div>
 -->
     <div style="margin-top: 10px;">
-    <p style="font-size: medium; cursor: pointer; color: rgba(0,0,0,0.6);" onclick="window.history.go(-1)">&lt; Back To <?php echo $product_category ?></p>
+    <p style="cursor: pointer;color: rgb(115, 115, 115);font-size: 14px;font-family: Helvetica-Neue-Bd;" onclick="window.history.go(-1)">&lt;&lt; Back To <?php echo $product_category ?></p>
     </div>
         
     
