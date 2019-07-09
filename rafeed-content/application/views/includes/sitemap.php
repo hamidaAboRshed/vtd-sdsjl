@@ -40,7 +40,7 @@
                 <a href="<?php echo $this->navigation->get_base_url()?>/Home" class="text-black footer-link">Home Page</a>
                 <br><a href="<?php echo $this->navigation->get_base_url()?>/Home/about" class="text-black footer-link">About us</a>
                 <br><a href="<?php echo $this->navigation->get_base_url()?>/Home/agents" class="text-black footer-link">Agents</a>
-                <br><a href="<?php echo $this->navigation->get_base_url()?>/Home/cct_info" class="text-black footer-link">Knowledge</a>
+                <br><a href="<?php echo $this->navigation->get_base_url()?>/article" class="text-black footer-link">Knowledge</a>
 
                 <!-- <br><a href="<?php echo base_url();?>/index.php/Home/cct" class="text-black footer-link">Color Temperature</a>
                 <br><a href="<?php echo base_url();?>/index.php/Home/services" class="text-black footer-link">Services</a> -->

@@ -173,8 +173,11 @@ I,L,X and T connectors are available for all tracks, with a pendant option for d
         <h5 class="card-text">Surface mounted</h5>
           <ul style="color: rgba(0,0,0,0.525);">';
           foreach ($accessory_data as &$value)
-              if($value['rail_installation_way']=='Surface')
-                  echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$value['rail_length'].'</span></li>';
+              if($value['rail_installation_way']=='Surface'){
+                  $length=$value['rail_length'] * 1000;
+                  echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$length.'</span></li>';
+              }
+                  
         echo '</ul></div></div></div>';
     
 
@@ -185,8 +188,11 @@ I,L,X and T connectors are available for all tracks, with a pendant option for d
                         <h5 class="card-text">Recessed</h5>
                         <ul style="color: rgba(0,0,0,0.525);">';
                         foreach ($accessory_data as &$value)
-                            if($value['rail_installation_way']=='Recessed')
-                                echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$value['rail_length'].'</span></li>';
+                            if($value['rail_installation_way']=='Recessed'){
+                                $length=$value['rail_length'] * 1000;                               
+                                echo '<li>'.$value['Code'].'<span style="padding-left:20px">Length: '.$length.'</span></li>';
+                            }
+
         echo '</ul></div></div></div></div>';  
         
     }     
