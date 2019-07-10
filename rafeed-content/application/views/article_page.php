@@ -1,5 +1,24 @@
 <meta name="keywords" content="<?php foreach ($keyword as $word => $value) { echo $value['Value']." ";  } ?>" >
 <link rel="stylesheet" href="<?php echo base_url();?>assets/theme/css/style_article.css" >
+<style type="text/css">
+.fa
+{
+  color: #fff;
+}
+.fa:hover
+{
+  color: #333;
+}
+.fa-share-alt
+{
+  font-size: 22px;
+  padding: 6px;
+}
+.fa-share-alt:hover
+{
+  color: #fff;
+}
+</style>
 
 <div id="Article_page">
   <section class="mbr-fullscreen mbr-parallax-background" id="header" style="background-image: url('<?php echo $this->navigation->get_includes_url()."/upload_files/Blog/".$details_article[0]->Artic_id.'/'.$details_article[0]->Main_Image;?>' );" >
@@ -35,6 +54,44 @@
    </div>
 
   <!-- end blog title -->
+
+  <!-- share icons --> 
+  <div class="container fixed-share">
+    <input type="checkbox" id="control"/>
+    <label id="main-menu" for="control">
+      <li class="fa fa-share-alt"></li>
+    </label>
+    <div class="icon-container">
+        <a  href="mailto:?Subject=Rafeed%20Atricle%20-%20<?php  echo $details_article[0]->Title; ?>&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?php echo $this->navigation->get_base_url().'/article/article_page/'.$details_article[0]->Artic_id;?>">
+          <i class="fa fa-envelope"></i>
+        </a>
+    </div>
+     <div class="icon-container">
+      <a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
+           <i class="fa fa-facebook"></i>
+       </a>
+    </div>
+    <div class="icon-container">
+      <a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
+        <i class="fa fa-google-plus"></i>
+      </a>
+    </div>
+    <div class="icon-container">
+      <a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
+        <i class="fa fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="icon-container">
+         <a  href="javascript:void(0)" onclick="javascript:genericSocialShare('javascript:void((function()%7Bvar%20e=document.createElement(\'script\');e.setAttribute(\'type\',\'text/javascript\');e.setAttribute(\'charset\',\'UTF-8\');e.setAttribute(\'src\',\'http://assets.pinterest.com/js/pinmarklet.js?r=\'+Math.random()*99999999);document.body.appendChild(e)%7D)());')" >
+            <i class="fa fa-pinterest"></i>
+        </a>
+    </div>
+    <div class="icon-container twit">
+      <a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://twitter.com/share?text=Rafeed%20Atricle%20-%20<?php  echo $details_article[0]->Title; ?>&amp;hashtags=Rafeed&url=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
+        <i class="fa fa-twitter"></i> 
+        </a>   
+    </div>
+  </div>
   <!-- --------------------------------start paraghraph ------------------------------------------------ -->
 
   <div class="container container-article" style="text-align: center;">
@@ -176,3 +233,9 @@
   </div>
 <!-- --------------------------------------------end paraghraph----------------------------------------- -->
 
+<script type="text/javascript">
+function genericSocialShare(url){
+    window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+    return true;
+}
+</script>

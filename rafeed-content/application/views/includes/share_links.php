@@ -4,7 +4,7 @@
     <div id="share-buttons">
                         
         <!-- Email -->
-        <a class="social-link" href="mailto:?Subject=Rafeed%20<?php if(isset($text))echo $text; ?>&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?php echo $URL;?>">
+        <a class="social-link" href="mailto:?Subject=Rafeed%20<?php if(isset($text))echo $text; ?>&amp;Body=I%20like%20this%20so%20much%20you%20should%20see%20it%20! <?php echo $URL;?> %0Awe%20are%20very%20pleased%20to%20share%20our%20business%20-%20Rafeed">
             <span alt="Email"><i class="fa fa-envelope"></i></span>
         </a>
      
@@ -15,9 +15,11 @@
         </a>
         
         <!-- Google+ -->
+<!--
         <a  class="social-link" href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo $URL;?>')" >
             <span alt="Google" ><i class="fa fa-google-plus"></i></span>
         </a>
+-->
         
         <!-- LinkedIn -->
         <a  class="social-link" href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $URL;?>')" >
@@ -50,7 +52,7 @@ else
     <div id="share-buttons">
                         
         <!-- Email -->
-        <a class="social-link" href="mailto:?Subject=Rafeed Product&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>">
+        <a class="social-link" href="mailto:?Subject=Rafeed Product&amp;Body=I%20like%20this%20so%20much%20you%20should%20see%20it%20! <?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>%0Awe%20are%20very%20pleased%20to%20share%20our%20business%20-%20Rafeed">
             <span alt="Email"><i class="fa fa-envelope"></i></span>
         </a>
      
@@ -62,9 +64,11 @@ else
         </a>
         
         <!-- Google+ -->
+<!--
         <a class="social-link" href="https://plus.google.com/share?url=<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" target="_blank">
             <span alt="Google" ><i class="fa fa-google-plus"></i></span>
         </a>
+-->
         
         <!-- LinkedIn -->
         <a class="social-link" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];?>" target="_blank">

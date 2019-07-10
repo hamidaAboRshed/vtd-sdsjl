@@ -46,9 +46,12 @@
                   <i class="fa fa-share-alt fa-share"  aria-expanded="false" data-toggle="collapse" 
                   data-target="#demo<?php echo $i; ?>"></i>
                  
-                  <div id="demo<?php echo $i; ?>" class="collapse" >
-           
-                      <?php  $this->load->view('includes/share_links');?>  
+                   <div id="demo<?php echo $i; ?>" class="collapse" >
+                    
+                      <?php
+                       $data['URL']=$this->navigation->get_base_url().'/article/article_page/'.$atricle[$i]->Artic_id;
+                       $data['text']='Article - '.$atricle[$i]->Title;
+                       $this->load->view('includes/share_links',$data);?>  
                
                   </div>
                   <!-- title -->
