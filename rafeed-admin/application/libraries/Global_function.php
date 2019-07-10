@@ -123,7 +123,7 @@ class global_function {
 				if($CI->upload->do_upload('file'))
 				{
 					// Uploaded file data
-					$imageData = $this->upload->data();
+					$imageData = $CI->upload->data();
 					$uploadImgData[$i] = $imageData['file_name'];
 				}
 			}
