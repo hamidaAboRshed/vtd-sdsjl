@@ -5,8 +5,8 @@
 
 
 <!-- cdnjs -->
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/JqueryLazy/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url();?>/assets/JqueryLazy/jquery.lazy.plugins.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/jquery-lazy/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/jquery-lazy/jquery.lazy.plugins.min.js"></script>
 <script> 
     String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();

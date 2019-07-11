@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/image-gallery/src/simplegallery.demo1.min.css" />
 
 
-<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/DataTables/datatables.min.css"/>
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/datatables/datatables.min.css"/>
 
 
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/panel/css/style.css">
@@ -474,7 +474,7 @@ $i=0
 <script type="text/javascript" src="<?php echo base_url();?>/assets/theme/js/premium-product-filter.js"></script>
 
 
-<script type="text/javascript" src="<?php echo base_url();?>/assets/DataTables/datatables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/datatables/datatables.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url();?>/assets/modal/js/index.js"></script>
 
