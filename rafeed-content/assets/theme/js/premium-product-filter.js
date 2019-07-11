@@ -59,8 +59,8 @@ $('#product_dimension_table').on('click', '.clickable-row', function(event) {
               
               if(beamanle == null)
                   beamanle = '-';
-              
-			  html += '<tr data-toggle="modal" onclick="product_info_popup('+this['ID']+')" data-target=".animate"  style ="cursor: pointer;">'+
+//              data-toggle="modal"
+			  html += '<tr class="click2" data-toggle="modal" onclick="product_info_popup('+this['ID']+')"  data-target=".animate"  style ="cursor: pointer;">'+
 			  		'<td>'+this['product_code']+'</td> '+
 				    '<td>'+power+'</td>'+
 				    '<td>'+CCT+'</td>'+

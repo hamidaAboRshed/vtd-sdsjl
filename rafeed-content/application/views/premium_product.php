@@ -2,7 +2,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/image-gallery/src/simplegallery.demo1.min.css" />
 
 
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>/assets/DataTables/datatables.min.css"/>
 
 
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/panel/css/style.css">
@@ -16,9 +16,7 @@
 <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/premium_product_style.css">
 
 <!--<link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/Back.css">-->
-<style>
 
-</style>
 
 
 
@@ -131,8 +129,8 @@
                 <th>CCT</th>
                 <th >CRI</th>
                 <th >IP</th>
-                <th>Beam Angle</th>
-                <th style='padding-bottom: 32px;'>Lumen</th>
+                <th >Beam Angle</th>
+                <th  style='padding-bottom: 32px;'>Lumen</th>
                 <th style='padding-bottom: 32px;  padding-left: 10px;'>Color</th>
             </tr>
         </thead>
@@ -260,7 +258,7 @@ $i=0
 
 
 
-		<div class="modal animate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" >
+		<div id="myModal" class="modal animate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" >
 			<div class="modal-dialog-centered a-flipY" role="document" style="width: 80%; margin:auto;">
 				<div class="modal-content" style="padding-bottom: 35px;">
 					<div class="modal-header" style="padding: 0rem 0rem 0rem 2rem; !important">
@@ -319,7 +317,6 @@ $i=0
         <div class="tab-content" id="nav-tabContent" style="overflow: auto; height:400px">
                               <div class="tab-pane fade  show active" id="product_info_0" role="tabpanel" aria-labelledby="product_info_0_tab" >
                                   <div id="product_info"></div>
-<!--                        <div class="pt-3"></div>-->
                                   <div style="text-align: justify; padding-left: 4%;padding-right: 10px;"><?php echo $datasheet_description ?></div>
                   </div>
                   <div class="tab-pane fade" id="product_info_2" role="tabpanel" aria-labelledby="product_info_2_tab">
@@ -352,16 +349,248 @@ $i=0
 		</div>
 
 
+
+
+
+<!--
+		<div class="modal animate" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="true" >
+			<div class="modal-dialog-centered a-flipY" role="document" style="width: 80%; margin:auto;">
+				<div class="modal-content" style="padding-bottom: 35px;">
+					<div class="row modal-body text-center p-lg" style="margin-left: 23px;">
+
+                                
+                                
+                                <section style="background-color: transparent;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center ">
+                <nav class="nav-justified" >
+                  <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                      
+                    <a class="nav-item nav-link active" id="info_0_tab" data-toggle="tab" href="#info_0" role="tab" aria-controls="pop1" aria-selected="true" style="padding-top: 0px;">Register</a>
+                    <a class="nav-item nav-link " id="info_2_tab" data-toggle="tab" href="#info_2" role="tab" aria-controls="pop2" aria-selected="false" style="padding-top: 0px;">Sign in</a>
+ 
+                  </div>
+                </nav>
+        <div class="tab-content" id="nav-tabContent" style="">
+                              <div class="tab-pane fade  show active" id="info_0" role="tabpanel" aria-labelledby="info_0_tab" >
+                                  
+<div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+		<h2>Register</h2>
+		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+			<div class="row">
+				<div class="col-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+				<div class="col-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+			</div>        	
+        </div>
+                <div class="form-group">
+			<div class="row">
+				<div class="col-6"><input type="text" class="form-control" name="first_name" placeholder="Company" required="required"></div>
+				<div class="col-6"><input type="text" class="form-control" name="last_name" placeholder="Phone" required="required"></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>        
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+</div>
+                                  
+                  </div>
+                  <div class="tab-pane fade" id="info_2" role="tabpanel" aria-labelledby="info_2_tab">
+                      
+                      
+                      
+                      <div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+		<h2>Register</h2>
+		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+			<div class="row">
+				<div class="col-6"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+				<div class="col-6"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+			</div>        	
+        </div>
+                <div class="form-group">
+			<div class="row">
+				<div class="col-6"><input type="text" class="form-control" name="first_name" placeholder="Company" required="required"></div>
+				<div class="col-6"><input type="text" class="form-control" name="last_name" placeholder="Phone" required="required"></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>        
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+</div>
+                      
+                      
+                      
+                  </div>
+
+                  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                                
+                                
+
+                        
+                        
+					</div>
+
+				</div>
+			</div>
+		</div>
+-->
+
+
+
 <!--        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
 <script src="<?php echo base_url();?>/assets/lightbox/js/lightbox-plus-jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>/assets/image-gallery/src/simplegallery.js"></script>
 <script type="text/javascript" src="<?php echo base_url();?>/assets/theme/js/premium-product-filter.js"></script>
 
 
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/DataTables/datatables.min.js"></script>
 
 <script type="text/javascript" src="<?php echo base_url();?>/assets/modal/js/index.js"></script>
 
+
+<link href="<?php echo base_url();?>/assets/sweetalert/sweetalert.css" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo base_url();?>/assets/sweetalert/Swal-Forms/swal-forms.css">
+<script type="text/javascript" src="<?php echo base_url();?>/assets/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>/assets/sweetalert/Swal-Forms/swal-forms.js"></script>
+
+
+<script>
+
+$(document).on('click', 'click00', function(){/*.click2*/
+          //authentication
+//	       	var form=[{
+//                name: "First name",
+//                placeholder:"First name",
+//                required: true,
+//        				id:"firstname",
+//        				value:""
+//            },
+//
+//            {
+//                name: "Last name",
+//                placeholder:"Last name",
+//                required: true,
+//                id:'lastname',
+//                value:""
+//            },
+//             {
+//                name: "Phone",
+//                placeholder:"Phone",
+//                required: true,
+//        				id:"phone",
+//        				value:""
+//            },
+//            {
+//                name: "Company",
+//                placeholder:"Company",
+//                required: true,
+//        				id:"company",
+//        				value:""
+//            },
+//            {
+//                name: "Job title",
+//                placeholder:"Job title",
+//                required: true,
+//        				id:"job",
+//        				value:""
+//            },
+//            {
+//                name: "Email",
+//                placeholder:"Email",
+//                required: true,
+//        				id:"email",
+//        				value:""
+//            },
+//            {
+//                name: "Password",
+//                placeholder:"Password",
+//                type:"password",
+//                required: true,
+//        				id:"password",
+//        				value:""
+//            },
+//
+//
+//                     ];
+    
+    var form=[{
+                        name: "Email",
+                placeholder:"Email",
+                required: true,
+        				id:"email",
+        				value:""
+            },
+            {
+                name: "Password",
+                placeholder:"Password",
+                type:"password",
+                required: true,
+        				id:"password",
+        				value:""
+            }];
+
+        var catalog_type=$(this).data('row');
+        swal.withForm({
+				title: 'Log in<br/>',
+				text: 'This has different types of inputs',
+				showCancelButton: true,
+				confirmButtonColor: '#DBAE27',
+				confirmButtonText: 'Send',
+				closeOnConfirm: true,
+			 	closeOnCancel: true,
+	    		formFields: form
+		     	 },
+		     	 function(isConfirm)
+		     	 { //if send data from swal
+			      	if(isConfirm)
+			      	{  
+                        $('#myModal').modal('show');
+				        }//if isConfirm
+				}//function
+
+			);//swal
+    
+//    .done(function (data) {
+//    swal({
+//        title: 'Thank you for your order',
+//        type: 'success',
+//        html: data
+//    });
+    
+	  });
+
+</script>
 
 
 

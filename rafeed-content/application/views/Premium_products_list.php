@@ -1,12 +1,12 @@
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/theme/css/Premium_products_list_style.css">
 
 
 
 
 <!-- cdnjs -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/JqueryLazy/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url();?>/assets/JqueryLazy/jquery.lazy.plugins.min.js"></script>
 <script> 
     String.prototype.capitalizeFirstLetter = function() {
     return this.charAt(0).toUpperCase() + this.slice(1).toLowerCase();
