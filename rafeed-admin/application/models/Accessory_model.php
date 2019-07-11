@@ -25,6 +25,15 @@ class Accessory_model extends CI_Model {
 		$insert= $this->db->insert('accessory_image',$data);
    		return  $insert;
 	}
+
+	function get_accessory_image_by_id($id)
+	{
+		$this->db->select("*");
+	 	$this->db->where('accessory_id',$id);
+		$this->db->from("accessory_image");
+		$result=$this->db->get();
+		return $result->result_array();
+	}
 	
 	function update($data, $id)
 	{

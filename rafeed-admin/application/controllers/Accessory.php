@@ -75,8 +75,19 @@ class Accessory extends CI_Controller {
 			}
 
 			$series_str=$this->ProductSeries_model->get_series_str($value['Series_id']);
+
+			$accessory_images = $this->Accessory_model->get_accessory_image_by_id($value['ID']);
+			//var_dump($accessory_images);
+			$image = 'accessory_default.png';
+
+			if ($accessory_images) {
+				$image= $accessory_images[0]['photo'];
+			}
+			elseif (!is_null($value['Photo'])) {
+				$image = $value['Photo'];
+			}
 			$result['data'][$key] = array(
-				'<img hight=100 width=100 src="'.$this->navigation->get_includes_url().'/upload_files/Accessory/'.(is_null($value['Photo'])? 'accessory_default.png':$value['Photo']).'" />',
+				'<img hight=100 width=100 src="'.$this->navigation->get_includes_url().'/upload_files/Accessory/'.$image.'" />',
 				$series_str.'-'.$value['Code'],
 				$value['SupplierCode']);
 			$result['data'][$key]= array_merge($result['data'][$key],$language);

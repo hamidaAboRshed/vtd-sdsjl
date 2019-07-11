@@ -308,7 +308,7 @@ function product_info_popup(id){
                data3+= '<div class="col-md-6">'+
                         '<div class="product-container-2">'+
                         '<div class="product-image-2">'+
-                        '<img class="img-responsive" src="'+url+'/upload_files/Accessory/'+(this['Photo']==null ? (this['photos'].length == 0 ? 'accessory_default.png' : this['photos'][0]['photo']) :this['Photo'])+'"></div>'+
+                        '<img class="img-responsive" src="'+url+'/upload_files/Accessory/'+(this['photos'].length == 0 ? (this['Photo']==null ? 'accessory_default.png' : this['Photo']) :this['photos'][0]['photo'])+'"></div>'+
                 
                         '<div class="product-description-2">'+
                             '<h6 style="margin-bottom: 0rem;">'+this['Code']+'</h6>'+
