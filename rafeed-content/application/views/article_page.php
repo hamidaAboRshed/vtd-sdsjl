@@ -71,11 +71,13 @@
            <i class="fa fa-facebook"></i>
        </a>
     </div>
+<!--
     <div class="icon-container">
       <a href="javascript:void(0)" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
         <i class="fa fa-google-plus"></i>
       </a>
     </div>
+-->
     <div class="icon-container">
       <a href="javascript:void(0)" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $this->navigation->get_base_url(); ?>/article/article_page/<?php echo $details_article[0]->Artic_id; ?>')">
         <i class="fa fa-linkedin"></i>
