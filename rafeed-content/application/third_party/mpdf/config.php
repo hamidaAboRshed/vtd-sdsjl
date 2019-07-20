@@ -284,19 +284,14 @@ $this->autoPadding = false; // Automatically increases padding in block elements
 // Default values if no style sheet offered	(cf. http://www.w3.org/TR/CSS21/sample.html)
 $this->defaultCSS = array(
 	'BODY' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
-		'FONT-SIZE' => '9pt',
+		'FONT-FAMILY' => 'serif',
+		'FONT-SIZE' => '11pt',
 		'TEXT-INDENT' => '0pt',
 		'LINE-HEIGHT' => 'normal',
 		'MARGIN-COLLAPSE' => 'collapse', /* Custom property to collapse top/bottom margins at top/bottom of page - ignored in tables/lists */
 		'HYPHENS' => 'manual',	/* mPDF 5.6.08 */
 	),
-	'.Cover_subtitle' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-MdCn'
-	),
 	'P' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
-		'FONT-SIZE' => '9pt',
 		'MARGIN' => '1.12em 0',
 	),
 	'H1' => array(
@@ -344,7 +339,7 @@ $this->defaultCSS = array(
 	),
 	'PRE' => array(
 		'MARGIN' => '0.83em 0',
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 	),
 	'S' => array(
 		'TEXT-DECORATION' => 'line-through',
@@ -391,16 +386,16 @@ $this->defaultCSS = array(
 		'FONT-STYLE' => 'italic',
 	),
 	'SAMP' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 	),
 	'CODE' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 	),
 	'KBD' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 	),
 	'TT' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 	),
 	'SMALL' => array(
 		'FONT-SIZE' => '83%',
@@ -475,17 +470,17 @@ $this->defaultCSS = array(
 		'VERTICAL-ALIGN' => 'baseline',
 	),
 	'INPUT' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'sans-serif',
 		'VERTICAL-ALIGN' => 'middle',
 		'FONT-SIZE' => '0.9em',
 	),
 	'SELECT' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'sans-serif',
 		'FONT-SIZE' => '0.9em',
 		'VERTICAL-ALIGN' => 'middle',
 	),
 	'TEXTAREA' => array(
-		'FONT-FAMILY' => 'Helvetica-Neue-Light',
+		'FONT-FAMILY' => 'monospace',
 		'FONT-SIZE' => '0.9em',
 		'VERTICAL-ALIGN' => 'text-bottom',
 	),
@@ -566,10 +561,10 @@ $this->fontsizes = array('XX-SMALL'=>0.7, 'X-SMALL'=>0.77, 'SMALL'=>0.86, 'MEDIU
 $this->allowedCSStags = 'DIV|P|H1|H2|H3|H4|H5|H6|FORM|IMG|A|BODY|TABLE|HR|THEAD|TFOOT|TBODY|TH|TR|TD|UL|OL|LI|PRE|BLOCKQUOTE|ADDRESS|DL|DT|DD';
 $this->allowedCSStags .= '|ARTICLE|ASIDE|FIGURE|FIGCAPTION|FOOTER|HEADER|HGROUP|NAV|SECTION|MARK|DETAILS|SUMMARY|METER|PROGRESS|TIME'; // mPDF 5.5.09
 $this->allowedCSStags .= '|SPAN|TT|I|B|BIG|SMALL|EM|STRONG|DFN|CODE|SAMP|KBD|VAR|CITE|ABBR|ACRONYM|STRIKE|S|U|DEL|INS|Q|FONT';
-$this->allowedCSStags .= '|SELECT|INPUT|TEXTAREA|CAPTION|FIELDSET|LEGEND';	// mPDF 5.4.18
-$this->allowedCSStags .= '|TEXTCIRCLE|DOTTAB';	// mPDF 5.5.23	// mPDF 5.6.33
+$this->allowedCSStags .= '|SELECT|INPUT|TEXTAREA|CAPTION|FIELDSET|LEGEND';
+$this->allowedCSStags .= '|TEXTCIRCLE|DOTTAB|MAIN';	// mPDF 5.7.3
 
-$this->outerblocktags = array('DIV','FORM','CENTER','DL','FIELDSET','ARTICLE','ASIDE','FIGURE','FIGCAPTION', 'FOOTER','HEADER','HGROUP','NAV','SECTION','DETAILS','SUMMARY');	// mPDF 5.5.09 // mPDF 5.5.22
+$this->outerblocktags = array('DIV','FORM','CENTER','DL','FIELDSET','ARTICLE','ASIDE','FIGURE','FIGCAPTION', 'FOOTER','HEADER','HGROUP','MAIN','NAV','SECTION','DETAILS','SUMMARY');	// mPDF 5.7.3
 $this->innerblocktags = array('P','BLOCKQUOTE','ADDRESS','PRE','H1','H2','H3','H4','H5','H6','DT','DD','CAPTION');
 
 

@@ -43,9 +43,7 @@ by including the font-family in $this->sans_fonts below
 To aid backwards compatability some are included:
 */
 $this->fonttrans = array(
-	'helvetica' => 'helvetica-neue-light',
-	'helvetica-ar' => 'helvetica-neue-light-ar',
-	'rafeed' => 'rafeed-icon',
+	'helvetica' => 'arial',
 	'times' => 'timesnewroman',
 	'courier' => 'couriernew',
 	'trebuchet' => 'trebuchetms',
@@ -56,6 +54,8 @@ $this->fonttrans = array(
 	'zn_hannom_a' => 'hannoma',
 	'ocr-b' => 'ocrb',
 	'ocr-b10bt' => 'ocrb',
+
+
 );
 
 /*
@@ -199,32 +199,6 @@ $this->fontdata = array(
 		'unAGlyphs' => true,
 		),
 
-/*  Custom font  */
-	"helvetica-neue-light" => array(
-		'R' => "Helvetica-Neue-LT-Com-45-Light.ttf",
-		'unAGlyphs' => true,
-		),
-	"helvetica-neue-light-ar" => array(
-		'R' => "HelveticaNeueW23forSKY-Reg.ttf",
-		'unAGlyphs' => true,
-		),
-	"helvetica-neue-bd" => array(
-		'R' => "HelveticaNeueLTCom-Bd.ttf",
-		'unAGlyphs' => true,
-		),
-	"helvetica-neue-ltex" => array(
-		'R' => "HelveticaNeueLTCom-LtEx.ttf",
-		'unAGlyphs' => true,
-		),
-	"helvetica-neue-mdcn" => array(
-		'R' => "Helvetica-LT-67-Medium-Condensed.ttf",
-		'unAGlyphs' => true,
-		),
-	"rafeed-icon" => array(
-		'R' => "rafeed.ttf",
-		'unAGlyphs' => true,
-		),
-
 
 
 
@@ -313,8 +287,7 @@ $this->BMPonly = array(
 $this->sans_fonts = array('dejavusanscondensed','dejavusans','freesans','liberationsans','sans','sans-serif','cursive','fantasy', 
 				'arial','helvetica','verdana','geneva','lucida','arialnarrow','arialblack','arialunicodems',
 				'franklin','franklingothicbook','tahoma','garuda','calibri','trebuchet','lucidagrande','microsoftsansserif',
-				'trebuchetms','lucidasansunicode','franklingothicmedium','albertusmedium','xbriyaz','albasuper','quillscript',
-				'Helvetica-Neue-Light'
+				'trebuchetms','lucidasansunicode','franklingothicmedium','albertusmedium','xbriyaz','albasuper','quillscript'
 
 );
 
