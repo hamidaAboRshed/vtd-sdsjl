@@ -289,7 +289,7 @@ class Product extends CI_Controller {
 		else
 		{
 			if(!$this->session->userdata('navdata')){
-				redirect($this->navigation->get_base_url() .'index.php/Home');
+				redirect($this->navigation->get_base_url() .'/Home');
 			}
 
 			$product_cat='';
