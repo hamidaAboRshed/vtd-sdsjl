@@ -9,7 +9,18 @@ class Pdf {
     }
 
     function load($param = NULL) {
-        require_once APPPATH .'third_party/mpdf/mpdf.php';
+        require_once APPPATH .'third_party/mpdf 5.7.3/mpdf.php';
+
+        if ($param == NULL) {
+            $param = '"en-GB-x","A4", "Helvetica-Neue-Light-ar","",10,10,10,10,6,3';
+            //$param = '"ar","A4","","",10,10,10,10,6,3';
+            
+        }
+        return new mPDF($param);
+    }
+
+    function load_old($param = NULL) {
+        require_once APPPATH .'third_party/mpdf 5.7.0/mpdf.php';
 
         if ($param == NULL) {
             $param = '"en-GB-x","A4", "Helvetica-Neue-Light-ar","",10,10,10,10,6,3';
