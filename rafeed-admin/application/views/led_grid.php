@@ -14,6 +14,7 @@
 		<tr>
 			<th>LightSourceType</th>
 			<th>Type</th>
+			<th>Size</th>
 			<th>Code</th>
 			<th>OriginCountry</th>
 			<th>Supplier</th>
@@ -25,6 +26,7 @@
 		<tr>
 			<th>LightSourceType</th>
 			<th>Type</th>
+			<th>Size</th>
 			<th>Code</th>
 			<th>OriginCountry</th>
 			<th>Supplier</th>
@@ -47,7 +49,7 @@
       <div class="row">
       	<div class="col-xs-6">
       		<div class="form-group ">
-			   	<?php echo form_label('LightSource Type','LightSourceTypeID',$attributes=array());?>
+			   	<?php echo form_label('Lighting Source','LightSourceTypeID',$attributes=array());?>
 			   	<?php $option =array();
 			   		foreach ($LightSourceType as $key => $value) {
 			   			$option[$value['ID']]=$value['Name'];
@@ -67,14 +69,14 @@
 			   	?>
 				<?php echo form_dropdown('led_type', $option,set_value('led_type'),array("class"=>"form-control" ,"id"=>"led_type" )); ?>
 				<?php $option =array();
-			   		foreach ($PinType as $key => $value) {
+			   		foreach ($TubeModel as $key => $value) {
 			   			$option[$value['ID']]=$value['Name'];
 			   		}
 			   	?>
-			   	<div  class="form-inline hide" id="LED_pin_type_div">
-					<?php echo form_dropdown('LED_pin_type', $option,set_value('LED_pin_type'),array("class"=>"form-control" ,"id"=>"LED_pin_type" )); ?>
-					<a class='btn btn-default btn sweet-prompt' onclick='open_popup("pin_type",0);'><i class='fa fa-plus'></i></a>
-	          		<a class="btn btn-default btn" onclick="refresh_datasource('pin_type',0,'LED_pin_type');"><i class="fa fa-refresh"></i></a>
+			   	<div  class="form-inline hide" id="LED_tube_model_div">
+					<?php echo form_dropdown('LED_tube_model', $option,set_value('LED_tube_model'),array("class"=>"form-control" ,"id"=>"LED_tube_model" )); ?>
+					<a class='btn btn-default btn sweet-prompt' onclick='open_popup("tube_model",0);'><i class='fa fa-plus'></i></a>
+	          		<a class="btn btn-default btn" onclick="refresh_datasource('tube_model',0,'LED_tube_model');"><i class="fa fa-refresh"></i></a>
           		</div>
 				
 				<?php $option =array();
@@ -93,6 +95,12 @@
       	</div>
       </div>      
 	  <div class="row">
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+	  			<?php echo form_label('Size','Size',$attributes=array());?>
+	  			<?php echo form_input('Size', set_value('Size'),$attributes = array('class' =>"form-control","id"=>"Size"));?>
+	  		</div>
+	  	</div>
 	  	<div class="col-xs-6">
 	  		<div class="form-group">
 			   	<?php echo form_label('Code','LEDCode',$attributes=array());?>
@@ -155,7 +163,7 @@
 		 <div class="row">
 	      	<div class="col-xs-6">
 	      		<div class="form-group ">
-				   	<?php echo form_label('LightSource Type','editLightSourceTypeID',$attributes=array());?>
+				   	<?php echo form_label('Lighting Source','editLightSourceTypeID',$attributes=array());?>
 				   	<?php $option =array();
 				   		foreach ($LightSourceType as $key => $value) {
 				   			$option[$value['ID']]=$value['Name'];
@@ -179,10 +187,10 @@
 				   			$option[$value['ID']]=$value['Name'];
 				   		}
 				   	?>
-					<div  class="form-inline hide" id="editLED_pin_type_div">
-					<?php echo form_dropdown('editLED_pin_type', $option,set_value('editLED_pin_type'),array("class"=>"form-control" ,"id"=>"editLED_pin_type" )); ?>
-					<a class='btn btn-default btn sweet-prompt' onclick='open_popup("pin_type",0);'><i class='fa fa-plus'></i></a>
-	          		<a class="btn btn-default btn" onclick="refresh_datasource('pin_type',0,'editLED_pin_type');"><i class="fa fa-refresh"></i></a>
+					<div  class="form-inline hide" id="editLED_tube_model_div">
+					<?php echo form_dropdown('editLED_tube_model', $option,set_value('editLED_tube_model'),array("class"=>"form-control" ,"id"=>"editLED_tube_model" )); ?>
+					<a class='btn btn-default btn sweet-prompt' onclick='open_popup("tube_model",0);'><i class='fa fa-plus'></i></a>
+	          		<a class="btn btn-default btn" onclick="refresh_datasource('tube_model',0,'editLED_tube_model');"><i class="fa fa-refresh"></i></a>
           		</div>
 				
 				<?php $option =array();
@@ -202,13 +210,16 @@
 		  <div class="row">
 		  	<div class="col-xs-6">
 		  		<div class="form-group">
+		  			<?php echo form_label('Size','editSize',$attributes=array());?>
+		  			<?php echo form_input('editSize', set_value('editSize'),$attributes = array('class' =>"form-control","id"=>"editSize"));?>
+		  		</div>
+		  	</div>
+		  	<div class="col-xs-6">
+		  		<div class="form-group">
 				   	<?php echo form_label('Code','editLEDCode',$attributes=array());?>
 				   	<?php echo form_input('editLEDCode', set_value('editLEDCode'),$attributes  = array('class' =>"form-control","id"=>"editLEDCode"));?>
 
 			   </div>
-		  	</div>
-		  	<div class="col-xs-6">
-		  		
 		  	</div>
 		  </div>
 		  <input type="hidden" name="editLEDCodeOldVal" id="editLEDCodeOldVal">
@@ -313,5 +324,4 @@
 
 <!-- custom js -->
 <script type="text/javascript" src="<?php echo base_url();?>/assets/grid-js/home_led.js"></script>
-<script src="<?php echo base_url();?>/assets/js/app/product.js"></script>
 <script src="<?php echo base_url();?>/assets/js/app/index_popup.js"></script>

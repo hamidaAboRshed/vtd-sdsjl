@@ -126,6 +126,8 @@ function editMember(id = null)
 
 				$("#editLEDSupplierID").val(response.SupplierID);	
 
+				$("#editSize").val(response.size);
+
 				$("#editForm").unbind('submit').bind('submit', function() {
 					
 					var form = $(this);
@@ -303,4 +305,39 @@ function removeMember(id = null)
 			}); // /ajax
 		});
 	}
+}
+
+function changeLightSourceType(sel,is_edit) 
+{
+  var res =sel.options[sel.selectedIndex].text.toLowerCase();
+  var edit='';
+  if(is_edit){
+    edit='edit';
+  }
+  switch(res){
+      case "module":
+          $("#"+edit+"led_type").removeClass("hide");
+          $("#"+edit+"LED_tube_model_div").addClass("hide");
+          $("#"+edit+"LED_socket_type_div").addClass("hide");
+          $("#"+edit+"LED_strips_m").addClass("hide");
+          break;
+      case "tube":
+          $("#"+edit+"led_type").addClass("hide");
+          $("#"+edit+"LED_tube_model_div").removeClass("hide");
+          $("#"+edit+"LED_socket_type_div").addClass("hide");
+          $("#"+edit+"LED_strips_m").addClass("hide");
+          break;
+      case "bulb":
+          $("#"+edit+"led_type").addClass("hide");
+          $("#"+edit+"LED_tube_model_div").addClass("hide");
+          $("#"+edit+"LED_socket_type_div").removeClass("hide");
+          $("#"+edit+"LED_strips_m").addClass("hide");
+          break;
+      case "strips":
+          $("#"+edit+"led_type").addClass("hide");
+          $("#"+edit+"LED_tube_model_div").addClass("hide");
+          $("#"+edit+"LED_socket_type_div").addClass("hide");
+          $("#"+edit+"LED_strips_m").removeClass("hide");
+          break;  
+  }
 }

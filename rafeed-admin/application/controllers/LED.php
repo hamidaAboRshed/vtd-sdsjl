@@ -21,7 +21,7 @@ class LED extends CI_Controller {
 			$data['LEDType']=$this->Index_model->get_index('led_type');
 			$data['Supplier']=$this->Index_model->get_index('supplier');
 			$data['SocketType']=$this->Index_model->get_index('socket_type');
-			$data['PinType']=$this->Index_model->get_index('pin_type');
+			$data['TubeModel']=$this->Index_model->get_index('tube_model');
 			$data['Country']=$this->Index_model->get_index_language('country');
 			$data['LightSourceType']=$this->Index_model->get_index_language('led_lightsource_type');
 
@@ -59,7 +59,7 @@ class LED extends CI_Controller {
 					$type=$this->global_function->get_referance_value('led_type',$value['Type']);
 					break;
 				case 'Tube':
-					$type=$this->global_function->get_referance_value('pin_type',$value['Type']);
+					$type=$this->global_function->get_referance_value('tube_model',$value['Type']);
 					break;
 				case 'Bulb':
 					$type=$this->global_function->get_referance_value('socket_type',$value['Type']);
@@ -72,6 +72,7 @@ class LED extends CI_Controller {
 			$result['data'][$key] = array(
 				$LightSource,
 				$type,
+				$value['size'],
 				$value['Code'],
 				$this->global_function->get_referance_value('country',$value['OriginCountryID']),
 				$this->global_function->get_referance_value('supplier',$value['SupplierID']),
@@ -121,7 +122,7 @@ class LED extends CI_Controller {
 					$type=$this->global_function->get_referance_value('led_type',$value['Type']);
 					break;
 				case 'Tube':
-					$type=$this->global_function->get_referance_value('pin_type',$value['Type']);
+					$type=$this->global_function->get_referance_value('tube_model',$value['Type']);
 					break;
 				case 'Bulb':
 					$type=$this->global_function->get_referance_value('socket_type',$value['Type']);
@@ -170,7 +171,7 @@ class LED extends CI_Controller {
 					$type=$this->input->post('led_type');
 					break;
 				case 2:
-					$type=$this->input->post('LED_pin_type');
+					$type=$this->input->post('LED_tube_model');
 					break;
 				case 3:
 					$type=$this->input->post('LED_socket_type');
@@ -189,6 +190,7 @@ class LED extends CI_Controller {
 			$data=array(
 				'LightSourceTypeID' => $this->input->post('LightSourceTypeID'),
 				'Type' => $type,
+				'size' => $this->input->post('Size'),
 				'Code' => $this->input->post('LEDCode'),
 				'OriginCountryID'=>$this->input->post('LEDOriginCountryID'),
 				'SupplierID'=>$this->input->post('LEDSupplierID'),
@@ -247,7 +249,7 @@ class LED extends CI_Controller {
 						$type=$this->input->post('editled_type');
 						break;
 					case 2:
-						$type=$this->input->post('editLED_pin_type');
+						$type=$this->input->post('editLED_tube_model');
 						break;
 					case 3:
 						$type=$this->input->post('editLED_socket_type');
@@ -266,6 +268,7 @@ class LED extends CI_Controller {
 				$data=array(
 					'LightSourceTypeID' => $this->input->post('editLightSourceTypeID'),
 					'Type' => $type,
+					'size' => $this->input->post('editSize'),
 					'Code' => $this->input->post('editLEDCode'),
 					'OriginCountryID'=>$this->input->post('editLEDOriginCountryID'),
 					'SupplierID'=>$this->input->post('editLEDSupplierID'),
