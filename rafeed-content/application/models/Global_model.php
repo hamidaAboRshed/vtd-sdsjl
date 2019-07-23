@@ -14,4 +14,12 @@ class Global_model extends CI_Model {
 		$q = $this->db->get($table);
 		return $q->result();
 	}
+    
+        public function updateData($table, $data, $id)
+    {
+        $this->db->where('ID', $id);
+        $this->db->update("$table", $data);
+
+        return true;
+    }
 }

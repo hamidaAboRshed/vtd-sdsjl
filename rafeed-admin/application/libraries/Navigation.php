@@ -14,6 +14,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     	return $newurl;
     }
 
+    public function get_website_url()
+    {
+    	$http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
+		$newurl = $http . $_SERVER['SERVER_NAME'];
+    	return $newurl;
+    }
+     
     public function get_includes_url()
     {
     	$http = 'http' . ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') ? 's' : '') . '://';
