@@ -24,7 +24,6 @@ $('#trigger').click(function () {
 function addDriverMemberModel() 
 {
 	$("#createDriverForm")[0].reset();
-	$('input:radio[name="DriverType"]')[0].checked=true;
 	$('input:radio[name="OutputType"]')[0].checked = true;
 
 	//remove textdanger
@@ -103,7 +102,9 @@ function editDriverMember(id = null)
 			dataType: 'json',
 			success:function(response) {
 
-				$("#editDriverType"+response.DriverType).prop('checked',true);
+				$("#editPowerMethod"+response.power_method).prop('checked',true);
+
+				$("#editVoltageTypeID"+response.voltage_type_id).prop('checked',true);
 
 				$("#editDimmable").val(response.Dimmable).trigger("chosen:updated");
 
@@ -111,7 +112,9 @@ function editDriverMember(id = null)
 
 				$("#editCode").val(response.Code);
 
-				$("#editPower").val(response.Power);				
+				$("#editPower").val(response.Power);
+
+				$("#editFrequency").val(response.frequency);				
 
 				$("#editOutputCurrentMin").val(response.OutputCurrentMin);	
 
@@ -134,6 +137,12 @@ function editDriverMember(id = null)
 				$("#editOriginCountryID").val(response.OriginCountryID);				
 
 				$("#editSupplierID").val(response.SupplierID);	
+
+				$("#editLength").val(response.length);	
+
+				$("#editWidth").val(response.width);	
+
+				$("#editHeight").val(response.height);	
 
 				$("#editDriverForm").unbind('submit').bind('submit', function() {
 					

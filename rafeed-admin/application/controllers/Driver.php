@@ -25,11 +25,12 @@ class Driver extends CI_Controller {
 		{
 			$data['Brand']=$this->Index_model->get_index('brand');
 			$data['DimmableType']=$this->Index_model->get_index_language('dimmable_type');
-			$data['DriverType']=$this->Enums->get_DriverType();
+			$data['PowerMethod']=$this->Enums->get_PowerMethod();
 			$data['DriverOutputType']=$this->Enums->get_DriverOutputType();
 			$data['Country']=$this->Index_model->get_index_language('country');
 			$data['DriverAccessory']=$this->Accessory_model->get_accessory_by_type(3);
 			$data['Supplier']=$this->Index_model->get_index('supplier');
+			$data['VoltageType'] = $this->Index_model->get_index('voltage_type');
 
 			$data['output'] = '';
 			$data['subview'] = 'driver_grid.php';
@@ -58,7 +59,7 @@ class Driver extends CI_Controller {
 	{
 		$value=$this->Driver_model->fetchMemberData($this->input->post('id'));
 		$data=	array( 
-			'Driver Type' => $this->Enums->get_DriverType_byId($value['DriverType']),
+			'Power Method' => $this->Enums->get_PowerMethod_byId($value['power_method']),
 			'Code' => $value['Code'],
 			'Power' => $value['Power'],
 			'Output Current' => $this->global_function->get_range($value['OutputCurrentMin'],$value['OutputCurrentMax']),
@@ -108,15 +109,18 @@ class Driver extends CI_Controller {
 			$OutputCurrent=$this->global_function->get_range($value['OutputCurrentMin'],$value['OutputCurrentMax']);
 			
 			$result['data'][$key] = array(
-				$this->Enums->get_DriverType_byId($value['DriverType']),
+				$this->Enums->get_PowerMethod_byId($value['power_method']),
 				$value['Code'],
 				$value['Power'],
 				$OutputCurrent,
+				$value['frequency'],
+				$this->global_function->get_referance_value('voltage_type',$value['voltage_type_id']),
 				$InputVoltage,
 				$OutputVoltage,
 				$value['IPRate'],
 				$this->global_function->get_referance_value('country',$value['OriginCountryID']),
 				$this->global_function->get_referance_value('supplier',$value['SupplierID']),
+				is_null($value['length']) ? '' :$value['length'].' x '.$value['width'].' x '.$value['height'],
 				(is_null($value['Datasheet_file']) ?'': '<a href="'. $this->navigation->get_includes_url().'/upload_files/Datasheet/Driver/'.$value['Datasheet_file'].'" download="driver_datasheet_'.$value['Code'].'">Download Datasheet</a>'),
 				$buttons		
 			);
@@ -140,11 +144,6 @@ class Driver extends CI_Controller {
 		$validator = array('success' => false, 'messages' => array());
 
 		$config = array(
-			array(
-		        'field' => 'DriverType',
-		        'label' => 'DriverType',
-		        'rules' => 'trim|required'	            
-		    ),
 		    array(
 		        'field' => 'Code',
 		        'label' => 'Code',
@@ -199,9 +198,11 @@ class Driver extends CI_Controller {
 			$format = "%Y-%m-%d %H:%i";
 
 			$data=array(
-				'DriverType' => $this->input->post('DriverType'),
+				'power_method' => $this->input->post('PowerMethod'),
+				'voltage_type_id' => $this->input->post('VoltageTypeID'),
 				'Code' => $this->input->post('Code'),
 				'Power' => $this->input->post('Power') == '' ? null : $this->input->post('Power'),
+				'frequency' => $this->input->post('frequency') == '' ? null : $this->input->post('frequency'),
 				'InputVoltageMin' => $this->input->post('InputVoltageMin') == '' ? null : $this->input->post('InputVoltageMin'),
 				'InputVoltageMax' => $this->input->post('InputVoltageMax') == '' ? null : $this->input->post('InputVoltageMax'),
 				'OutputVoltageMin' => $this->input->post('OutputVoltageMin') == '' ? null : $this->input->post('OutputVoltageMin'),
@@ -213,6 +214,9 @@ class Driver extends CI_Controller {
 				'IPRate'=>$this->input->post('IPRate') == '' ? null : $this->input->post('IPRate'),
 				'OriginCountryID'=>$this->input->post('OriginCountryID'),
 				'SupplierID'=>$this->input->post('SupplierID'),
+				'length' => $this->global_function->is_null($this->input->post('Length')),
+				'width' => $this->global_function->is_null($this->input->post('Width')),
+				'height' => $this->global_function->is_null($this->input->post('Height')),
 				'CreatedBy'=>$username,
 				'CreatedDate'=>mdate($format)
 			);
@@ -302,11 +306,6 @@ class Driver extends CI_Controller {
 
 			$config = array(
 			    array(
-			        'field' => 'editDriverType',
-			        'label' => 'DriverType',
-			        'rules' => 'trim|required'	            
-			    ),
-			    array(
 			        'field' => 'editPower',
 			        'label' => 'Power',
 			        'rules' => 'trim|required|numeric'	            
@@ -361,9 +360,11 @@ class Driver extends CI_Controller {
 				$format = "%Y-%m-%d %H:%i";
 
 				$data=array(
-				'DriverType' => $this->input->post('editDriverType'),
+				'power_method' => $this->input->post('editPowerMethod'),
+				'voltage_type_id' => $this->input->post('editVoltageTypeID'),
 				'Code' => $this->input->post('editCode'),
 				'Power' => $this->input->post('editPower') == '' ? null : $this->input->post('editPower'),
+				'frequency' => $this->input->post('editFrequency') == '' ? null : $this->input->post('editFrequency'),
 				'InputVoltageMin' => $this->input->post('editInputVoltageMin') == '' ? null : $this->input->post('editInputVoltageMin'),
 				'InputVoltageMax' => $this->input->post('editInputVoltageMax') == '' ? null : $this->input->post('editInputVoltageMax'),
 				'OutputVoltageMin' => $this->input->post('editOutputVoltageMin') == '' ? null : $this->input->post('editOutputVoltageMin'),
@@ -375,6 +376,9 @@ class Driver extends CI_Controller {
 				'IPRate'=>$this->input->post('editIPRate') == '' ? null : $this->input->post('editIPRate'),
 				'OriginCountryID'=>$this->input->post('editOriginCountryID'),
 				'SupplierID'=>$this->input->post('editSupplierID'),
+				'length' => $this->global_function->is_null($this->input->post('editLength')),
+				'width' => $this->global_function->is_null($this->input->post('editWidth')),
+				'height' => $this->global_function->is_null($this->input->post('editHeight')),
 				'EditedBy'=>$username,
 				'EditedDate'=>mdate($format)
 				);
