@@ -1,0 +1,66 @@
+.small.modal-dialog {
+    width: 460px;
+  }
+.modal-header {
+    padding:16px 16px;
+  }
+
+#E-series .modal-title,#premium .modal-title{
+  color:#FFF;
+}
+
+#E-series .modal-header{
+  background-color: #e90e8b;
+  border-bottom:2px dashed #e90e8b;
+  color:#FFF;
+}
+
+#premium .modal-header {
+    background-color: #DBAE27;
+    padding:16px 16px;
+    color:#FFF;
+    border-bottom:2px dashed #DBAE27;
+  }
+
+#E-series .btn-primary{
+  background-color: #e90e8b !important;
+  border: 1px solid #e90e8b !important;
+}
+#E-series .btn-primary:active,#E-series .btn-primary:active:focus,#E-series .btn-primary:visit{
+  background-color: #e90e8b !important;
+  border: 1px solid #e90e8b !important;
+}
+#E-series .btn-primary:hover{
+  background-color: #e90e8b !important;
+  border: 1px solid #e90e8b !important;
+}
+
+#premium .btn-primary{
+  background-color: #DBAE27 !important;
+  border: 1px solid #DBAE27 !important;
+}
+#premium .btn-primary:active,.btn-primary:active:focus, .btn-primary:visit{
+  background-color: #DBAE27 !important;
+  border: 1px solid #DBAE27 !important;
+}
+#premium .btn-primary:hover{
+  background-color: #DBAE27 !important;
+  border: 1px solid #DBAE27 !important;
+}
+
+
+#error_msg{
+    color: red;
+    font-size: 11px; 
+}
+.check-icon{
+    font-size: 20px;
+    text-align: center;
+}
+#E-series.fa-check-circle{
+  color: #e90e8b;
+} 
+
+#premium.fa-check-circle{
+  color: #DBAE27;
+} 
