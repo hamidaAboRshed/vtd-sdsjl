@@ -49,7 +49,7 @@ class Product_model extends CI_Model {
 	}
 
 	function insert_premium_dimension_attachment($data){
-		$this->db->insert('premium_dimension_attachment',$data);
+		return $this->db->insert('premium_dimension_attachment',$data);
 	}
 
 	function delete_premium_dimension_attachment($dim_id,$type){
