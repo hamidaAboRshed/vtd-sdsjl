@@ -194,40 +194,6 @@ function addIESfiles(elm) {
     }
   }
 }
-function changeLightSourceType(sel,is_edit) 
-{
-  var res =sel.options[sel.selectedIndex].text.toLowerCase();
-  var edit='';
-  if(is_edit){
-    edit='edit';
-  }
-  switch(res){
-      case "module":
-          $("#"+edit+"led_type").removeClass("hide");
-          $("#"+edit+"LED_pin_type_div").addClass("hide");
-          $("#"+edit+"LED_socket_type_div").addClass("hide");
-          $("#"+edit+"LED_strips_m").addClass("hide");
-          break;
-      case "tube":
-          $("#"+edit+"led_type").addClass("hide");
-          $("#"+edit+"LED_pin_type_div").removeClass("hide");
-          $("#"+edit+"LED_socket_type_div").addClass("hide");
-          $("#"+edit+"LED_strips_m").addClass("hide");
-          break;
-      case "bulb":
-          $("#"+edit+"led_type").addClass("hide");
-          $("#"+edit+"LED_pin_type_div").addClass("hide");
-          $("#"+edit+"LED_socket_type_div").removeClass("hide");
-          $("#"+edit+"LED_strips_m").addClass("hide");
-          break;
-      case "strips":
-          $("#"+edit+"led_type").addClass("hide");
-          $("#"+edit+"LED_pin_type_div").addClass("hide");
-          $("#"+edit+"LED_socket_type_div").addClass("hide");
-          $("#"+edit+"LED_strips_m").removeClass("hide");
-          break;  
-  }
-}
 
 var color_series=1;
 var dimension_count = 1;

@@ -70,21 +70,15 @@ class Premium_product extends CI_Controller {
 			';
 			
 			$_sol_val='';
-			if (is_null($value['ProductSolutionID'])) {
-	           $sol_str='';
-	            $solution_data = $this->Product_model->get_product_solution($value['ProductId'],$default_language);
+            $solution_data = $this->Product_model->get_product_solution($value['ProductId'],$default_language);
 
-	            foreach ($solution_data as $key_sol => $value_sol) {
-	                $sol_str .= $value_sol['Name'];
-	                if($key_sol !== count($solution_data) -1 )
-	                {
-	                    $sol_str.=' & ';
-	                }
-	            }
-	            $_sol_val = $sol_str; 
-	        }
-	        else
-	            $_sol_val = $this->Index_model->get_value_by_id("solution",$value['ProductSolutionID']);
+            foreach ($solution_data as $key_sol => $value_sol) {
+                $_sol_val .= $value_sol['Name'];
+                if($key_sol !== count($solution_data) -1 )
+                {
+                    $_sol_val.=' & ';
+                }
+            }
 
 
 			$result['data'][$key] = array(	
@@ -97,7 +91,7 @@ class Premium_product extends CI_Controller {
 				$value['LifeSpan'],
 				$value['Warranty'],
 				$this->Index_model->get_value_by_id('supplier',$value['SupplierID']),
-				'<div class="check-icon"><i class="fa '.($value['Review_check']==1? 'fa-check-circle' : 'fa-circle').'"></i></div>',
+				'<div class="check-icon"><i id="premium" class="fa '.($value['Review_check']==1? 'fa-check-circle' : 'fa-circle').'"></i></div>',
 				$buttons);
 		} // /foreach
 
@@ -685,7 +679,7 @@ class Premium_product extends CI_Controller {
 		if ($product_data) {
 			$product_type_code=$this->Index_model->get_category_code($product_data[0]['cat_id']);
 			$product_type_num=$this->Index_model->get_category_num($product_data[0]['cat_id']);
-			$serial=$this->Premium_product_model->get_collection_serial();
+			$serial=$this->Product_model->get_collection_serial('premium_product_collection');
 			//$serial=17995;
 			$family_num = $this->Premium_product_model->get_premium_family_num($premium_id);
 			$serial++;

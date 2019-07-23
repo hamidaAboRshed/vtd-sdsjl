@@ -36,7 +36,7 @@ class Premium_product_model extends CI_Model {
 		$this->load->model('Index_model');
 		$default_lan=$this->Index_model->get_default_language();
 		if($type){
-			$sql = "SELECT DISTINCT Product.*,premium_product.*,premium_product_language.* FROM product INNER JOIN premium_product ON product.ID=premium_product.ProductId LEFT JOIN premium_product_language on premium_product.ID= premium_product_language.Premium_product_id LEFT JOIN product_solution ON product_solution.product_id = product.ID where premium_product_language.Language_id=".$default_lan." and  (product_solution.solution_id =".$type." or product.ProductSolutionID=".$type.")  order by product.ID DESC";
+			$sql = "SELECT DISTINCT Product.*,premium_product.*,premium_product_language.* FROM product INNER JOIN premium_product ON product.ID=premium_product.ProductId LEFT JOIN premium_product_language on premium_product.ID= premium_product_language.Premium_product_id LEFT JOIN product_solution ON product_solution.product_id = product.ID where premium_product_language.Language_id=".$default_lan." and product_solution.solution_id =".$type."  order by product.ID DESC";
 			$query = $this->db->query($sql);
 			return $query->result_array();
 		}
@@ -216,14 +216,6 @@ class Premium_product_model extends CI_Model {
 		$result=$this->db->get();
 		return $result->result_array();
 	}
-
-	function get_collection_serial(){
-   		$this->db->select_max('serial_num');
-		$this->db->from("premium_product_collection");
-		$result=$this->db->get();
-		$ret = $result->row();
-	 	return $ret->serial_num;
-   	}
 
 	function get_max_collection_serial($dim_id){
    		$this->db->select_max('serial_num');

@@ -218,4 +218,12 @@ class Product_model extends CI_Model {
 		$result=$this->db->get();
 		return $result->result_array();
 	}
+
+	function get_collection_serial($table){
+   		$this->db->select_max('serial_num');
+		$this->db->from($table);
+		$result=$this->db->get();
+		$ret = $result->row();
+	 	return $ret->serial_num;
+   	}
 }

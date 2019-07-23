@@ -3,11 +3,11 @@
     <div class="row">
         <div class="col-xs-6 form-group">
             <div class="">
-                <label style="display: -webkit-box;"><p class="form_title" value="SKD/Finished">Product mode</p><span class="text-danger">*</span></label>
+                <label style="display: -webkit-box;"><p class="form_title" value="SKD/Finished">Manufacturing Technique</p><span class="text-danger">*</span></label>
                 
                 <div style="display: inline-block;">
                    
-                    <?php foreach ($ProductMode as $key => $value) {?>
+                    <?php foreach ($ManufacturingTechnique as $key => $value) {?>
                         <div class="col ">
                             <span class="radio-wrapper"> 
                                 <input type="radio" name="SKD_Finished" id="SKD_Finished<?php echo($value)?>" value="<?php echo($value)?>">

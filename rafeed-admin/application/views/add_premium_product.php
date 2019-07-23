@@ -65,7 +65,7 @@
                 <div class="tab-pane p-20" id="mixer_tab" role="tabpanel">
                   <div class="table-responsive">
                     <?php $this->load->view('add_premium_product_mixer'); ?>
-                    <button type="submit" class="btn btn-success" form="create_productForm" onclick="add_premium_product()"><i class="fa fa-check"></i> Save</button>
+                    <button type="submit" class="btn btn-success" form="create_productForm"><i class="fa fa-check"></i> Save</button>
                   </div>
                 </div>
 
