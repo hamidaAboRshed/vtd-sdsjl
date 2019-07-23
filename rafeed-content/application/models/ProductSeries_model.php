@@ -20,7 +20,6 @@ class ProductSeries_model extends CI_Model {
 	function get_series_category($series_id,$sol_id=0)
 	{
 		$language_id = $this->ui_language->get_ui_language();
-		$where_or = "(ProductSolutionID = ".$sol_id." OR product_solution.solution_id = ".$sol_id.")";
 		$this->db->distinct();
 		$this->db->select('product_category.ID as ID,product_category_language.Name as Name, product_category.icon as icon');
 		$this->db->where("Language_id",$language_id);
@@ -28,7 +27,7 @@ class ProductSeries_model extends CI_Model {
 		$this->db->join('product_category_language', 'product_category.ID = product_category_language.product_category_id', 'left');
 		if($sol_id != 0){
 			$this->db->join('product', 'product.ProductCategoryID = product_category.ID', 'inner');
-			$this->db->where($where_or);
+			$this->db->where('product_solution.solution_id',$sol_id);
 			$this->db->join('product_solution', 'product.ID = product_solution.product_id', 'left');
 		}
 		//$this->db->order_by('Order');
@@ -62,15 +61,11 @@ class ProductSeries_model extends CI_Model {
 	function get_premium_product_list($sol_id,$cat_id=0)
 	{
 		$language_id = $this->ui_language->get_ui_language();
-		$where_or = "(ProductSolutionID = ".$sol_id." OR product_solution.solution_id = ".$sol_id.")";
 
 		$this->db->select('Family_name ,Family_description,datasheet_description, product.ID as ID, FileName as img, product_solution.display_order as solution_order, premium_product.display_order as premium_order');
 		$this->db->where("Language_id",$language_id);
 		
-
-		/*$this->db->where("ProductSolutionID",$sol_id);
-		$this->db->or_where('product_solution.solution_id',$sol_id);*/
-		$this->db->where($where_or);
+		$this->db->where('product_solution.solution_id',$sol_id);
 		$this->db->from('product');
 		$this->db->join('product_solution', 'product.ID = product_solution.product_id', 'left');
 		$this->db->join('product_attachment', 'product.ID = product_attachment.ProductID and AttachmentTypeID = 2', 'left');

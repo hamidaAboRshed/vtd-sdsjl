@@ -597,13 +597,9 @@ class Product extends CI_Controller {
         }
         //solution
 
-        if (is_null($product_data['ProductSolutionID'])) {
 
-            $data->solution_data = $this->Premium_product_model->get_product_solution($product_id,$default_language);
-        }
-        else{
-            	$data->solution_data = $this->Index_model->get_value_by_id("solution",$product_data['ProductSolutionID']);
-    	}
+        $data->solution_data = $this->Premium_product_model->get_product_solution($product_id,$default_language);
+        
 
 
         $pdf->SetProtection(array('print-highres','print'), null, md5(time()), 128);
@@ -714,25 +710,19 @@ class Product extends CI_Controller {
         $premium_product = $this->Premium_product_model->get_premium_product_byProduct_id($product_id);
         
         //product solution
-         $solution_id = $product_data['ProductSolutionID'];
-        if (is_null($product_data['ProductSolutionID'])) {
-           $sol_str='';
-            $solution_data = $this->Premium_product_model->get_product_solution($product_id,$default_language);
+        $sol_str='';
+        $solution_data = $this->Premium_product_model->get_product_solution($product_id,$default_language);
 
-            foreach ($solution_data as $key => $value) {
-                $sol_str .= $value['Name'];
-                if($key !== count($solution_data) -1 )
-                {
-                    $sol_str.=' & ';
-                }
-                $solution_id = $value['ID'];
+        foreach ($solution_data as $key => $value) {
+            $sol_str .= $value['Name'];
+            if($key !== count($solution_data) -1 )
+            {
+                $sol_str.=' & ';
             }
-            $data['product_solution']=$sol_str; 
+            $solution_id = $value['ID'];
         }
-        else{
-            	$data['product_solution']=$this->Index_model->get_value_by_id("solution",$product_data['ProductSolutionID']);
-            	//$solution_id =$product_data['ProductSolutionID'];
-    	}
+        $data['product_solution']=$sol_str; 
+        
 
 
 
