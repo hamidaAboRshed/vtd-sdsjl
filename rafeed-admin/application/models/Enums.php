@@ -1,17 +1,20 @@
 <?php
 class Enums extends CI_Model{
-    const ProductMode  = array('SKD' => 1 ,'Finished'=>2 );
+    const ProductMode  = array('Finished'=>2, 'Semi Finished'=>3,'SKD' => 1 );
     const AccessoryType = array('public' => 1, 'private' => 2,'driver'=>3);
     const OutputType = array('Fix' => 1, 'Flex' => 2);
     const AdjustableType = array('Not Adjustable' => 0,'Tilted' => 1, 'Rotated' => 2, 'Tilted & Rotated' => 3);
     const LEDColorTemperature = array(1=>'Tunable', 2 =>'NotTunable' ,3=>'RGB'   ,4 =>'RGBW' );
-    const DriverType = array('Driver' => 1,'Power supply' => 2 );
+    const PowerMethod = array('Driver' => 1,'Power supply' => 2 );
+    const DriverType = array('DOB' => 1,'Internal' => 2 ,'External' => 3,'Integrated' => 4);
     const BaseFixture = array('Socket' => 1,'Pin' => 2 ,'LED' => 3);
     const ProductPart = array('Fitting' => 1,'Driver' => 2, 'LED' => 3 , 'Accessory' => 4, 'Installation way Accessory' =>5 );
     const ProductType = array('Indoor' => 1,'Outdoor' => 2 );
-    const ProductPowerType = array('Specific Drivers' => 1,'Undefined Drivers' => 2, 'AC' => 3 );
+    const ProductPowerType = array('Specific Drivers' => 1,'Without Drivers' => 2, 'AC' => 3 );
     const CCTRangeValues = array('Tunable White 3500-5000k' => -1,'RGB' => -2,'RGBW' => -3);
     const ProductFamilyType = array('Fitting with lighting source' => 1,'Just fitting without lighting source' => 2, 'Both' => 3 );
+    const ACProductFunction = array('Bulb' => 1,'Normal Tube' => 2, 'Integrated Tube' => 3, 'Spotlight' => 4, "Other" =>5 );
+    const LightingSourceType = array('LED' => 1 ,'Filement' => 2 );
 
     public function get_product_part()
     {
@@ -27,8 +30,17 @@ class Enums extends CI_Model{
         return Enums::BaseFixture; 
     }
 
+    public function get_LightingSourceType(){
+        return Enums::LightingSourceType; 
+    }
+
     public function get_ProductType(){
         return Enums::ProductType; 
+    }
+
+    public function get_PowerMethod()
+    {
+        return Enums::PowerMethod; 
     }
 
     public function get_DriverType()
@@ -56,9 +68,19 @@ class Enums extends CI_Model{
         return Enums::ProductFamilyType;
     }
 
+    public function get_ACProductFunction()
+    {
+        return Enums::ACProductFunction;
+    }
+
     public function get_CCTRangeValues_byId($id)
     {
         return array_search($id,Enums::CCTRangeValues) == FALSE ? null : array_search($id,Enums::CCTRangeValues);
+    }
+    
+    public function get_PowerMethod_byId($id)
+    {
+        return array_search($id,Enums::PowerMethod) == FALSE ? null : array_search($id,Enums::PowerMethod);
     }
 
     public function get_DriverType_byId($id)

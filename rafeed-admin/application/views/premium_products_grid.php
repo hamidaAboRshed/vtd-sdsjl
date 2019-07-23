@@ -1,41 +1,5 @@
 <script src="<?php echo base_url();?>/assets/ckeditor/ckeditor.js"></script>
-<style>
-.modal-dialog {
-    width: 460px;
-  }
-.modal-header {
-    background-color: #DBAE27;
-    padding:16px 16px;
-    color:#FFF;
-    border-bottom:2px dashed #DBAE27;
-  }
-.modal-title{
-  color:#FFF;
-}
-.btn-primary{
-  background-color: #DBAE27 !important;
-  border: 1px solid #DBAE27 !important;
-}
-.btn-primary:active,.btn-primary:active:focus, .btn-primary:visit{
-  background-color: #DBAE27 !important;
-  border: 1px solid #DBAE27 !important;
-}
-.btn-primary:hover{
-  background-color: #DBAE27 !important;
-  border: 1px solid #DBAE27 !important;
-}
-#error_msg{
-    color: red;
-    font-size: 11px; 
-}
-.check-icon{
-    font-size: 20px;
-    text-align: center;
-}
-.fa-check-circle{
-	color: #DBAE27;
-}
-</style>
+<link href="<?php echo base_url();?>/assets/grid-css/custom-grid.css" rel="stylesheet">
 
 <div  id="row">
     <div class="card">
@@ -120,7 +84,7 @@
 
 <!-- removeMember -->
 <div class="modal fade" tabindex="-1" role="dialog" id="deletePremiumProductModal">
-  <div class="modal-dialog" role="document">
+  <div id="premium" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -140,7 +104,7 @@
 
 <!-- checkMember -->
 <div class="modal fade" tabindex="-1" role="dialog" id="checkPremiumProductModal">
-  <div class="modal-dialog" role="document">
+  <div id="premium" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -161,7 +125,7 @@
 
 <!-- upload MemberModal -->
 <div class="modal fade" role="dialog" id="uploadPhotosModal">
-  <div class="modal-dialog" role="document">
+  <div id="premium" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -201,7 +165,7 @@
 
 <!-- upload MemberModal -->
 <div class="modal fade" role="dialog" id="uploadApplicationPhotosModal">
-  <div class="modal-dialog" role="document">
+  <div id="premium" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -238,7 +202,7 @@
 
 <!-- color series MemberModal -->
 <div class="modal fade" role="dialog" id="colorSeriesPhotoModal">
-  <div class="modal-dialog" role="document" style="width: 700px">
+  <div id="premium" class="small modal-dialog" role="document" style="width: 700px">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -260,7 +224,7 @@
 
 <!-- family order MemberModal -->
 <div class="modal fade" role="dialog" id="premiumFamilyOrderModal">
-  <div class="modal-dialog" role="document">
+  <div id="premium" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -290,7 +254,7 @@
 
 <!-- family description MemberModal -->
 <div class="modal fade" role="dialog" id="premiumFamilyDescriptionModal">
-  <div class="modal-dialog" role="document" style="width: 600px">
+  <div id="premium" class="small modal-dialog" role="document" style="width: 600px">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

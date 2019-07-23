@@ -59,21 +59,17 @@ class Print_pdf  extends CI_Controller {
         //$premium_product = $this->Premium_product_model->get_premium_product_byProduct_id($product_id);
         //product solution
 
-        if (is_null($data['cover_data']['ProductSolutionID'])) {
-           $sol_str='';
-            $solution_data = $this->Product_model->get_product_solution($product_id,$default_language);
-            //var_dump($solution_data);
-            foreach ($solution_data as $key => $value) {
-                $sol_str .= $value['Name'];
-                if($key !== count($solution_data) -1 )
-                {
-                    $sol_str.=' & ';
-                }
+        $sol_str='';
+        $solution_data = $this->Product_model->get_product_solution($product_id,$default_language);
+        //var_dump($solution_data);
+        foreach ($solution_data as $key => $value) {
+            $sol_str .= $value['Name'];
+            if($key !== count($solution_data) -1 )
+            {
+                $sol_str.=' & ';
             }
-            $data['cover_data']['product_solution']=$sol_str; 
         }
-        else
-            $data['cover_data']['product_solution']=$this->Index_model->get_value_by_id("solution",$data['cover_data']['ProductSolutionID']);
+        $data['cover_data']['product_solution']=$sol_str; 
 
         $premium_language = $this->Premium_product_model->get_premium_product_language($premium_product["ID"],$default_language);
         $data['cover_data']['family_name']=$premium_language[0]['Family_name'];
@@ -404,21 +400,18 @@ class Print_pdf  extends CI_Controller {
         //$premium_product = $this->Premium_product_model->get_premium_product_byProduct_id($product_id);
         //product solution
 
-        if (is_null($data['cover_data']['ProductSolutionID'])) {
-           $sol_str='';
-            $solution_data = $this->Product_model->get_product_solution($product_id,$default_language);
-            var_dump($solution_data);
-            foreach ($solution_data as $key => $value) {
-                $sol_str .= $value['Name'];
-                if($key !== count($solution_data) -1 )
-                {
-                    $sol_str.=' & ';
-                }
+        $sol_str='';
+        $solution_data = $this->Product_model->get_product_solution($product_id,$default_language);
+        var_dump($solution_data);
+        foreach ($solution_data as $key => $value) {
+            $sol_str .= $value['Name'];
+            if($key !== count($solution_data) -1 )
+            {
+                $sol_str.=' & ';
             }
-            $data['cover_data']['product_solution']=$sol_str; 
         }
-        else
-            $data['cover_data']['product_solution']=$this->Index_model->get_value_by_id("solution",$data['cover_data']['ProductSolutionID']);
+        $data['cover_data']['product_solution']=$sol_str; 
+       
 
         $premium_language = $this->Premium_product_model->get_premium_product_language($premium_product["ID"],$default_language);
         $data['cover_data']['family_name']=$premium_language[0]['Family_name'];

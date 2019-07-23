@@ -4,6 +4,7 @@
 <input type="hidden" name="economic_product_collection_id" id="economic_product_collection_id" value="<?php echo $economic_product_collection_id ?>">
   <fieldset class="form-group">
     <legend>Dimension section</legend>
+    <form>
     <div id="">
       <div class="row">
         <div class="col-xs-6 form-group">
@@ -120,20 +121,20 @@
             <input type="number" min="0" name="Weight" id="Weight" />
         </div>
         <div class="col-xs-6 form-group">
-          <label class="custom-file-label" for="validatedCustomFile">Upload dimension photo ...</label>
-          <input type="file" class="custom-file-input" id="validatedCustomFile" name="dimension_photo[]" multiple>
+          <label class="custom-file-label" for="product_photo">Upload product photo ...</label>
+          <input type="file" class="custom-file-input" id="product_photo" name="product_photo[]" multiple>
           
         </div>
       </div>
       <div class="row">
         <div class="col-xs-6 form-group">
-          <label class="custom-file-label" for="validatedCustomFile">Upload product photo ...</label>
-          <input type="file" class="custom-file-input" id="validatedCustomFile" name="product_photo[]" multiple>
+          <label class="custom-file-label" for="dimension_photo">Upload dimension photo ...</label>
+          <input type="file" class="custom-file-input" id="dimension_photo" name="dimension_photo[]" multiple>
           
         </div>
         <div class="col-xs-6 form-group">
-          <label class="custom-file-label" for="validatedCustomFile">Upload dailog study photo ...</label>
-          <input type="file" class="custom-file-input" id="validatedCustomFile" name="dailog_study_file">
+          <label class="custom-file-label" for="dialog_study_file">Upload dialog study file ...</label>
+          <input type="file" class="custom-file-input" id="dialog_study_file" name="dialog_study_file">
           
         </div>
       </div>
@@ -157,8 +158,19 @@
         </div>
       </div> -->
       <div class="row">
+        <div class="col-xs-6 form-group">
+          <p class="form_title">Supplier<span class="text-danger">*</span></p><br/>
+          <select data-placeholder="Select" class="text_field chosen-select"  id="Supplier" name="Fitting_supplierID" value="<?php echo isset($fitting->SupplierID) ? $fitting->SupplierID : ''; ?>">
+              <option value=""></option>
+              <?php foreach ($Supplier as $rec) : ?>
+                  <?php echo '<option value="'.$rec['ID'].'">'.$rec['Name'].'</option>'?>
+              <?php endforeach; ?>
+          </select>
+        </div>
+      </div>
+      <div class="row">
         <div class="form-group col-xs-6">
-          <p class="form_title">Accessory</p>
+          <p class="form_title">Accessory from selected supplier</p>
           <select data-placeholder="Select" class="text_field chosen-select" id="PrivateFittingAccessory" name="AccessoryID[]" multiple>
               <option value=""></option>
               <?php foreach ($FittingAccessory as $rec) : ?>
@@ -170,7 +182,7 @@
         <div class="form-group col-xs-6">
           <input type="hidden" name="public_accessory" value="0" />
           <input type="checkbox" name="public_accessory" id="public_accessory" value="1" onchange="changePublicAccessory(this);" />
-          <label for="public_accessory">use public accessory</label>
+          <label for="public_accessory">use accessory from other suppliers</label>
           <p class="form_title"></p>
           <select data-placeholder="Select" class="text_field chosen-select" id="PublicFittingAccessory" name="AccessoryID[]" multiple disabled="true">
               <option value=""></option>
@@ -182,6 +194,8 @@
         </div>
       </div>
     </div>
+    <button type="button" class="btn btn-primary mb-2 hide">Save</button>
+  </form>
   </fieldset>
 
   
@@ -246,8 +260,8 @@
       </div>
 
       <div class="custom-file form-group">
-        <input type="file" class="custom-file-input" id="validatedCustomFile" required>
-        <label class="custom-file-label" for="validatedCustomFile">upload product photo with selected color...</label>
+        <input type="file" class="custom-file-input" id="color_series_photo" required name="color_series_photo">
+        <label class="custom-file-label" for="color_series_photo">upload product photo with selected color...</label>
       </div>
     </div>
     </div>
@@ -312,6 +326,21 @@
     <legend>Additional Information</legend>
     <!-- <a onclick="add_lightingDistributorSeries()">Add lighting distributor series</a> -->
   </fieldset>
+  <div class="row">
+    <div class="col-xs-6 form-group">
+        <div class="question-main">
+            <p class="form_title">Life span (Hours)</p>
+            <input type="text" class="text_field" name="LifeSpan">
+        </div>
+    </div>
+    <div class="col-xs-6 form-group">
+        <div class="question-main">
+            <p class="form_title">Warranty (Years)</p>
+            <input type="text" class="text_field" name="Warranty">
+        </div>
+    </div>
+  </div>
+  
   <div class="row">
     <div class="col-xs-6">
       <div class="question-main">
@@ -378,22 +407,30 @@
             </div>
         </div>
       </div>
-        <div class="col-xs-6 form-group" id="IES_files">
-            <label class="custom-file-label" for="validatedCustomFile">Upload IES files ...</label>
-            <input type="file" class="custom-file-input" id="validatedCustomFile" name="ies_file">
-        </div>
-    </div>
-    <div class="row">
       <div class="col-xs-6 form-group">
           <div class="question-main">
               <p class="form_title">UGR rate</p>
               <input type="number" class="text_field" min="0" name="UGRRate" />
           </div>
       </div>
+        
+    </div>
+    <div class="row">
+      <div class="col-xs-6 form-group" id="IES_files">
+            <label class="custom-file-label" for="ies_file">Upload IES file ...</label>
+            <input type="file" class="custom-file-input" id="ies_file" name="ies_file">
+        </div>
       
       <div class="col-xs-6 form-group ">
-        
+        <label class="custom-file-label" for="lux_file">Upload Lux file ...</label>
+        <input type="file" class="custom-file-input" id="lux_file" name="lux_file">
       </div>
     </div> 
+    <div class="row">
+      <div class="col-xs-6 form-group">
+          <label class="custom-file-label" for="photo_mertic_report">Upload Photo metric report ...</label>
+          <input type="file" class="custom-file-input" id="photo_mertic_report" name="photo_mertic_report">
+      </div>
+    </div>
   
 </div>

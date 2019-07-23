@@ -1,7 +1,8 @@
+
 <!-- MemberModal -->
 
 <div class="modal fade" role="dialog" id="addEconomicProductModal">
-  <div class="modal-dialog" role="document" style="    height: 90%;">
+  <div id="E-series" class="modal-dialog" role="document" style="    height: 90%;">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -24,7 +25,7 @@
 
 <!-- upload MemberModal -->
 <div class="modal fade" role="dialog" id="uploadPhotosModal">
-  <div class="modal-dialog" role="document">
+  <div id="E-series" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -64,7 +65,7 @@
 
 <!-- upload MemberModal -->
 <div class="modal fade" role="dialog" id="uploadApplicationPhotosModal">
-  <div class="modal-dialog" role="document">
+  <div id="E-series" class="small modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -98,6 +99,27 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+
+<!-- checkMember -->
+<div class="modal fade" tabindex="-1" role="dialog" id="checkEconomicProductModal">
+  <div id="E-series" class="small modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Check Economic Family</h4>
+      </div>
+      <div class="modal-body">
+        <p>Do you want to recoding all product options in this family ?</p>
+        <div class="form-group " id="error_msg"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" id="checkMemberBtn" class="btn btn-primary">Yes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- checkMember -->
 
 <!-- custom js -->
 <script type="text/javascript" src="<?php echo base_url();?>/assets/grid-js/home_economic_products.js"></script>

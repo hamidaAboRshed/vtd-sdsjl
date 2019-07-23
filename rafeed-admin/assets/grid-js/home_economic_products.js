@@ -331,3 +331,97 @@ function updateApplicationPhoto(product_id = null)
 		alert('error');
 	}
 }
+
+function checkEconomicProduct(id = null) 
+{
+	if(id) {
+		$('.form-group').removeClass('has-error').removeClass('has-success');
+		$('#error_msg').html("");
+		$("#checkMemberBtn").unbind('click').bind('click', function() {
+			$.ajax({
+				url: './set_economic_product_collection_code' + '/' + id,
+				type: 'post',				
+				dataType: 'json',
+				success:function(response) {
+					if(response.success === true) {
+						$(".messages").html('<div class="alert alert-success alert-dismissible" role="alert">'+
+						  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+						  '<strong> <span class="glyphicon glyphicon-ok-sign"></span> </strong>'+response.messages+
+						'</div>');
+
+						// hide the modal
+						$("#checkEconomicProductModal").modal('hide');
+
+						// update the manageMemberTable
+						manageMemberTable.ajax.reload(null, false); 
+					} else {
+						$('.text-danger').remove()
+						if(response.messages instanceof Object) {
+							$.each(response.messages, function(index, value) {
+								var id = $("#"+index);
+
+								id
+								.closest('.form-group')
+								.removeClass('has-error')
+								.removeClass('has-success')
+								.addClass(value.length > 0 ? 'has-error' : 'has-success')										
+								.html(value);										
+
+							});
+						} else {
+							$(".messages").html('<div class="alert alert-warning alert-dismissible" role="alert">'+
+							  '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>'+
+							  '<strong> <span class="glyphicon glyphicon-exclamation-sign"></span> </strong>'+response.messages+
+							'</div>');
+						}
+					}
+				} // /succes
+			}); // /ajax
+		});
+	}
+}
+
+function changeACProductFunction(sel){
+  //var res =sel.options[sel.selectedIndex].text.toLowerCase();
+  var res =sel.labels[0].textContent.toLowerCase();
+      if($.trim(res)=="bulb"){
+          $("#Socket").css("display","grid");
+          $("#Pin").css("display","none");
+          $("#TubeModel").css("display","none");
+      }
+      else
+          if($.trim(res)=="normal tube" || $.trim(res)=="integrated tube"){
+          $("#Socket").css("display","none");
+          $("#Pin").css("display","none");
+          $("#TubeModel").css("display","grid");
+        }
+        else
+          if ($.trim(res)=="spotlight") {
+            $("#Socket").css("display","none");
+            $("#Pin").css("display","grid");
+            $("#TubeModel").css("display","none");
+          }
+          else{
+            $("#Socket").css("display","none");
+            $("#Pin").css("display","none");
+            $("#TubeModel").css("display","none");
+          }
+}
+
+function changeLightSourceType(sel) 
+{
+  var res =sel.labels[0].textContent.toLowerCase();
+  if(res== "led")
+      	$("#led_type_div").removeClass("hide");
+    else
+  		$("#led_type_div").addClass("hide");
+  
+}
+
+function changeProductPowerType(sel) {
+	var res =sel.labels[0].textContent.toLowerCase();
+  	if(res== "ac")
+      	$("#AC_row").removeClass("hide");
+    else
+  		$("#AC_row").addClass("hide");
+}

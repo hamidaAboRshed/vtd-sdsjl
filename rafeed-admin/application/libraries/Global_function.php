@@ -61,7 +61,7 @@ class global_function {
         
         $config['upload_path'] = $path;
         $config['file_name'] = $file_name;
-        $config['overwrite'] = TRUE;
+        $config['overwrite'] = FALSE;
         $config['allowed_types'] = '*';
 
 		if (!is_dir($path))
@@ -76,7 +76,7 @@ class global_function {
         // Upload file to server
         if($CI->upload->do_upload($element)){
             // Uploaded file data
-            $imageData = $this->upload->data();
+            $imageData = $CI->upload->data();
             $file = $imageData['file_name'];
 
 		}
@@ -109,6 +109,7 @@ class global_function {
 				$config['upload_path'] = $path;
 				$config['file_name'] = $file_name.$i;
 				$config['allowed_types'] = '*';
+				$config['overwrite'] = FALSE;
 
 				if (!is_dir($path))
 				{

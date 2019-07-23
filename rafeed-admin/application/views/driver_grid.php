@@ -22,30 +22,36 @@
 <table width="100%" class="display nowrap table table-hover table-striped table-bordered" id="driverManageMemberTable">
 	<thead>
 		<tr>
-			<th>Driver Type</th>
+			<th>Power Method</th>
 			<th>Code</th>
 			<th>Power</th>
 			<th>Current</th>
+			<th>Frequency</th>
+			<th>Voltage Type</th>
 			<th>Input Voltage</th>
 			<th>Output Voltage</th>
 			<th>IP Rate</th>
 			<th>Origin Country</th>
 			<th>Supplier</th>
+			<th>Dimension</th>
 			<th>Datasheet</th>
 			<th>Options</th>	
 		</tr>
 	</thead>
 	<tfoot>
 		<tr>
-			<th>Driver Type</th>
+			<th>Power Method</th>
 			<th>Code</th>
 			<th>Power</th>
 			<th>Current</th>
+			<th>Frequency</th>
+			<th>Voltage Type</th>
 			<th>Input Voltage</th>
 			<th>Output Voltage</th>
 			<th>IP Rate</th>
 			<th>Origin Country</th>
 			<th>Supplier</th>
+			<th>Dimension</th>
 			<th>Datasheet</th>
 			<th>Options</th>		
 		</tr>
@@ -65,17 +71,32 @@
       <div class="row">
       	<div class="col-xs-6">
       		<div class="form-group ">
-			   	<?php echo form_label('Type','DriverType',$attributes=array());?>
+			   	<?php echo form_label('Power Method','PowerMethod',$attributes=array());?>
 			   	<br/>
 			   	<div style="display: inline-block;">
 			   		<!-- <input type="hidden" value="true" name="DriverType"> -->
-			   	<?php foreach ($DriverType as $key => $value) {
-			   		echo form_radio(array("name"=>"DriverType","id"=>$key,"value"=>$value, 'checked'=>set_radio('DriverType', $value, FALSE)));
+			   	<?php foreach ($PowerMethod as $key => $value) {
+			   		echo form_radio(array("name"=>"PowerMethod","id"=>$key,"value"=>$value, 'checked'=>set_radio('PowerMethod', $value, FALSE)));
 			   		echo form_label($key, $key, $attributes = array('style' =>'padding-right: 14px;'));
 			   	} ?>
 			   </div>
  		  </div>
       	</div>
+      	<div class="col-xs-6">
+      		<!-- <div class="form-group">
+			   	<?php echo form_label('Type','DriverType',$attributes=array());?>
+			   	<br/>
+			   	<div style="display: inline-block;">
+			   	
+			   	<?php foreach ($DriverType as $key => $value) {
+			   		echo form_radio(array("name"=>"DriverType","id"=>"DriverType".$value,"value"=>$value, 'checked'=>set_radio('DriverType', $value, FALSE)));
+			   		echo form_label($key, "DriverType".$value, $attributes = array('style' =>'padding-right: 14px;'));
+			   	} ?>
+			   </div>
+		   </div> -->
+      	</div>
+      </div>  
+      <div class="row">
       	<div class="col-xs-6">
       		<div class="form-group">
 			   	<?php echo form_label('Output Type','OutputType',$attributes=array());?>
@@ -89,23 +110,20 @@
 			   </div>
 		   </div>
       	</div>
-      </div>      
-	  <div class="row">
-	  	<div class="col-xs-6">
+      	<div class="col-xs-6">
 	  		<div class="form-group">
-			   	<?php echo form_label('Code','Code',$attributes=array());?>
-			   	<?php echo form_input('Code', set_value('Code'),$attributes  = array('class' =>"form-control","id"=>"Code"));?>
-		   </div>
-	  	</div>
-	  	<div class="col-xs-6">
-	  		<div class="form-group">
-		   	<?php echo form_label('Power','Power',$attributes=array());?>
-		   	<?php echo form_input('Power', set_value('Power'),$attributes  = array('class' =>"form-control","id"=>"Power"));?>
-		   </div>
-	  	</div>
-	  </div>
+				<?php echo form_label('Voltage Type','VoltageTypeID',$attributes=array());?><br/>
+				<div style="display: inline-block;">
+			   	<?php foreach ($VoltageType as $key => $value) {
+			   		echo form_radio(array("name"=>"VoltageTypeID","id"=>"VoltageTypeID".$value['ID'],"value"=>$value['ID'], 'checked'=>set_radio('VoltageTypeID', $value['ID'], FALSE)));
+			   		echo form_label($value['Name'], "VoltageTypeID".$value['ID'], $attributes = array('style' =>'padding-right: 14px;'));
+			   	} ?>
+			   	</div>
+			</div>
+		</div>
+      </div>    
 	  <div class="row">
-	  	<div class="col-xs-6">
+      	<div class="col-xs-6">
 		  	<div class="form-group ">
 			   	<?php echo form_label('Dimmable','Dimmable[]',$attributes=array());?>
 			   	<?php $option =array();
@@ -120,34 +138,45 @@
 	          	</div>
  		  </div>
 		</div>
-		<div class="col-xs-6">
-			<?php echo form_label('Output Current','OutputCurrent',$attributes=array("style"=>"display: block;"));?>
-		   <div class="form-mgroup">
-		   		<div class="form-group"><!--   -->
-				   	<?php echo form_label('Min','OutputCurrentMin',$attributes=array());?>
-				   	<?php echo form_input('OutputCurrentMin', set_value('OutputCurrentMin'),$attributes  = array('class' =>"form-control","id"=>"OutputCurrentMin"));?>
-			   </div>
-			   <div class="form-group"><!--   -->
-				   	<?php echo form_label('Max','OutputCurrentMax',$attributes=array());?>
-				   	<?php echo form_input('OutputCurrentMax', set_value('OutputCurrentMax'),$attributes  = array('class' =>"form-control","id"=>"OutputCurrentMax"));?>
-			   </div>
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+			   	<?php echo form_label('Code','Code',$attributes=array());?>
+			   	<?php echo form_input('Code', set_value('Code'),$attributes  = array('class' =>"form-control","id"=>"Code"));?>
 		   </div>
-		</div>
+	  	</div>
+	  	
 	  </div>
+	  <div class="row">
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+		   	<?php echo form_label('Power','Power',$attributes=array());?>
+		   	<?php echo form_input(array('class' =>"form-control","id"=>"Power",'type' => 'number', 'name' => 'Power'));?>
+		   </div>
+	  	</div>
+		<div class="col-xs-6">
+	  		<div class="form-group">
+		   	<?php echo form_label('Frequency','frequency',$attributes=array());?>
+		   	<?php echo form_input('frequency', set_value('frequency'),$attributes  = array('class' =>"form-control","id"=>"frequency"));?>
+		   </div>
+	  	</div>
+	  </div>
+	  <!-- <div class="row">
+	  	
+	  </div> -->
 	   <div class="row">
 	   	<div class="col-xs-6">
 	   		<?php echo form_label('Input Voltage','InputVoltage',$attributes=array("style"=>"display: block;"));?>
 		   	<div class="form-mgroup" ><!-- style="display: -webkit-inline-box" -->
 			   	<div class="form-group"><!--   -->
 				   	<?php echo form_label('Min','InputVoltageMin',$attributes=array());?>
-				   	<?php echo form_input('InputVoltageMin', set_value('InputVoltageMin'),$attributes  = array('class' =>"form-control","id"=>"InputVoltageMin"));?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"InputVoltageMin","type" => "number","name" => 'InputVoltageMin'));?>
 			   </div>
 			   <!-- <div  class="form-group" style="width: 10%">
 			   		
 			   </div> -->
 			   <div class="form-group"><!--  -->
 				   	<?php echo form_label('Max','InputVoltageMax',$attributes=array());?>
-				   	<?php echo form_input('InputVoltageMax', set_value('InputVoltageMax'),$attributes  = array('class' =>"form-control","id"=>"InputVoltageMax"));?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"InputVoltageMax",'type' => 'number','name' => 'InputVoltageMax'));?>
 			   </div>
 		   </div>
 		</div>
@@ -156,24 +185,57 @@
 		   <div class="form-mgroup"><!--  style="display: -webkit-inline-box" -->
 		   	<div class="form-group"><!--  -->
 		   		<?php echo form_label('Min','OutputVoltageMin',$attributes=array());?>
-			   	<?php echo form_input('OutputVoltageMin', set_value('OutputVoltageMin'),$attributes  = array('class' =>"form-control","id"=>"OutputVoltageMin"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"OutputVoltageMin",'type' => 'number','name' => 'OutputVoltageMin'));?>
 		    </div>
 		    <!-- <div  class="form-group" style="width: 10%">
 			   		
 			   </div> -->
 			   <div class="form-group">
 			   	<?php echo form_label('Max','OutputVoltageMax',$attributes=array());?>
-			   	<?php echo form_input('OutputVoltageMax', set_value('OutputVoltageMax'),$attributes  = array('class' =>"form-control","id"=>"OutputVoltageMax"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"OutputVoltageMax",'type' => 'number','name'=> 'OutputVoltageMax'));?>
 			   </div>
 		   </div>
 		</div>
 	   </div>
-
+	   <div class="row">
+	  	<div class="col-xs-6">
+			<?php echo form_label('Output Current','OutputCurrent',$attributes=array("style"=>"display: block;"));?>
+		   <div class="form-mgroup">
+		   		<div class="form-group">
+				   	<?php echo form_label('Min','OutputCurrentMin',$attributes=array());?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"OutputCurrentMin",'type' => 'number','name' => 'OutputCurrentMin'));?>
+			   </div>
+			   <div class="form-group">
+				   	<?php echo form_label('Max','OutputCurrentMax',$attributes=array());?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"OutputCurrentMax",'type' => 'number','name' => 'OutputCurrentMax'));?>
+			   </div>
+		   </div>
+		</div>
+		<div class="col-xs-6">
+		   <div class="form-group">
+		   		<?php echo form_label('Dimension','editdimension',$attributes=array("style"=>"display: block;"));?>
+			   <div class="form-mgroup" style="display: flex;">
+			   		<div class="form-group">
+					   	<?php echo form_label('Length','Length',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"Length",'type' => 'number','name' => 'Length'));?>
+				   	</div>
+				   	<div class="form-group">
+					   	<?php echo form_label('Width','Width',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"Width",'type' => 'number','name' => 'Width'));?>
+				   	</div>
+				   	<div class="form-group">
+					   	<?php echo form_label('Height','Height',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"Height",'type' => 'number','name' => 'Height'));?>
+				   	</div>
+			   </div>
+		   </div>
+		</div>
+	  </div>
 	   <div class="row">
 	   	<div class="col-xs-6">
 		   	<div class="form-group">
 			   	<?php echo form_label('Power Factor','PowerFactor',$attributes=array());?>
-			   	<?php echo form_input('PowerFactor', set_value('PowerFactor'),$attributes  = array('class' =>"form-control","id"=>"PowerFactor"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"PowerFactor",'type' => 'number','step' => ".00",'name' => 'PowerFactor'));?>
 		   </div>
 		</div>
 		<div class="col-xs-6">
@@ -212,7 +274,6 @@
  		  </div>
  		</div>
 	   </div>
-		  <!-- <input type="file" name="userfile" size="20" />  -->
 
       </div>
       <div class="modal-footer">
@@ -236,17 +297,24 @@
 		 <div class="row">
       	<div class="col-xs-6">
       		<div class="form-group ">
-			   	<?php echo form_label('Type','editDriverType',$attributes=array());?>
+			   	<?php echo form_label('Power Method','editPowerMethod',$attributes=array());?>
 			   	<br/>
 			   	<div style="display: inline-block;">
-			   	<?php foreach ($DriverType as $key => $value) {
+			   	<?php foreach ($PowerMethod as $key => $value) {
 			   		
-			   		echo form_radio(array("name"=>"editDriverType","id"=>"editDriverType".$value,"value"=>$value));
-			   		echo form_label($key, "editDriverType".$value, $attributes = array('style' =>'padding-right: 14px;'));
+			   		echo form_radio(array("name"=>"editPowerMethod","id"=>"editPowerMethod".$value,"value"=>$value));
+			   		echo form_label($key, "editPowerMethod".$value, $attributes = array('style' =>'padding-right: 14px;'));
 			   	} ?>
 			   </div>
  		  </div>
       	</div>
+      	<div class="col-xs-6">
+      		<div class="form-group">
+
+		   </div>
+      	</div>
+      </div>
+      <div class="row">
       	<div class="col-xs-6">
       		<div class="form-group">
 			   	<?php echo form_label('Output Type','editOutputType',$attributes=array());?>
@@ -260,22 +328,19 @@
 			   </div>
 		   </div>
       	</div>
+      	<div class="col-xs-6">
+	  		<div class="form-group">
+				<?php echo form_label('Voltage Type','editVoltageTypeID',$attributes=array());?><br/>
+				<div style="display: inline-block;">
+			   	<?php foreach ($VoltageType as $key => $value) {
+			   		echo form_radio(array("name"=>"editVoltageTypeID","id"=>"editVoltageTypeID".$value['ID'],"value"=>$value['ID'], 'checked'=>set_radio('editVoltageTypeID', $value['ID'], FALSE)));
+			   		echo form_label($value['Name'], "editVoltageTypeID".$value['ID'], $attributes = array('style' =>'padding-right: 14px;'));
+			   	} ?>
+			   	</div>
+			</div>
+		</div>
       </div>
       <input type="hidden" name="editCodeOldVal" id="editCodeOldVal">     
-	  <div class="row">
-	  	<div class="col-xs-6">
-	  		<div class="form-group">
-			   	<?php echo form_label('Code','editCode',$attributes=array());?>
-			   	<?php echo form_input('editCode', set_value('editCode'),$attributes  = array('class' =>"form-control","id"=>"editCode"));?>
-		   </div>
-	  	</div>
-	  	<div class="col-xs-6">
-	  		<div class="form-group">
-			   	<?php echo form_label('Power','editPower',$attributes=array());?>
-			   	<?php echo form_input('editPower', set_value('editPower'),$attributes  = array('class' =>"form-control","id"=>"editPower"));?>
-		   </div>
-	  	</div>
-	  </div>
 	  <div class="row">
 	  	<div class="col-xs-6">
 	  		<div class="form-group ">
@@ -292,21 +357,26 @@
           		</div>
  		  </div>
 		</div>
-		<div class="col-xs-6">
-		   <div class="form-group">
-		   		<?php echo form_label('Output Current','editOutputCurrent',$attributes=array("style"=>"display: block;"));?>
-			   <div class="form-mgroup">
-			   		<div class="form-group"><!--   -->
-					   	<?php echo form_label('Min','editOutputCurrentMin',$attributes=array());?>
-					   	<?php echo form_input('editOutputCurrentMin', set_value('editOutputCurrentMin'),$attributes  = array('class' =>"form-control","id"=>"editOutputCurrentMin"));?>
-				   </div>
-				   <div class="form-group"><!--   -->
-					   	<?php echo form_label('Min','editOutputCurrentMax',$attributes=array());?>
-					   	<?php echo form_input('editOutputCurrentMax', set_value('editOutputCurrentMax'),$attributes  = array('class' =>"form-control","id"=>"editOutputCurrentMax"));?>
-				   </div>
-			   </div>
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+			   	<?php echo form_label('Code','editCode',$attributes=array());?>
+			   	<?php echo form_input('editCode', set_value('editCode'),$attributes  = array('class' =>"form-control","id"=>"editCode"));?>
 		   </div>
-		</div>
+	  	</div>
+	  </div>
+	  <div class="row">
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+			   	<?php echo form_label('Power','editPower',$attributes=array());?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"editPower",'type' => 'number', 'name' => 'editPower'));?>
+		   </div>
+	  	</div>
+	  	<div class="col-xs-6">
+	  		<div class="form-group">
+		   	<?php echo form_label('Frequency','editFrequency',$attributes=array());?>
+		   	<?php echo form_input('editFrequency', set_value('editFrequency'),$attributes  = array('class' =>"form-control","id"=>"editFrequency"));?>
+		   </div>
+	  	</div>
 	  </div>
 	   <div class="row">
 	   	<div class="col-xs-6">
@@ -314,11 +384,11 @@
 		   	<div class="form-mgroup"><!--  style="display: -webkit-inline-box" -->
 			   	<div class="form-group">
 				   	<?php echo form_label('Min','editInputVoltageMin',$attributes=array());?>
-				   	<?php echo form_input('editInputVoltageMin', set_value('editInputVoltageMin'),$attributes  = array('class' =>"form-control","id"=>"editInputVoltageMin"));?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"editInputVoltageMin",'type' => 'number','name' => 'editInputVoltageMin'));?>
 			   </div>
 			   <div class="form-group">
 				   	<?php echo form_label('Max','editInputVoltageMax',$attributes=array());?>
-				   	<?php echo form_input('editInputVoltageMax', set_value('editInputVoltageMax'),$attributes  = array('class' =>"form-control","id"=>"editInputVoltageMax"));?>
+				   	<?php echo form_input(array('class' =>"form-control","id"=>"editInputVoltageMax",'type' => 'number','name' => 'editInputVoltageMax'));?>
 			   </div>
 		   </div>
 		</div>
@@ -327,21 +397,56 @@
 		   <div class="form-mgroup"><!--  style="display: -webkit-inline-box" -->
 		   	<div class="form-group"> 
 		   		<?php echo form_label('Min','editOutputVoltageMin',$attributes=array());?>
-			   	<?php echo form_input('editOutputVoltageMin', set_value('editOutputVoltageMin'),$attributes  = array('class' =>"form-control","id"=>"editOutputVoltageMin"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"editOutputVoltageMin",'type' => 'number','name' =>'editOutputVoltageMin'));?>
 		    </div>
 			   <div class="form-group">
 			   	<?php echo form_label('Max','editOutputVoltageMax',$attributes=array());?>
-			   	<?php echo form_input('editOutputVoltageMax', set_value('editOutputVoltageMax'),$attributes  = array('class' =>"form-control","id"=>"editOutputVoltageMax"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"editOutputVoltageMax",'type' => 'number','name' => 'editOutputVoltageMax'));?>
 			   </div>
 		   </div>
 		</div>
 	   </div>
-
+	  <div class="row">
+		<div class="col-xs-6">
+		   <div class="form-group">
+		   		<?php echo form_label('Output Current','editOutputCurrent',$attributes=array("style"=>"display: block;"));?>
+			   <div class="form-mgroup">
+			   		<div class="form-group"><!--   -->
+					   	<?php echo form_label('Min','editOutputCurrentMin',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"editOutputCurrentMin",'type' => 'number','name' => 'editOutputCurrentMin'));?>
+				   </div>
+				   <div class="form-group"><!--   -->
+					   	<?php echo form_label('Min','editOutputCurrentMax',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"editOutputCurrentMax",'type' => 'number','name' => 'editOutputCurrentMax'));?>
+				   </div>
+			   </div>
+		   </div>
+		</div>
+		<div class="col-xs-6">
+		   <div class="form-group">
+		   		<?php echo form_label('Dimension','editdimension',$attributes=array("style"=>"display: block;"));?>
+			   <div class="form-mgroup" style="display: flex;">
+			   		<div class="form-group">
+					   	<?php echo form_label('Length','editLength',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"editLength",'type' => 'number','name' => 'editLength'));?>
+				   	</div>
+				   	<div class="form-group">
+					   	<?php echo form_label('Width','editWidth',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"editWidth",'type' => 'number','name' => 'editWidth'));?>
+				   	</div>
+				   	<div class="form-group">
+					   	<?php echo form_label('Height','editHeight',$attributes=array());?>
+					   	<?php echo form_input(array('class' =>"form-control","id"=>"editHeight",'type' => 'number','name' => 'editHeight'));?>
+				   	</div>
+			   </div>
+		   </div>
+		</div>
+	  </div>
 	   <div class="row">
 	   	<div class="col-xs-6">
 		   	<div class="form-group">
 			   	<?php echo form_label('Power Factor','editPowerFactor',$attributes=array());?>
-			   	<?php echo form_input('editPowerFactor', set_value('editPowerFactor'),$attributes  = array('class' =>"form-control","id"=>"editPowerFactor"));?>
+			   	<?php echo form_input(array('class' =>"form-control","id"=>"editPowerFactor",'type' => 'number','step' => ".00",'name' => 'editPowerFactor'));?>
 		   </div>
 		</div>
 		<div class="col-xs-6">

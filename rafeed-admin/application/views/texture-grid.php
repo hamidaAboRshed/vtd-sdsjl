@@ -115,7 +115,7 @@
         
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      <?php echo form_submit('submit', 'Save Changes',array("class"=>"btn btn-primary","id"=>"submit"));?>
+      <?php echo form_submit('submit', 'Save Changes',array("class"=>"btn btn-primary","id"=>"submit","form"=>"createTextureForm"));?>
     </div>
     <?php echo form_close()?>
   </div>

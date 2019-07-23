@@ -19,7 +19,7 @@
                 </li>
             </ul>
             <!-- Tab panes -->
-            <?php echo form_open_multipart('Economic_product/add_economic_collection',$attributes=array('id'=>'create_productCollectionForm',"novalidate"=> "novalidate"));?>
+            <?php echo form_open_multipart('Economic_product/add_economic_collection',$attributes=array('id'=>'create_productCollectionForm','novalidate'=> 'novalidate'));?>
             <div class="tab-content tabcontent-border">
                 <div class="tab-pane p-20 active" id="fitting_tab" role="tabpanel">
                   <div class="table-responsive">
@@ -31,7 +31,7 @@
                   <div class="table-responsive">
                     <?php $this->load->view('add_economic_product_fixture.php');?> 
                     <div id="validation_msg"></div>
-                    <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Save</button>
+                    <button type="submit" class="btn btn-success" form="create_productCollectionForm" > <i class="fa fa-check"></i> Save</button>
                   </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="<?php echo base_url();?>/assets/js/Steps_form/main.js"></script>
+<!-- <script type="text/javascript" src="<?php echo base_url();?>/assets/js/Steps_form/main.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url();?>/assets/grid-js/home_economic_product_collection.js"></script>
 <style type="text/css">
   .question-main label{
@@ -53,5 +53,5 @@
 
 <!-- <script src="<?php echo base_url();?>/assets/js/grocery_newtabadd.js"></script> -->
 <script src="<?php echo base_url();?>/assets/js/app/product_economic.js"></script>
-<!-- <script src="<?php echo base_url();?>/assets/js/app/mixer.js"></script> -->
+<script src="<?php echo base_url();?>/assets/js/app/mixer.js"></script>
 <script src="<?php echo base_url();?>/assets/js/app/index_popup.js"></script>

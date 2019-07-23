@@ -61,7 +61,7 @@ class Product extends CI_Controller {
 		$data['DriverType']=$this->Enums->get_DriverType();
 		$data['DriverOutputType']=$this->Enums->get_DriverOutputType();
 		$data['LightingSource']=$this->Enums->get_BaseFixture();
-		$data['ProductMode']=$this->Enums->get_productMode();
+		$data['ManufacturingTechnique']=$this->Enums->get_productMode();
 		$data['AdjustableType']=$this->Enums->get_AdjustableType();
 		$data['AccessoryType']=$this->Enums->get_AccessoryType();
 		$data['ProductFamilyType']=$this->Enums->get_ProductFamilyType();
